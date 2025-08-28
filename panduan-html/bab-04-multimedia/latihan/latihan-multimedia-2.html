@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Multimedia 2 - Media Center</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .exercise-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+
+        .task-section {
+            border-left: 4px solid #4CAF50;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .media-section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .media-section h3 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .placeholder-area {
+            background: #e9ecef;
+            border: 2px dashed #6c757d;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #6c757d;
+        }
+
+        .requirements {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎬 Latihan Multimedia 2</h1>
+        <p>Membuat Media Center Lengkap</p>
+        <small>Video • Audio • Iframe Integration</small>
+    </div>
+
+    <div class="exercise-box">
+        <h2>📋 Deskripsi Latihan</h2>
+        <p>Dalam latihan ini, kalian akan membuat halaman Media Center yang menggabungkan video, audio, dan iframe dalam satu halaman terintegrasi.</p>
+
+        <div class="task-section">
+            <h3>🎯 Tujuan Pembelajaran:</h3>
+            <ul>
+                <li>Menggunakan tag <code>&lt;video&gt;</code> dengan multiple sources</li>
+                <li>Mengimplementasikan <code>&lt;audio&gt;</code> dengan kontrol</li>
+                <li>Menerapkan <code>&lt;iframe&gt;</code> untuk konten eksternal</li>
+                <li>Menerapkan responsive design untuk multimedia</li>
+                <li>Menggunakan atribut aksesibilitas</li>
+            </ul>
+        </div>
+
+        <div class="requirements">
+            <h3>✅ Requirements Wajib:</h3>
+            <ol>
+                <li><strong>1 Video Player</strong> dengan poster, controls, dan multiple sources</li>
+                <li><strong>2 Audio Player</strong> dengan kontrol dan deskripsi</li>
+                <li><strong>2 Iframe</strong> untuk konten eksternal (YouTube dan Maps placeholder)</li>
+                <li><strong>Responsive Design</strong> yang bekerja di mobile dan desktop</li>
+                <li><strong>Accessibility</strong> dengan title, alt, dan ARIA labels</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- BAGIAN 1: VIDEO PLAYER -->
+    <div class="media-section">
+        <h3>🎥 Bagian 1: Video Player</h3>
+        <p><strong>Tugas:</strong> Buat video player dengan poster image dan multiple format sources</p>
+
+        <div class="code-example">
+&lt;video controls width="640" height="360" poster="URL_POSTER"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Browser tidak mendukung video HTML5.
+&lt;/video&gt;
+        </div>
+
+        <!-- TODO: Siswa mengerjakan di sini -->
+        <div class="placeholder-area">
+            <h4>📝 KERJAKAN DI SINI</h4>
+            <p>Tambahkan video player dengan:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Poster image (gunakan placeholder)</li>
+                <li>Controls attribute</li>
+                <li>2 source formats (mp4 dan webm)</li>
+                <li>Fallback text</li>
+                <li>Ukuran yang responsive</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BAGIAN 2: AUDIO PLAYERS -->
+    <div class="media-section">
+        <h3>🎵 Bagian 2: Audio Players</h3>
+        <p><strong>Tugas:</strong> Buat 2 audio player dengan tema berbeda dan deskripsi</p>
+
+        <div class="code-example">
+&lt;div class="audio-item"&gt;
+    &lt;h4&gt;Judul Audio&lt;/h4&gt;
+    &lt;audio controls preload="metadata"&gt;
+        &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+        &lt;source src="audio.ogg" type="audio/ogg"&gt;
+        Browser tidak mendukung audio.
+    &lt;/audio&gt;
+    &lt;p&gt;Deskripsi audio...&lt;/p&gt;
+&lt;/div&gt;
+        </div>
+
+        <!-- TODO: Siswa mengerjakan di sini -->
+        <div class="placeholder-area">
+            <h4>📝 KERJAKAN DI SINI - AUDIO 1</h4>
+            <p>Tema: Podcast/Radio Show</p>
+        </div>
+
+        <div class="placeholder-area">
+            <h4>📝 KERJAKAN DI SINI - AUDIO 2</h4>
+            <p>Tema: Musik/Lagu</p>
+        </div>
+    </div>
+
+    <!-- BAGIAN 3: IFRAME INTEGRATION -->
+    <div class="media-section">
+        <h3>🌐 Bagian 3: Iframe Integration</h3>
+        <p><strong>Tugas:</strong> Integrasikan 2 iframe untuk konten eksternal</p>
+
+        <div class="code-example">
+&lt;div class="iframe-container"&gt;
+    &lt;h4&gt;Judul Konten&lt;/h4&gt;
+    &lt;iframe src="URL"
+            width="560"
+            height="315"
+            title="Deskripsi"
+            allowfullscreen
+            loading="lazy"&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+        </div>
+
+        <h4>🎬 YouTube Embed</h4>
+        <!-- TODO: Siswa mengerjakan di sini -->
+        <div class="placeholder-area">
+            <h4>📝 KERJAKAN DI SINI</h4>
+            <p>Embed YouTube video dengan:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>URL: https://www.youtube.com/embed/dQw4w9WgXcQ</li>
+                <li>Allowfullscreen attribute</li>
+                <li>Responsive wrapper</li>
+                <li>Title attribute</li>
+            </ul>
+        </div>
+
+        <h4>🗺️ Maps Integration</h4>
+        <!-- TODO: Siswa mengerjakan di sini -->
+        <div class="placeholder-area">
+            <h4>📝 KERJAKAN DI SINI</h4>
+            <p>Tambahkan iframe "peta" dengan:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Placeholder untuk Google Maps</li>
+                <li>Title yang deskriptif</li>
+                <li>Ukuran yang sesuai</li>
+                <li>Loading lazy</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BAGIAN 4: RESPONSIVE CSS -->
+    <div class="media-section">
+        <h3>📱 Bagian 4: Responsive Design</h3>
+        <p><strong>Tugas:</strong> Tambahkan CSS untuk membuat semua media responsive</p>
+
+        <div class="code-example">
+/* Tambahkan CSS ini di bagian &lt;style&gt; */
+.responsive-media {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+}
+
+.iframe-responsive {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+}
+
+.iframe-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    /* Mobile styles */
+}
+        </div>
+
+        <div class="placeholder-area">
+            <h4>📝 CSS CHALLENGE</h4>
+            <p>Tambahkan CSS responsive di bagian &lt;style&gt; untuk:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Video dan audio responsive</li>
+                <li>Iframe dengan aspect ratio 16:9</li>
+                <li>Media queries untuk mobile</li>
+                <li>Grid layout untuk audio players</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PANDUAN DAN TIPS -->
+    <div class="exercise-box" style="background: #e8f5e8;">
+        <h3>💡 Tips & Panduan Pengerjaan</h3>
+
+        <h4>🎥 Untuk Video:</h4>
+        <ul>
+            <li>Gunakan <code>https://sample-videos.com/</code> untuk sample video</li>
+            <li>Poster bisa dari <code>https://via.placeholder.com/640x360</code></li>
+            <li>Jangan lupa atribut <code>controls</code></li>
+            <li>Tambahkan <code>preload="metadata"</code> untuk optimasi</li>
+        </ul>
+
+        <h4>🎵 Untuk Audio:</h4>
+        <ul>
+            <li>Gunakan placeholder audio atau sample dari internet</li>
+            <li>Berikan judul dan deskripsi yang menarik</li>
+            <li>Pertimbangkan <code>preload="metadata"</code></li>
+            <li>Tambahkan informasi durasi jika ada</li>
+        </ul>
+
+        <h4>🌐 Untuk Iframe:</h4>
+        <ul>
+            <li>YouTube: gunakan format embed URL</li>
+            <li>Selalu tambahkan <code>title</code> attribute</li>
+            <li>Gunakan <code>loading="lazy"</code> untuk performance</li>
+            <li>Buat responsive dengan CSS</li>
+        </ul>
+
+        <h4>📱 Untuk Responsive:</h4>
+        <ul>
+            <li>Test di berbagai ukuran layar</li>
+            <li>Gunakan <code>max-width: 100%</code> dan <code>height: auto</code></li>
+            <li>Implementasikan aspect ratio untuk iframe</li>
+            <li>Pertimbangkan loading performance</li>
+        </ul>
+    </div>
+
+    <div class="exercise-box" style="background: #fff3cd; border-left: 4px solid #ffc107;">
+        <h3>⚠️ Checklist Sebelum Submit</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h4>✅ Functionality</h4>
+                <ul>
+                    <li>☐ Video player berfungsi</li>
+                    <li>☐ Audio players berfungsi</li>
+                    <li>☐ Iframe loading dengan benar</li>
+                    <li>☐ Responsive di mobile</li>
+                </ul>
+            </div>
+            <div>
+                <h4>🎯 Accessibility</h4>
+                <ul>
+                    <li>☐ Title attributes ada</li>
+                    <li>☐ Alt text untuk gambar</li>
+                    <li>☐ Fallback content ada</li>
+                    <li>☐ Semantic HTML structure</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+        <h3>🏆 Setelah Selesai</h3>
+        <p>Simpan file sebagai <code>media-center-saya.html</code></p>
+        <p><strong>Bonus Challenges:</strong></p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                <h4>🌟 Level 1</h4>
+                <p>Tambahkan custom controls dengan JavaScript</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                <h4>🚀 Level 2</h4>
+                <p>Implementasikan lightbox untuk video</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

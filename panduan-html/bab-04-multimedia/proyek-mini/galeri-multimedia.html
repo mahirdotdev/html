@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeri multimedia SMA Negeri 1 Jakarta - koleksi foto, video, dan audio kegiatan sekolah">
+    <meta name="keywords" content="galeri, multimedia, sekolah, foto, video, audio">
+    <meta name="author" content="SMA Negeri 1 Jakarta">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Galeri Multimedia - SMA Negeri 1 Jakarta">
+    <meta property="og:description" content="Jelajahi koleksi multimedia kegiatan dan prestasi SMA Negeri 1 Jakarta">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sman1-jakarta.sch.id/galeri">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/2196F3/white?text=Galeri+Multimedia">
+
+    <title>Galeri Multimedia - SMA Negeri 1 Jakarta</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://via.placeholder.com/32x32/2196F3/white?text=S">
+
+    <!-- Preconnect untuk optimasi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://via.placeholder.com">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset dan Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FF5722;
+            --accent-color: #4CAF50;
+            --warning-color: #FF9800;
+            --success-color: #8BC34A;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Main Content */
+        .main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .media-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .video-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .audio-grid {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+
+        /* Media Cards */
+        .media-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .media-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .media-card-content {
+            padding: 1.5rem;
+        }
+
+        .media-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .media-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .media-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .media-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .video-container video,
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Audio Player Custom */
+        .audio-player {
+            background: linear-gradient(135deg, var(--accent-color), var(--success-color));
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+        }
+
+        .audio-player audio {
+            width: 100%;
+            margin: 1rem 0;
+            border-radius: 25px;
+        }
+
+        .audio-info {
+            text-align: center;
+        }
+
+        .audio-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-description {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        /* Iframe Section */
+        .iframe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .iframe-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .iframe-responsive {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .iframe-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--border-radius);
+        }
+
+        /* Modal/Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal img,
+        .modal video {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: var(--white);
+            color: var(--text-dark);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--white);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+        }
+
+        /* Statistics */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .video-grid,
+            .iframe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .main {
+                padding: 2rem 0;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles for keyboard navigation */
+        a:focus,
+        button:focus,
+        audio:focus,
+        video:focus,
+        iframe:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #0066cc;
+                --secondary-color: #cc3300;
+                --text-dark: #000000;
+                --text-light: #333333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>🎨 Galeri Multimedia</h1>
+            <p>SMA Negeri 1 Jakarta - Koleksi Foto, Video, dan Audio Kegiatan Sekolah</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#galeri-foto" class="active">📸 Galeri Foto</a></li>
+                    <li><a href="#video-kegiatan">🎥 Video</a></li>
+                    <li><a href="#audio-podcast">🎵 Audio</a></li>
+                    <li><a href="#konten-eksternal">🌐 Konten Eksternal</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+
+            <!-- Statistics -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="photoCount">48</div>
+                    <div class="stat-label">Foto Kegiatan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="videoCount">12</div>
+                    <div class="stat-label">Video Dokumentasi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="audioCount">8</div>
+                    <div class="stat-label">Audio Podcast</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="viewCount">2.1k</div>
+                    <div class="stat-label">Total Views</div>
+                </div>
+            </div>
+
+            <!-- Galeri Foto -->
+            <section id="galeri-foto" class="section">
+                <h2 class="section-title">📸 Galeri Foto Kegiatan</h2>
+                <div class="media-grid gallery-grid">
+
+                    <div class="media-card" onclick="openModal('photo1')">
+                        <img src="https://via.placeholder.com/300x200/4CAF50/white?text=Upacara+Bendera"
+                             alt="Upacara bendera Senin pagi di halaman sekolah dengan seluruh siswa berbaris rapi"
+                             loading="lazy">
+                        <div class="media-card-content">
+                            <h3>Upacara Bendera</h3>
+                            <p>Upacara bendera rutin setiap hari Senin yang diikuti seluruh siswa dan guru dengan khidmat.</p>
+                            <div class="media-meta">
+                                <span>📅 Senin, 15 Jan 2024</span>
+                                <span class="media-tag">Kegiatan Rutin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card" onclick="openModal('photo2')">
+                        <img src="https://via.placeholder.com/300x200/2196F3/white?text=Lomba+Sains"
+                             alt="Siswa sedang berkonsentrasi mengerjakan soal olimpiade sains di laboratorium"
+                             loading="lazy">
+                        <div class="media-card-content">
+                            <h3>Olimpiade Sains</h3>
+                            <p>Kompetisi sains tingkat nasional dimana siswa kami meraih juara 2 kategori Biologi.</p>
+                            <div class="media-meta">
+                                <span>📅 Kamis, 8 Feb 2024</span>
+                                <span class="media-tag">Prestasi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card" onclick="openModal('photo3')">
+                        <img src="https://via.placeholder.com/300x200/FF9800/white?text=Pentas+Seni"
+                             alt="Penampilan tari tradisional siswa di atas panggung dengan kostum colorful"
+                             loading="lazy">
+                        <div class="media-card-content">
+                            <h3>Festival Pentas Seni</h3>
+                            <p>Pertunjukan seni budaya yang menampilkan berbagai bakat siswa dari tari hingga musik.</p>
+                            <div class="media-meta">
+                                <span>📅 Sabtu, 25 Mar 2024</span>
+                                <span class="media-tag">Seni & Budaya</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card" onclick="openModal('photo4')">
+                        <img src="https://via.placeholder.com/300x200/9C27B0/white?text=Lab+Komputer"
+                             alt="Siswa belajar programming di laboratorium komputer dengan setup modern"
+                             loading="lazy">
+                        <div class="media-card-content">
+                            <h3>Kelas Programming</h3>
+                            <p>Pembelajaran coding dan pemrograman web di laboratorium komputer yang telah diperbarui.</p>
+                            <div class="media-meta">
+                                <span>📅 Rabu, 12 Apr 2024</span>
+                                <span class="media-tag">Teknologi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card" onclick="openModal('photo5')">
+                        <img src="https://via.placeholder.com/300x200/FF5722/white?text=Olahraga"
+                             alt="Pertandingan basket antar kelas dengan antusiasme tinggi dari penonton"
+                             loading="lazy">
+                        <div class="media-card-content">
+                            <h3>Turnamen Basket</h3>
+                            <p>Kompetisi olahraga antar kelas yang berlangsung sengit dan penuh sportivitas.</p>
+                            <div class="media-meta">
+                                <span>📅 Jumat, 28 Apr 2024</span>
+                                <span class="media-tag">Olahraga</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card" onclick="openModal('photo6')">
+                        <img src="https://via.placeholder.com/300x200/607D8B/white?text=Wisuda"
+                             alt="Foto kelulusan siswa kelas 12 dengan toga dan topi wisuda yang membanggakan"
+                             loading="lazy">
+                        <div class="media-card-content">
+                            <h3>Wisuda Kelulusan</h3>
+                            <p>Momen bersejarah kelulusan angkatan 2024 dengan tingkat kelulusan 100%.</p>
+                            <div class="media-meta">
+                                <span>📅 Sabtu, 15 Jun 2024</span>
+                                <span class="media-tag">Milestone</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn" onclick="loadMorePhotos()">
+                        <span class="loading" id="photoLoading" style="display: none;"></span>
+                        📷 Muat Lebih Banyak Foto
+                    </button>
+                </div>
+            </section>
+
+            <!-- Video Kegiatan -->
+            <section id="video-kegiatan" class="section">
+                <h2 class="section-title">🎥 Video Dokumentasi</h2>
+                <div class="media-grid video-grid">
+
+                    <div class="media-card">
+                        <div class="video-container">
+                            <video controls
+                                   poster="https://via.placeholder.com/640x360/E91E63/white?text=Video+Profile"
+                                   preload="metadata"
+                                   loading="lazy">
+                                <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                                <track kind="subtitles"
+                                       src="data:text/vtt;charset=utf-8,WEBVTT%0A%0A1%0A00%3A00%3A01.000%20--%3E%2000%3A00%3A05.000%0ASelamat%20datang%20di%20SMA%20Negeri%201%20Jakarta%0A%0A2%0A00%3A00%3A06.000%20--%3E%2000%3A00%3A10.000%0ASekolah%20yang%20mengutamakan%20prestasi%20dan%20karakter"
+                                       srclang="id"
+                                       label="Bahasa Indonesia"
+                                       default>
+                                <p>Browser Anda tidak mendukung video HTML5.</p>
+                            </video>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Profil Sekolah 2024</h3>
+                            <p>Video profil lengkap mengenai fasilitas, program unggulan, dan prestasi sekolah terbaru.</p>
+                            <div class="media-meta">
+                                <span>⏱️ 3:45 menit</span>
+                                <span class="media-tag">Profil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="video-container">
+                            <video controls
+                                   poster="https://via.placeholder.com/640x360/3F51B5/white?text=Virtual+Tour"
+                                   preload="metadata"
+                                   loading="lazy">
+                                <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_2mb.mp4" type="video/mp4">
+                                <track kind="subtitles"
+                                       src="data:text/vtt;charset=utf-8,WEBVTT%0A%0A1%0A00%3A00%3A01.000%20--%3E%2000%3A00%3A05.000%0AMari%20berkeliling%20sekolah%20kami%0A%0A2%0A00%3A00%3A06.000%20--%3E%2000%3A00%3A10.000%0AFasilitas%20modern%20dan%20lingkungan%20belajar%20yang%20nyaman"
+                                       srclang="id"
+                                       label="Bahasa Indonesia"
+                                       default>
+                                <p>Browser Anda tidak mendukung video HTML5.</p>
+                            </video>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Virtual Tour Sekolah</h3>
+                            <p>Tur virtual keliling sekolah menampilkan fasilitas lengkap dari kelas hingga laboratorium.</p>
+                            <div class="media-meta">
+                                <span>⏱️ 8:20 menit</span>
+                                <span class="media-tag">Tour</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=10&end=40&rel=0&modestbranding=1"
+                                    title="Video kegiatan ekstrakurikuler robotika"
+                                    allowfullscreen
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Ekstrakurikuler Robotika</h3>
+                            <p>Dokumentasi kegiatan klub robotika yang berhasil meraih juara nasional tahun ini.</p>
+                            <div class="media-meta">
+                                <span>🏆 YouTube</span>
+                                <span class="media-tag">Ekstrakurikuler</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=20&end=60&rel=0&modestbranding=1"
+                                    title="Video perpisahan kelas 12 yang mengharukan"
+                                    allowfullscreen
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Perpisahan Kelas 12</h3>
+                            <p>Momen mengharukan perpisahan siswa kelas 12 sebelum menghadapi ujian kelulusan.</p>
+                            <div class="media-meta">
+                                <span>📺 YouTube</span>
+                                <span class="media-tag">Emosional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Audio Podcast -->
+            <section id="audio-podcast" class="section">
+                <h2 class="section-title">🎵 Audio & Podcast Sekolah</h2>
+                <div class="media-grid audio-grid">
+
+                    <div class="media-card">
+                        <div class="audio-player">
+                            <div class="audio-info">
+                                <div class="audio-title">🎙️ Podcast Inspirasi</div>
+                                <div class="audio-description">Wawancara dengan alumni yang sukses di berbagai bidang</div>
+                            </div>
+                            <audio controls preload="metadata">
+                                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+                                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                                <p>Browser Anda tidak mendukung audio HTML5.</p>
+                            </audio>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Episode 5: Meraih Mimpi</h3>
+                            <p>Berbagi cerita inspiratif dari alumni yang berhasil meraih cita-citanya setelah lulus.</p>
+                            <div class="media-meta">
+                                <span>⏱️ 25:30</span>
+                                <span class="media-tag">Inspirasi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="audio-player">
+                            <div class="audio-info">
+                                <div class="audio-title">📻 Radio Sekolah</div>
+                                <div class="audio-description">Siaran langsung acara morning show setiap hari</div>
+                            </div>
+                            <audio controls preload="metadata">
+                                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                                <p>Browser Anda tidak mendukung audio HTML5.</p>
+                            </audio>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Good Morning SMAN 1!</h3>
+                            <p>Program radio pagi yang menyajikan info terkini, musik, dan motivasi untuk memulai hari.</p>
+                            <div class="media-meta">
+                                <span>⏱️ 45:00</span>
+                                <span class="media-tag">Radio Show</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="audio-player">
+                            <div class="audio-info">
+                                <div class="audio-title">🎶 Mars Sekolah</div>
+                                <div class="audio-description">Lagu kebanggaan yang dinyanyikan setiap upacara</div>
+                            </div>
+                            <audio controls preload="metadata">
+                                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                                <p>Browser Anda tidak mendukung audio HTML5.</p>
+                            </audio>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Mars SMA Negeri 1 Jakarta</h3>
+                            <p>Hymne sekolah yang penuh semangat dan makna untuk membangun karakter siswa.</p>
+                            <div class="media-meta">
+                                <span>⏱️ 3:15</span>
+                                <span class="media-tag">Hymne</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card">
+                        <div class="audio-player">
+                            <div class="audio-info">
+                                <div class="audio-title">🎵 Konser Musik</div>
+                                <div class="audio-description">Rekaman live performance band sekolah</div>
+                            </div>
+                            <audio controls preload="metadata" loop>
+                                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                                <p>Browser Anda tidak mendukung audio HTML5.</p>
+                            </audio>
+                        </div>
+                        <div class="media-card-content">
+                            <h3>Live Performance</h3>
+                            <p>Penampilan live band sekolah dalam acara pentas seni dengan lagu original karya siswa.</p>
+                            <div class="media-meta">
+                                <span>⏱️ 12:45</span>
+                                <span class="media-tag">Live Music</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Transcript Box -->
+                <div style="background: var(--background-light); padding: 2rem; border-radius: var(--border-radius); margin-top: 2rem; border-left: 4px solid var(--accent-color);">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">📝 Transkrip Audio Terbaru</h3>
+                    <details>
+                        <summary style="cursor: pointer; font-weight: 600; margin-bottom: 1rem;">Podcast Episode 5: Meraih Mimpi</summary>
+                        <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; font-size: 0.9rem; line-height: 1.6;">
+                            <p><strong>Host:</strong> "Selamat datang di Podcast Inspirasi SMA Negeri 1 Jakarta. Hari ini kita akan berbincang dengan Alumni angkatan 2020..."</p>
+                            <p><strong>Alumni:</strong> "Terima kasih sudah mengundang saya. Senang bisa berbagi pengalaman dengan adik-adik di sekolah..."</p>
+                            <p><em>[Durasi penuh: 25 menit 30 detik - Tersedia subtitle lengkap]</em></p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Konten Eksternal -->
+            <section id="konten-eksternal" class="section">
+                <h2 class="section-title">🌐 Konten Eksternal & Integrasi</h2>
+                <div class="iframe-grid">
+
+                    <div class="iframe-card">
+                        <h3>🗺️ Lokasi Sekolah</h3>
+                        <div class="iframe-responsive">
+                            <div style="background: linear-gradient(45deg, #2196F3, #21CBF3); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 8px;">
+                                📍 Google Maps<br>
+                                <small style="opacity: 0.8;">(Demo Placeholder)</small>
+                            </div>
+                        </div>
+                        <p>Peta interaktif lokasi SMA Negeri 1 Jakarta dengan informasi akses transportasi umum.</p>
+                        <div class="media-meta" style="justify-content: center;">
+                            <span class="media-tag">Maps</span>
+                        </div>
+                    </div>
+
+                    <div class="iframe-card">
+                        <h3>📝 Form Pendaftaran</h3>
+                        <div class="iframe-responsive">
+                            <div style="background: linear-gradient(45deg, #4CAF50, #8BC34A); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 8px;">
+                                📋 Google Forms<br>
+                                <small style="opacity: 0.8;">(Demo Placeholder)</small>
+                            </div>
+                        </div>
+                        <p>Formulir online untuk pendaftaran siswa baru dan kegiatan ekstrakurikuler.</p>
+                        <div class="media-meta" style="justify-content: center;">
+                            <span class="media-tag">Form</span>
+                        </div>
+                    </div>
+
+                    <div class="iframe-card">
+                        <h3>📊 Dashboard Nilai</h3>
+                        <div class="iframe-responsive">
+                            <div style="background: linear-gradient(45deg, #FF9800, #FFC107); height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border-radius: 8px;">
+                                📈 Analytics<br>
+                                <small style="opacity: 0.8;">(Demo Placeholder)</small>
+                            </div>
+                        </div>
+                        <p>Dashboard interaktif untuk monitoring prestasi dan perkembangan siswa secara real-time.</p>
+                        <div class="media-meta" style="justify-content: center;">
+                            <span class="media-tag">Dashboard</span>
+                        </div>
+                    </div>
+
+                    <div class="iframe-card">
+                        <h3>📚 E-Library</h3>
+                        <div class="iframe-responsive">
+                            <iframe src="../bab-03-struktur-html/README.md"
+                                    title="Demo halaman e-library sekolah"
+                                    loading="lazy"
+                                    style="background: white;">
+                                <p>Konten e-library tidak dapat dimuat.</p>
+                            </iframe>
+                        </div>
+                        <p>Akses ke perpustakaan digital dengan ribuan koleksi buku dan jurnal ilmiah.</p>
+                        <div class="media-meta" style="justify-content: center;">
+                            <span class="media-tag">Library</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; padding: 3rem 0; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); border-radius: var(--border-radius); margin: 3rem 0;">
+                <h2 style="margin-bottom: 1rem;">📸 Bagikan Momen Anda!</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">Punya foto atau video kegiatan menarik? Kirim ke kami untuk ditampilkan di galeri!</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn" onclick="alert('Fitur upload akan segera hadir!')">📤 Upload Media</button>
+                    <button class="btn btn-secondary" onclick="shareGallery()">🔗 Bagikan Galeri</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SMA Negeri 1 Jakarta - Galeri Multimedia</p>
+            <p>Dibuat dengan ❤️ menggunakan HTML5, CSS3, dan JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Modal untuk Lightbox -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk interaktivitas
+
+        // Smooth scrolling untuk navigasi
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Smooth scroll to target
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active navigation based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(photoId) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+
+            // Mapping photo IDs to images
+            const photos = {
+                'photo1': {
+                    src: 'https://via.placeholder.com/800x600/4CAF50/white?text=Upacara+Bendera+Full+Size',
+                    alt: 'Upacara bendera Senin pagi di halaman sekolah dengan seluruh siswa berbaris rapi dalam ukuran penuh'
+                },
+                'photo2': {
+                    src: 'https://via.placeholder.com/800x600/2196F3/white?text=Lomba+Sains+Full+Size',
+                    alt: 'Siswa sedang berkonsentrasi mengerjakan soal olimpiade sains di laboratorium dalam ukuran penuh'
+                },
+                'photo3': {
+                    src: 'https://via.placeholder.com/800x600/FF9800/white?text=Pentas+Seni+Full+Size',
+                    alt: 'Penampilan tari tradisional siswa di atas panggung dengan kostum colorful dalam ukuran penuh'
+                },
+                'photo4': {
+                    src: 'https://via.placeholder.com/800x600/9C27B0/white?text=Lab+Komputer+Full+Size',
+                    alt: 'Siswa belajar programming di laboratorium komputer dengan setup modern dalam ukuran penuh'
+                },
+                'photo5': {
+                    src: 'https://via.placeholder.com/800x600/FF5722/white?text=Olahraga+Full+Size',
+                    alt: 'Pertandingan basket antar kelas dengan antusiasme tinggi dari penonton dalam ukuran penuh'
+                },
+                'photo6': {
+                    src: 'https://via.placeholder.com/800x600/607D8B/white?text=Wisuda+Full+Size',
+                    alt: 'Foto kelulusan siswa kelas 12 dengan toga dan topi wisuda yang membanggakan dalam ukuran penuh'
+                }
+            };
+
+            if (photos[photoId]) {
+                modalImage.src = photos[photoId].src;
+                modalImage.alt = photos[photoId].alt;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Load more photos function
+        function loadMorePhotos() {
+            const loading = document.getElementById('photoLoading');
+            const button = loading.parentElement;
+
+            loading.style.display = 'inline-block';
+            button.disabled = true;
+
+            // Simulate loading delay
+            setTimeout(() => {
+                loading.style.display = 'none';
+                button.disabled = false;
+
+                // Update counter
+                const counter = document.getElementById('photoCount');
+                const currentCount = parseInt(counter.textContent);
+                counter.textContent = currentCount + 6;
+
+                alert('📸 6 foto baru telah dimuat!\n(Dalam implementasi nyata, foto akan ditambahkan ke galeri)');
+            }, 2000);
+        }
+
+        // Share gallery function
+        function shareGallery() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Galeri Multimedia SMA Negeri 1 Jakarta',
+                    text: 'Lihat koleksi foto, video, dan audio kegiatan sekolah kami!',
+                    url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('🔗 Link galeri telah disalin ke clipboard!');
+                }).catch(() => {
+                    alert('🔗 Link: ' + url);
+                });
+            }
+        }
+
+        // Lazy loading enhancement for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Audio/Video error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle audio errors
+            document.querySelectorAll('audio').forEach(audio => {
+                audio.addEventListener('error', function() {
+                    console.log('Audio failed to load:', this.src);
+                    const container = this.parentElement;
+                    if (container.classList.contains('audio-player')) {
+                        container.style.background = 'linear-gradient(135deg, #ff6b6b, #ffa726)';
+                        const info = container.querySelector('.audio-info');
+                        if (info) {
+                            info.innerHTML = '<div class="audio-title">⚠️ Audio Tidak Tersedia</div><div class="audio-description">Maaf, audio sedang dalam pemeliharaan</div>';
+                        }
+                    }
+                });
+            });
+
+            // Handle video errors
+            document.querySelectorAll('video').forEach(video => {
+                video.addEventListener('error', function() {
+                    console.log('Video failed to load:', this.src);
+                    this.poster = 'https://via.placeholder.com/640x360/ff6b6b/white?text=Video+Error';
+                });
+            });
+
+            // Handle iframe errors
+            document.querySelectorAll('iframe').forEach(iframe => {
+                iframe.addEventListener('error', function() {
+                    console.log('Iframe failed to load:', this.src);
+                });
+            });
+        });
+
+        // Animate statistics on scroll
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        const target = entry.target;
+                        const finalValue = target.textContent;
+                        let currentValue = 0;
+                        const increment = finalValue / 50;
+
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= finalValue) {
+                                target.textContent = finalValue;
+                                clearInterval(timer);
+                            } else {
+                                target.textContent = Math.floor(currentValue);
+                            }
+                        }, 30);
+                    }
+                });
+            });
+
+            stats.forEach(stat => observer.observe(stat));
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            animateStats();
+
+            // Add loading state to media elements
+            const mediaElements = document.querySelectorAll('img, video, audio, iframe');
+            mediaElements.forEach(element => {
+                element.addEventListener('loadstart', function() {
+                    this.style.opacity = '0.5';
+                });
+
+                element.addEventListener('canplay', function() {
+                    this.style.opacity = '1';
+                });
+
+                element.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+
+        // Console welcome message
+        console.log('%c🎨 Galeri Multimedia SMA Negeri 1 Jakarta', 'font-size: 16px; font-weight: bold; color: #2196F3;');
+        console.log('%cDibuat dengan HTML5, CSS3, dan JavaScript', 'color: #666; font-style: italic;');
+        console.log('%cFitur: Responsive Design, Lazy Loading, Accessibility, SEO Optimized', 'color: #4CAF50;');
+    </script>
+</body>
+</html>

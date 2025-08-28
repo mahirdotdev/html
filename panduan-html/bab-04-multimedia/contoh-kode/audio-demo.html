@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Audio HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        .demo-section {
+            margin: 30px 0;
+            padding: 25px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            color: #333;
+            border-bottom: 3px solid #FF5722;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .audio-player {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            border-radius: 20px;
+        }
+
+        .code-snippet {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 4px solid #FF5722;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            color: #FF5722;
+            margin-bottom: 15px;
+        }
+
+        .format-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .format-table th,
+        .format-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .format-table th {
+            background: linear-gradient(135deg, #FF5722, #FF7043);
+            color: white;
+            font-weight: bold;
+        }
+
+        .format-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .controls-demo {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .transcript-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .transcript-box h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .audio-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .custom-button {
+            background: #FF5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .custom-button:hover {
+            background: #E64A19;
+        }
+
+        .custom-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Demo Tag &lt;audio&gt; - Audio Player HTML</h1>
+    <p>Halaman ini mendemonstrasikan berbagai penggunaan tag &lt;audio&gt; dalam HTML untuk memutar file audio dengan kontrol yang user-friendly.</p>
+
+    <!-- Audio Dasar -->
+    <div class="demo-section">
+        <h2>1. Audio Player Dasar</h2>
+        <p>Tag &lt;audio&gt; dengan kontrol standar HTML5:</p>
+
+        <div class="code-snippet">
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Browser Anda tidak mendukung audio HTML5.
+&lt;/audio&gt;
+        </div>
+
+        <div class="audio-player">
+            <h3>🎼 Demo Audio Player</h3>
+            <audio controls preload="metadata">
+                <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+D2v2AaAjiG1/LNeS0FJHbH8N6QQAwTXrTq66hVFAlHnt/3wGAZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZAzuF2fLNeSsFJHbH8N2QQAwTXrTq66hVFAlGnt/3wGEZA==" type="audio/wav">
+                <p>🔇 Browser Anda tidak mendukung audio HTML5.<br>
+                   <a href="#" style="color: #fff;">Download file audio</a>
+                </p>
+            </audio>
+            <p>Audio player dengan kontrol standar HTML5</p>
+        </div>
+    </div>
+
+    <!-- Atribut Audio -->
+    <div class="demo-section">
+        <h2>2. Atribut-Atribut Audio</h2>
+        <p>Tag &lt;audio&gt; memiliki berbagai atribut untuk mengontrol perilaku pemutaran:</p>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Deskripsi</th>
+                    <th>Nilai</th>
+                    <th>Contoh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>controls</code></td>
+                    <td>Menampilkan kontrol pemutaran</td>
+                    <td>boolean</td>
+                    <td><code>controls</code></td>
+                </tr>
+                <tr>
+                    <td><code>autoplay</code></td>
+                    <td>Otomatis memutar audio</td>
+                    <td>boolean</td>
+                    <td><code>autoplay</code></td>
+                </tr>
+                <tr>
+                    <td><code>loop</code></td>
+                    <td>Memutar audio berulang</td>
+                    <td>boolean</td>
+                    <td><code>loop</code></td>
+                </tr>
+                <tr>
+                    <td><code>muted</code></td>
+                    <td>Memulai dalam kondisi mute</td>
+                    <td>boolean</td>
+                    <td><code>muted</code></td>
+                </tr>
+                <tr>
+                    <td><code>preload</code></td>
+                    <td>Strategi loading audio</td>
+                    <td>none, metadata, auto</td>
+                    <td><code>preload="metadata"</code></td>
+                </tr>
+                <tr>
+                    <td><code>volume</code></td>
+                    <td>Volume default (0.0 - 1.0)</td>
+                    <td>number</td>
+                    <td><code>volume="0.5"</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Demo Atribut -->
+    <div class="demo-section">
+        <h2>3. Demo Berbagai Atribut</h2>
+
+        <div class="feature-grid">
+            <!-- Audio dengan Loop -->
+            <div class="feature-card">
+                <h3>🔄 Audio dengan Loop</h3>
+                <div class="controls-demo">
+                    <audio controls loop muted>
+                        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                    </audio>
+                    <p>Audio akan berulang terus menerus</p>
+                </div>
+                <div class="code-snippet">
+&lt;audio controls loop muted&gt;
+    &lt;source src="audio.mp3"&gt;
+&lt;/audio&gt;
+                </div>
+            </div>
+
+            <!-- Audio dengan Preload -->
+            <div class="feature-card">
+                <h3>⚡ Preload Metadata</h3>
+                <div class="controls-demo">
+                    <audio controls preload="metadata">
+                        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                    </audio>
+                    <p>Hanya metadata yang dimuat awal</p>
+                </div>
+                <div class="code-snippet">
+&lt;audio controls preload="metadata"&gt;
+    &lt;source src="audio.mp3"&gt;
+&lt;/audio&gt;
+                </div>
+            </div>
+
+            <!-- Audio Tanpa Preload -->
+            <div class="feature-card">
+                <h3>🚫 Tanpa Preload</h3>
+                <div class="controls-demo">
+                    <audio controls preload="none">
+                        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                    </audio>
+                    <p>Tidak ada loading sampai user play</p>
+                </div>
+                <div class="code-snippet">
+&lt;audio controls preload="none"&gt;
+    &lt;source src="audio.mp3"&gt;
+&lt;/audio&gt;
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Peringatan Autoplay:</strong><br>
+            Kebanyakan browser modern memblokir autoplay audio untuk meningkatkan user experience.
+            Autoplay hanya bekerja jika audio di-mute atau user sudah berinteraksi dengan halaman.
+        </div>
+    </div>
+
+    <!-- Format Audio -->
+    <div class="demo-section">
+        <h2>4. Format Audio yang Didukung</h2>
+        <p>Berbagai format audio dan kompatibilitasnya:</p>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Ekstensi</th>
+                    <th>MIME Type</th>
+                    <th>Kompatibilitas</th>
+                    <th>Kelebihan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>MP3</strong></td>
+                    <td>.mp3</td>
+                    <td>audio/mpeg</td>
+                    <td>Universal ✅</td>
+                    <td>Ukuran kecil, dukungan luas</td>
+                </tr>
+                <tr>
+                    <td><strong>OGG Vorbis</strong></td>
+                    <td>.ogg</td>
+                    <td>audio/ogg</td>
+                    <td>Firefox, Chrome ✅</td>
+                    <td>Open source, kualitas baik</td>
+                </tr>
+                <tr>
+                    <td><strong>WAV</strong></td>
+                    <td>.wav</td>
+                    <td>audio/wav</td>
+                    <td>Universal ✅</td>
+                    <td>Kualitas tinggi, tidak terkompresi</td>
+                </tr>
+                <tr>
+                    <td><strong>AAC</strong></td>
+                    <td>.m4a, .aac</td>
+                    <td>audio/mp4</td>
+                    <td>Safari, Chrome ✅</td>
+                    <td>Kompresi efisien, kualitas baik</td>
+                </tr>
+                <tr>
+                    <td><strong>FLAC</strong></td>
+                    <td>.flac</td>
+                    <td>audio/flac</td>
+                    <td>Terbatas ⚠️</td>
+                    <td>Lossless compression</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="success-box">
+            <strong>💡 Best Practice:</strong> Sediakan multiple format untuk kompatibilitas maksimum:
+            <br><br>
+            <code>&lt;source src="audio.mp3" type="audio/mpeg"&gt;</code><br>
+            <code>&lt;source src="audio.ogg" type="audio/ogg"&gt;</code>
+        </div>
+    </div>
+
+    <!-- Multiple Sources -->
+    <div class="demo-section">
+        <h2>5. Multiple Audio Sources</h2>
+        <p>Menggunakan beberapa format untuk kompatibilitas maksimum:</p>
+
+        <div class="code-snippet">
+&lt;audio controls preload="metadata"&gt;
+    &lt;source src="music.m4a" type="audio/mp4"&gt;
+    &lt;source src="music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="music.ogg" type="audio/ogg"&gt;
+    &lt;source src="music.wav" type="audio/wav"&gt;
+    &lt;p&gt;Browser Anda tidak mendukung audio HTML5.
+       &lt;a href="music.mp3"&gt;Download audio&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/audio&gt;
+        </div>
+
+        <div class="audio-player">
+            <h3>🎶 Audio dengan Multiple Sources</h3>
+            <audio controls>
+                <source src="data:audio/mp4;base64,AAAAIGZ0eXBNNEEgAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAs1tZGF0AAACrgYF//+q3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE2NCByMzA5NSBiYTI0ODk5IC0gSC4yNjQvTVBFRy00IEFWQyBjb2RlYyAtIENvcHlsZWZ0IDIwMDMtMjAyMSAtIGh0dHA6Ly93d3cudmlkZW9sYW4ub3JnL3gyNjQuaHRtbCAtIG9wdGlvbnM6IGNhYmFjPTEgcmVmPTMgZGVibG9jaz0xOjA6MCBhbmFseXNlPTB4MzoweDExMyBtZT1oZXggc3VibWU9NyBwc3k9MSBwc3lfcmQ9MS4wMDowLjAwIG1peGVkX3JlZj0xIG1lX3JhbmdlPTE2IGNocm9tYV9tZT0xIHRyZWxsaXM9MSA4eDhkY3Q9MSBjcW09MCBkZWFkem9uZT0yMSwxMSBmYXN0X3Bza2lwPTEgY2hyb21hX3FwX29mZnNldD0tMiB0aHJlYWRzPTMgbG9va2FoZWFkX3RocmVhZHM9MSBzbGljZWRfdGhyZWFkcz0wIG5yPTAgZGVjaW1hdGU9MSBpbnRlcmxhY2VkPTAgYmx1cmF5X2NvbXBhdD0wIGNvbnN0cmFpbmVkX2ludHJhPTAgYmZyYW1lcz0zIGJfcHlyYW1pZD0yIGJfYWRhcHQ9MSBiX2JpYXM9MCBkaXJlY3Q9MSB3ZWlnaHRiPTEgb3Blbl9nb3A9MCB3ZWlnaHRwPTIga2V5aW50PTI1MCBrZXlpbnRfbWluPTI1IHNjZW5lY3V0PTQwIGludHJhX3JlZnJlc2g9MCByY19sb29rYWhlYWQ9NDAgcmM9Y3JmIG1idHJlZT0xIGNyZj0yMy4wIHFjb21wPTAuNjAgcXBtaW49MCBxcG1heD02OSBxcHN0ZXA9NCBpcF9yYXRpbz0xLjQwIGFxPTE6MS4wMACAAAABhWWIhAAf//72rvzLK0cLlS4dWXuzUfLoSXL9iDB9aAAAAwAAAwAAFiClZYiEIB///8ORSxlFEJwqcjhVAAAATUIvdEdNUlkZlgS7lzUZSk4NUDJlBHmMSZJMEAGl" type="audio/mp4">
+                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                <p>🔇 Browser tidak mendukung format audio yang disediakan.<br>
+                   <a href="#" style="color: #fff;">Download file audio</a>
+                </p>
+            </audio>
+            <p>Browser akan memilih format pertama yang didukung</p>
+        </div>
+    </div>
+
+    <!-- Audio dengan Transkrip -->
+    <div class="demo-section">
+        <h2>6. Audio dengan Transkrip (Aksesibilitas)</h2>
+        <p>Menyediakan transkrip untuk aksesibilitas yang lebih baik:</p>
+
+        <div class="audio-player">
+            <h3>📻 Pengumuman Sekolah</h3>
+            <audio controls>
+                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+                <p>🔇 Browser tidak mendukung audio.</p>
+            </audio>
+        </div>
+
+        <div class="transcript-box">
+            <h4>📝 Transkrip Audio</h4>
+            <p><strong>Kepala Sekolah:</strong> "Selamat pagi siswa-siswi sekalian. Kami ingin menginformasikan bahwa kegiatan ekstrakurikuler akan dimulai minggu depan. Pendaftaran dibuka di ruang OSIS mulai hari Senin pukul 10.00 WIB. Terima kasih."</p>
+
+            <details style="margin-top: 15px;">
+                <summary style="cursor: pointer; font-weight: bold;">🎵 Detail Audio</summary>
+                <ul>
+                    <li><strong>Durasi:</strong> 30 detik</li>
+                    <li><strong>Format:</strong> MP3, WAV</li>
+                    <li><strong>Kualitas:</strong> 44.1kHz, 128kbps</li>
+                    <li><strong>Bahasa:</strong> Bahasa Indonesia</li>
+                </ul>
+            </details>
+        </div>
+
+        <div class="code-snippet">
+&lt;audio controls&gt;
+    &lt;source src="pengumuman.mp3" type="audio/mpeg"&gt;
+    &lt;source src="pengumuman.wav" type="audio/wav"&gt;
+&lt;/audio&gt;
+
+&lt;div class="transcript"&gt;
+    &lt;h4&gt;Transkrip Audio&lt;/h4&gt;
+    &lt;p&gt;&lt;strong&gt;Pembicara:&lt;/strong&gt; "Konten transkrip..."&lt;/p&gt;
+&lt;/div&gt;
+        </div>
+    </div>
+
+    <!-- Custom Controls -->
+    <div class="demo-section">
+        <h2>7. Custom Audio Controls dengan JavaScript</h2>
+        <p>Membuat kontrol audio custom menggunakan JavaScript:</p>
+
+        <div class="audio-player">
+            <h3>🎛️ Custom Audio Player</h3>
+            <audio id="customAudio" preload="metadata">
+                <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSw=" type="audio/wav">
+            </audio>
+
+            <div class="audio-controls">
+                <button class="custom-button" onclick="togglePlay()" id="playBtn">▶️ Play</button>
+                <button class="custom-button" onclick="stopAudio()">⏹️ Stop</button>
+                <button class="custom-button" onclick="changeVolume(-0.1)">🔉 Vol-</button>
+                <button class="custom-button" onclick="changeVolume(0.1)">🔊 Vol+</button>
+                <button class="custom-button" onclick="muteAudio()" id="muteBtn">🔇 Mute</button>
+            </div>
+
+            <div style="margin: 15px 0;">
+                <label for="volumeSlider" style="color: white;">Volume: </label>
+                <input type="range" id="volumeSlider" min="0" max="100" value="50"
+                       oninput="setVolume(this.value)" style="width: 200px;">
+                <span id="volumeValue" style="color: white;">50%</span>
+            </div>
+
+            <div style="margin: 15px 0;">
+                <label for="progressBar" style="color: white;">Progress: </label>
+                <input type="range" id="progressBar" min="0" max="100" value="0"
+                       oninput="setProgress(this.value)" style="width: 300px;">
+                <span id="timeDisplay" style="color: white;">00:00 / 00:00</span>
+            </div>
+        </div>
+
+        <div class="code-snippet">
+&lt;audio id="myAudio" preload="metadata"&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;button onclick="togglePlay()"&gt;Play/Pause&lt;/button&gt;
+&lt;button onclick="stopAudio()"&gt;Stop&lt;/button&gt;
+&lt;input type="range" oninput="setVolume(this.value)"&gt;
+
+&lt;script&gt;
+const audio = document.getElementById('myAudio');
+
+function togglePlay() {
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+}
+
+function setVolume(value) {
+    audio.volume = value / 100;
+}
+&lt;/script&gt;
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="demo-section">
+        <h2>8. Best Practices Audio</h2>
+
+        <div class="success-box">
+            <h3>✅ Yang Harus Dilakukan:</h3>
+            <ul>
+                <li><strong>Sediakan multiple format</strong> untuk kompatibilitas maksimum</li>
+                <li><strong>Gunakan preload="metadata"</strong> untuk balance antara UX dan performance</li>
+                <li><strong>Sediakan transkrip</strong> untuk aksesibilitas</li>
+                <li><strong>Kompres audio</strong> untuk web (128kbps untuk MP3 sudah cukup)</li>
+                <li><strong>Gunakan controls</strong> agar user bisa mengontrol pemutaran</li>
+                <li><strong>Test di berbagai browser</strong> dan perangkat</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>❌ Yang Harus Dihindari:</h3>
+            <ul>
+                <li><strong>Autoplay tanpa mute</strong> - mengganggu user experience</li>
+                <li><strong>File audio terlalu besar</strong> - lambat loading</li>
+                <li><strong>Tidak ada fallback</strong> untuk browser lama</li>
+                <li><strong>Volume terlalu keras</strong> default - bisa mengejutkan user</li>
+                <li><strong>Format tidak standar</strong> - kompatibilitas terbatas</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Performance Tips -->
+    <div class="demo-section">
+        <h2>9. Tips Optimasi Performance</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📁 Ukuran File</h3>
+                <ul style="text-align: left;">
+                    <li>MP3: 128kbps untuk speech</li>
+                    <li>MP3: 192kbps untuk musik</li>
+                    <li>AAC: 128kbps (lebih efisien)</li>
+                    <li>Hindari WAV untuk web</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Loading Strategy</h3>
+                <ul style="text-align: left;">
+                    <li><code>preload="none"</code> - audio pendek</li>
+                    <li><code>preload="metadata"</code> - default</li>
+                    <li><code>preload="auto"</code> - audio penting</li>
+                    <li>Lazy loading dengan JavaScript</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>🗄️ CDN & Hosting</h3>
+                <ul style="text-align: left;">
+                    <li>Gunakan CDN untuk file besar</li>
+                    <li>Compress dengan Gzip</li>
+                    <li>Set cache headers</li>
+                    <li>Progressive loading</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+        <h2>🎉 Selamat!</h2>
+        <p>Anda telah mempelajari semua aspek penggunaan tag &lt;audio&gt; dalam HTML.</p>
+        <p><strong>Selanjutnya:</strong> <a href="video-demo.html" style="color: #fff; text-decoration: underline;">Demo Video</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 4</a></p>
+    </div>
+
+    <script>
+        // JavaScript untuk custom audio controls
+        const audio = document.getElementById('customAudio');
+        const playBtn = document.getElementById('playBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeValue = document.getElementById('volumeValue');
+        const progressBar = document.getElementById('progressBar');
+        const timeDisplay = document.getElementById('timeDisplay');
+
+        // Set initial volume
+        audio.volume = 0.5;
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = '⏸️ Pause';
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶️ Play';
+            }
+        }
+
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+            playBtn.textContent = '▶️ Play';
+        }
+
+        function changeVolume(delta) {
+            let newVolume = audio.volume + delta;
+            newVolume = Math.max(0, Math.min(1, newVolume));
+            audio.volume = newVolume;
+            volumeSlider.value = newVolume * 100;
+            volumeValue.textContent = Math.round(newVolume * 100) + '%';
+        }
+
+        function setVolume(value) {
+            audio.volume = value / 100;
+            volumeValue.textContent = value + '%';
+        }
+
+        function muteAudio() {
+            if (audio.muted) {
+                audio.muted = false;
+                muteBtn.textContent = '🔇 Mute';
+            } else {
+                audio.muted = true;
+                muteBtn.textContent = '🔊 Unmute';
+            }
+        }
+
+        function setProgress(value) {
+            if (audio.duration) {
+                audio.currentTime = (value / 100) * audio.duration;
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Update progress dan time display
+        audio.addEventListener('timeupdate', function() {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.value = progress;
+                timeDisplay.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
+            }
+        });
+
+        // Reset play button saat audio selesai
+        audio.addEventListener('ended', function() {
+            playBtn.textContent = '▶️ Play';
+            progressBar.value = 0;
+        });
+
+        // Handle loading errors
+        audio.addEventListener('error', function(e) {
+            console.error('Audio error:', e);
+            playBtn.textContent = '❌ Error';
+            playBtn.disabled = true;
+        });
+
+        // Update duration saat metadata loaded
+        audio.addEventListener('loadedmetadata', function() {
+            timeDisplay.textContent = '00:00 / ' + formatTime(audio.duration);
+        });
+    </script>
+</body>
+</html>

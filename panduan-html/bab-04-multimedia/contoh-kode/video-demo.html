@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Video HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+        }
+
+        .demo-section {
+            margin: 30px 0;
+            padding: 25px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            color: #333;
+            border-bottom: 3px solid #E91E63;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .video-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .video-container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .responsive-video {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .responsive-video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .code-snippet {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 4px solid #E91E63;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 25px;
+            background: white;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #E91E63;
+            margin-bottom: 15px;
+        }
+
+        .format-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .format-table th,
+        .format-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .format-table th {
+            background: linear-gradient(135deg, #E91E63, #EC407A);
+            color: white;
+            font-weight: bold;
+        }
+
+        .format-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            color: #0d47a1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .subtitle-demo {
+            background: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .custom-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .custom-button {
+            background: #E91E63;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .custom-button:hover {
+            background: #C2185B;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .custom-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress-container {
+            margin: 15px 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #fff;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .time-display {
+            color: white;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 Demo Tag &lt;video&gt; - Video Player HTML</h1>
+    <p>Halaman ini mendemonstrasikan berbagai penggunaan tag &lt;video&gt; dalam HTML untuk menampilkan dan mengontrol pemutaran video.</p>
+
+    <!-- Video Dasar -->
+    <div class="demo-section">
+        <h2>1. Video Player Dasar</h2>
+        <p>Tag &lt;video&gt; dengan kontrol standar HTML5:</p>
+
+        <div class="code-snippet">
+&lt;video controls width="640" height="360"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Browser Anda tidak mendukung video HTML5.
+&lt;/video&gt;
+        </div>
+
+        <div class="video-container">
+            <h3>🎬 Demo Video Player</h3>
+            <video controls width="640" height="360" poster="https://via.placeholder.com/640x360/E91E63/white?text=Video+Demo">
+                <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                <source src="https://sample-videos.com/zip/10/webm/480/SampleVideo_480x270_1mb.webm" type="video/webm">
+                <p>🎞️ Browser Anda tidak mendukung video HTML5.<br>
+                   <a href="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" style="color: #fff;">Download video</a>
+                </p>
+            </video>
+            <p>Video player dengan kontrol standar HTML5</p>
+        </div>
+    </div>
+
+    <!-- Atribut Video -->
+    <div class="demo-section">
+        <h2>2. Atribut-Atribut Video</h2>
+        <p>Tag &lt;video&gt; memiliki berbagai atribut untuk mengontrol tampilan dan perilaku:</p>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Deskripsi</th>
+                    <th>Nilai</th>
+                    <th>Contoh Penggunaan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>controls</code></td>
+                    <td>Menampilkan kontrol pemutaran</td>
+                    <td>boolean</td>
+                    <td><code>controls</code></td>
+                </tr>
+                <tr>
+                    <td><code>width</code></td>
+                    <td>Lebar video dalam piksel</td>
+                    <td>number</td>
+                    <td><code>width="640"</code></td>
+                </tr>
+                <tr>
+                    <td><code>height</code></td>
+                    <td>Tinggi video dalam piksel</td>
+                    <td>number</td>
+                    <td><code>height="360"</code></td>
+                </tr>
+                <tr>
+                    <td><code>poster</code></td>
+                    <td>Gambar preview sebelum video dimuat</td>
+                    <td>URL</td>
+                    <td><code>poster="thumb.jpg"</code></td>
+                </tr>
+                <tr>
+                    <td><code>autoplay</code></td>
+                    <td>Otomatis memutar video</td>
+                    <td>boolean</td>
+                    <td><code>autoplay</code></td>
+                </tr>
+                <tr>
+                    <td><code>loop</code></td>
+                    <td>Memutar video berulang</td>
+                    <td>boolean</td>
+                    <td><code>loop</code></td>
+                </tr>
+                <tr>
+                    <td><code>muted</code></td>
+                    <td>Memulai dalam kondisi mute</td>
+                    <td>boolean</td>
+                    <td><code>muted</code></td>
+                </tr>
+                <tr>
+                    <td><code>preload</code></td>
+                    <td>Strategi loading video</td>
+                    <td>none, metadata, auto</td>
+                    <td><code>preload="metadata"</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Demo Atribut -->
+    <div class="demo-section">
+        <h2>3. Demo Berbagai Atribut</h2>
+
+        <div class="feature-grid">
+            <!-- Video dengan Poster -->
+            <div class="feature-card">
+                <h3>🖼️ Video dengan Poster</h3>
+                <video controls width="280" height="180" poster="https://via.placeholder.com/280x180/2196F3/white?text=Click+to+Play">
+                    <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                    Video tidak dapat dimuat.
+                </video>
+                <div class="code-snippet">
+&lt;video controls poster="thumbnail.jpg"&gt;
+    &lt;source src="video.mp4"&gt;
+&lt;/video&gt;
+                </div>
+            </div>
+
+            <!-- Video Loop -->
+            <div class="feature-card">
+                <h3>🔄 Video Loop</h3>
+                <video controls loop muted width="280" height="180" poster="https://via.placeholder.com/280x180/FF9800/white?text=Loop+Video">
+                    <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                    Video tidak dapat dimuat.
+                </video>
+                <div class="code-snippet">
+&lt;video controls loop muted&gt;
+    &lt;source src="video.mp4"&gt;
+&lt;/video&gt;
+                </div>
+            </div>
+
+            <!-- Video Autoplay -->
+            <div class="feature-card">
+                <h3>⚡ Autoplay (Muted)</h3>
+                <video autoplay muted loop width="280" height="180" poster="https://via.placeholder.com/280x180/4CAF50/white?text=Auto+Play">
+                    <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                    Video tidak dapat dimuat.
+                </video>
+                <div class="code-snippet">
+&lt;video autoplay muted loop&gt;
+    &lt;source src="video.mp4"&gt;
+&lt;/video&gt;
+                </div>
+                <div class="warning-box">
+                    <small>⚠️ Autoplay hanya bekerja dengan muted untuk kebanyakan browser</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Format Video -->
+    <div class="demo-section">
+        <h2>4. Format Video yang Didukung</h2>
+        <p>Berbagai format video dan karakteristiknya:</p>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Format</th>
+                    <th>Ekstensi</th>
+                    <th>MIME Type</th>
+                    <th>Kompatibilitas</th>
+                    <th>Kelebihan</th>
+                    <th>Kekurangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>MP4 (H.264)</strong></td>
+                    <td>.mp4</td>
+                    <td>video/mp4</td>
+                    <td>Universal ✅</td>
+                    <td>Dukungan luas, kualitas baik</td>
+                    <td>Patent licensing</td>
+                </tr>
+                <tr>
+                    <td><strong>WebM (VP9)</strong></td>
+                    <td>.webm</td>
+                    <td>video/webm</td>
+                    <td>Chrome, Firefox ✅</td>
+                    <td>Open source, efisien</td>
+                    <td>Tidak didukung Safari</td>
+                </tr>
+                <tr>
+                    <td><strong>OGV (Theora)</strong></td>
+                    <td>.ogv</td>
+                    <td>video/ogg</td>
+                    <td>Firefox, Chrome ✅</td>
+                    <td>Open source</td>
+                    <td>Kualitas lebih rendah</td>
+                </tr>
+                <tr>
+                    <td><strong>AVI</strong></td>
+                    <td>.avi</td>
+                    <td>video/x-msvideo</td>
+                    <td>Terbatas ⚠️</td>
+                    <td>Format lama</td>
+                    <td>Tidak standar web</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="success-box">
+            <h3>💡 Best Practice Format:</h3>
+            <p>Untuk kompatibilitas maksimum, sediakan format dalam urutan ini:</p>
+            <ol>
+                <li><strong>MP4 (H.264)</strong> - untuk kompatibilitas universal</li>
+                <li><strong>WebM (VP9)</strong> - untuk browser modern dengan efisiensi tinggi</li>
+                <li><strong>OGV</strong> - fallback untuk browser lama</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Multiple Sources -->
+    <div class="demo-section">
+        <h2>5. Multiple Video Sources</h2>
+        <p>Menggunakan beberapa format untuk kompatibilitas maksimum:</p>
+
+        <div class="code-snippet">
+&lt;video controls width="640" height="360" poster="thumbnail.jpg"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.ogv" type="video/ogg"&gt;
+    &lt;p&gt;Browser Anda tidak mendukung video HTML5.
+       &lt;a href="video.mp4"&gt;Download video&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/video&gt;
+        </div>
+
+        <div class="video-container">
+            <h3>🎞️ Video dengan Multiple Sources</h3>
+            <video controls width="640" height="360" poster="https://via.placeholder.com/640x360/9C27B0/white?text=Multiple+Formats">
+                <source src="https://sample-videos.com/zip/10/webm/480/SampleVideo_480x270_1mb.webm" type="video/webm">
+                <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                <p>🎭 Browser tidak mendukung format video yang disediakan.<br>
+                   <a href="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" style="color: #fff;">Download video MP4</a>
+                </p>
+            </video>
+            <p>Browser akan memilih format pertama yang didukung</p>
+        </div>
+    </div>
+
+    <!-- Video Responsif -->
+    <div class="demo-section">
+        <h2>6. Video Responsif</h2>
+        <p>Membuat video yang menyesuaikan ukuran layar dengan CSS:</p>
+
+        <div class="code-snippet">
+/* CSS untuk video responsif */
+.responsive-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.responsive-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        </div>
+
+        <div class="video-container">
+            <h3>📱 Video Responsif</h3>
+            <div class="responsive-video">
+                <video controls poster="https://via.placeholder.com/640x360/FF5722/white?text=Responsive+Video">
+                    <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                    Video tidak dapat dimuat.
+                </video>
+            </div>
+            <p>Video menyesuaikan ukuran container dengan rasio tetap</p>
+        </div>
+    </div>
+
+    <!-- Subtitle/Captions -->
+    <div class="demo-section">
+        <h2>7. Video dengan Subtitle</h2>
+        <p>Menambahkan subtitle untuk aksesibilitas menggunakan tag &lt;track&gt;:</p>
+
+        <div class="code-snippet">
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;track src="subtitle-id.vtt"
+           kind="subtitles"
+           srclang="id"
+           label="Bahasa Indonesia"
+           default&gt;
+    &lt;track src="subtitle-en.vtt"
+           kind="subtitles"
+           srclang="en"
+           label="English"&gt;
+    &lt;track src="captions.vtt"
+           kind="captions"
+           srclang="id"
+           label="Captions Indonesia"&gt;
+&lt;/video&gt;
+        </div>
+
+        <div class="video-container">
+            <h3>💬 Video dengan Subtitle</h3>
+            <video controls width="640" height="360" poster="https://via.placeholder.com/640x360/607D8B/white?text=Subtitle+Demo">
+                <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                <track kind="subtitles" src="data:text/vtt;charset=utf-8,WEBVTT%0A%0A1%0A00%3A00%3A01.000%20--%3E%2000%3A00%3A05.000%0ADemo%20video%20dengan%20subtitle%0A%0A2%0A00%3A00%3A06.000%20--%3E%2000%3A00%3A10.000%0AMenampilkan%20cara%20penggunaan%20tag%20video"
+                       srclang="id" label="Bahasa Indonesia" default>
+                <p>Video dengan subtitle tidak dapat dimuat.</p>
+            </video>
+            <p>Aktifkan subtitle dari menu CC di kontrol video</p>
+        </div>
+
+        <div class="info-box">
+            <h4>📝 Format WebVTT (.vtt)</h4>
+            <p>Subtitle menggunakan format WebVTT (Web Video Text Tracks):</p>
+            <div class="code-snippet">
+WEBVTT
+
+1
+00:00:01.000 --> 00:00:05.000
+Ini adalah subtitle pertama
+
+2
+00:00:06.000 --> 00:00:10.000
+Dan ini adalah subtitle kedua
+            </div>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎯 Jenis Track</h3>
+                <ul style="text-align: left;">
+                    <li><strong>subtitles:</strong> Terjemahan dialog</li>
+                    <li><strong>captions:</strong> Subtitle + sound effects</li>
+                    <li><strong>descriptions:</strong> Audio description</li>
+                    <li><strong>chapters:</strong> Navigasi bab</li>
+                    <li><strong>metadata:</strong> Data tambahan</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌍 Bahasa</h3>
+                <ul style="text-align: left;">
+                    <li><strong>srclang="id":</strong> Bahasa Indonesia</li>
+                    <li><strong>srclang="en":</strong> English</li>
+                    <li><strong>srclang="es":</strong> Español</li>
+                    <li><strong>srclang="fr":</strong> Français</li>
+                    <li><strong>default:</strong> Bahasa default</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Video Controls -->
+    <div class="demo-section">
+        <h2>8. Custom Video Controls</h2>
+        <p>Membuat kontrol video custom dengan JavaScript:</p>
+
+        <div class="video-container">
+            <h3>🎮 Custom Video Player</h3>
+            <video id="customVideo" width="640" height="360" poster="https://via.placeholder.com/640x360/3F51B5/white?text=Custom+Controls">
+                <source src="https://sample-videos.com/zip/10/mp4/480/SampleVideo_480x270_1mb.mp4" type="video/mp4">
+                <p>Video tidak dapat dimuat.</p>
+            </video>
+
+            <div class="custom-controls">
+                <button class="custom-button" onclick="togglePlayPause()" id="playPauseBtn">▶️ Play</button>
+                <button class="custom-button" onclick="stopVideo()">⏹️ Stop</button>
+                <button class="custom-button" onclick="skipBackward()">⏪ -10s</button>
+                <button class="custom-button" onclick="skipForward()">⏩ +10s</button>
+                <button class="custom-button" onclick="toggleMute()" id="muteBtn">🔊 Volume</button>
+                <button class="custom-button" onclick="toggleFullscreen()">📺 Fullscreen</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" onclick="seekVideo(event)">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-display" id="timeDisplay">00:00 / 00:00</div>
+            </div>
+        </div>
+
+        <div class="code-snippet">
+&lt;video id="myVideo"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;button onclick="togglePlayPause()"&gt;Play/Pause&lt;/button&gt;
+&lt;button onclick="stopVideo()"&gt;Stop&lt;/button&gt;
+
+&lt;script&gt;
+const video = document.getElementById('myVideo');
+
+function togglePlayPause() {
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
+function stopVideo() {
+    video.pause();
+    video.currentTime = 0;
+}
+
+// Update progress bar
+video.addEventListener('timeupdate', function() {
+    const progress = (video.currentTime / video.duration) * 100;
+    progressBar.style.width = progress + '%';
+});
+&lt;/script&gt;
+        </div>
+    </div>
+
+    <!-- Performance & Optimization -->
+    <div class="demo-section">
+        <h2>9. Optimasi Performance Video</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📦 Ukuran & Kompresi</h3>
+                <ul style="text-align: left;">
+                    <li><strong>Resolusi:</strong> 720p untuk web standard</li>
+                    <li><strong>Bitrate:</strong> 1-3 Mbps untuk 720p</li>
+                    <li><strong>Codec:</strong> H.264 untuk kompatibilitas</li>
+                    <li><strong>Compression:</strong> Handbrake, FFmpeg</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Loading Strategy</h3>
+                <ul style="text-align: left;">
+                    <li><code>preload="none"</code> - Hemat bandwidth</li>
+                    <li><code>preload="metadata"</code> - Balance</li>
+                    <li><code>preload="auto"</code> - UX terbaik</li>
+                    <li>Lazy loading dengan Intersection Observer</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>🌐 Delivery & CDN</h3>
+                <ul style="text-align: left;">
+                    <li>Gunakan CDN untuk global delivery</li>
+                    <li>Adaptive bitrate streaming</li>
+                    <li>Progressive download</li>
+                    <li>Video hosting (YouTube, Vimeo)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="demo-section">
+        <h2>10. Best Practices Video</h2>
+
+        <div class="success-box">
+            <h3>✅ Yang Harus Dilakukan:</h3>
+            <ul>
+                <li><strong>Sediakan multiple format</strong> (MP4, WebM) untuk kompatibilitas</li>
+                <li><strong>Gunakan poster image</strong> untuk preview yang menarik</li>
+                <li><strong>Kompres video</strong> sesuai kebutuhan web</li>
+                <li><strong>Sediakan subtitle</strong> untuk aksesibilitas</li>
+                <li><strong>Set dimensi eksplisit</strong> untuk menghindari layout shift</li>
+                <li><strong>Test di berbagai browser</strong> dan perangkat</li>
+                <li><strong>Gunakan preload strategy</strong> yang tepat</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>❌ Yang Harus Dihindari:</h3>
+            <ul>
+                <li><strong>Autoplay dengan suara</strong> - mengganggu UX</li>
+                <li><strong>Video terlalu besar</strong> - lambat loading</li>
+                <li><strong>Tidak ada fallback</strong> untuk browser lama</li>
+                <li><strong>Resolusi terlalu tinggi</strong> untuk web</li>
+                <li><strong>Tidak ada subtitle</strong> untuk video dialog</li>
+                <li><strong>Format proprietary</strong> tanpa alternatif</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>📊 Tools Optimasi Video:</h3>
+            <div class="feature-grid">
+                <div style="text-align: left;">
+                    <h4>🔧 Compression Tools:</h4>
+                    <ul>
+                        <li>HandBrake (gratis, cross-platform)</li>
+                        <li>FFmpeg (command line)</li>
+                        <li>Adobe Media Encoder</li>
+                        <li>Online video compressors</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: left;">
+                    <h4>📈 Testing Tools:</h4>
+                    <ul>
+                        <li>Chrome DevTools Network tab</li>
+                        <li>Lighthouse performance audit</li>
+                        <li>WebPageTest.org</li>
+                        <li>GTmetrix video analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+        <h2>🎉 Fantastic!</h2>
+        <p>Anda telah menguasai semua aspek penggunaan tag &lt;video&gt; dalam HTML!</p>
+        <p><strong>Selanjutnya:</strong> <a href="iframe-demo.html" style="color: #fff; text-decoration: underline;">Demo Iframe</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 4</a></p>
+    </div>
+
+    <script>
+        // JavaScript untuk custom video controls
+        const video = document.getElementById('customVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const progressFill = document.getElementById('progressFill');
+        const timeDisplay = document.getElementById('timeDisplay');
+
+        function togglePlayPause() {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.textContent = '⏸️ Pause';
+            } else {
+                video.pause();
+                playPauseBtn.textContent = '▶️ Play';
+            }
+        }
+
+        function stopVideo() {
+            video.pause();
+            video.currentTime = 0;
+            playPauseBtn.textContent = '▶️ Play';
+        }
+
+        function skipBackward() {
+            video.currentTime -= 10;
+        }
+
+        function skipForward() {
+            video.currentTime += 10;
+        }
+
+        function toggleMute() {
+            if (video.muted) {
+                video.muted = false;
+                muteBtn.textContent = '🔊 Volume';
+            } else {
+                video.muted = true;
+                muteBtn.textContent = '🔇 Muted';
+            }
+        }
+
+        function toggleFullscreen() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            }
+        }
+
+        function seekVideo(e) {
+            const progressBar = e.currentTarget;
+            const clickX = e.offsetX;
+            const width = progressBar.offsetWidth;
+            const duration = video.duration;
+
+            if (duration) {
+                video.currentTime = (clickX / width) * duration;
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Update progress dan time
+        video.addEventListener('timeupdate', function() {
+            if (video.duration) {
+                const progress = (video.currentTime / video.duration) * 100;
+                progressFill.style.width = progress + '%';
+                timeDisplay.textContent = formatTime(video.currentTime) + ' / ' + formatTime(video.duration);
+            }
+        });
+
+        // Reset saat video selesai
+        video.addEventListener('ended', function() {
+            playPauseBtn.textContent = '▶️ Play';
+            progressFill.style.width = '0%';
+        });
+
+        // Handle metadata loading
+        video.addEventListener('loadedmetadata', function() {
+            timeDisplay.textContent = '00:00 / ' + formatTime(video.duration);
+        });
+
+        // Handle errors
+        video.addEventListener('error', function(e) {
+            console.error('Video error:', e);
+            playPauseBtn.textContent = '❌ Error';
+            playPauseBtn.disabled = true;
+        });
+
+        // Keyboard controls
+        document.addEventListener('keydown', function(e) {
+            if (e.target === document.body) {
+                switch(e.code) {
+                    case 'Space':
+                        e.preventDefault();
+                        togglePlayPause();
+                        break;
+                    case 'ArrowLeft':
+                        skipBackward();
+                        break;
+                    case 'ArrowRight':
+                        skipForward();
+                        break;
+                    case 'KeyM':
+                        toggleMute();
+                        break;
+                    case 'KeyF':
+                        toggleFullscreen();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

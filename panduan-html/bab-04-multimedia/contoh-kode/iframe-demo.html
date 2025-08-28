@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Iframe HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .demo-section {
+            margin: 30px 0;
+            padding: 25px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            color: #333;
+            border-bottom: 3px solid #673AB7;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .iframe-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .iframe-container iframe {
+            border: 3px solid #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .code-snippet {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 4px solid #673AB7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 25px;
+            background: white;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #673AB7;
+            margin-bottom: 15px;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .iframe-16-9 {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .iframe-16-9 iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .format-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .format-table th,
+        .format-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .format-table th {
+            background: linear-gradient(135deg, #673AB7, #7E57C2);
+            color: white;
+            font-weight: bold;
+        }
+
+        .format-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            color: #0d47a1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #dc3545;
+        }
+
+        .loading-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, transparent 63%, #f0f0f0 75%);
+            background-size: 400% 100%;
+            animation: shimmer 1.5s ease-in-out infinite;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
+        .sandbox-demo {
+            border: 2px dashed #673AB7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            background: rgba(103, 58, 183, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>🌐 Demo Tag &lt;iframe&gt; - Inline Frame HTML</h1>
+    <p>Halaman ini mendemonstrasikan berbagai penggunaan tag &lt;iframe&gt; untuk menampilkan konten eksternal dalam halaman web Anda.</p>
+
+    <!-- Iframe Dasar -->
+    <div class="demo-section">
+        <h2>1. Iframe Dasar</h2>
+        <p>Tag &lt;iframe&gt; digunakan untuk menampilkan halaman web lain di dalam halaman web kita:</p>
+
+        <div class="code-snippet">
+&lt;iframe src="https://example.com"
+        width="600"
+        height="400"
+        title="Deskripsi konten iframe"&gt;
+&lt;/iframe&gt;
+        </div>
+
+        <div class="iframe-container">
+            <h3>🖼️ Demo Iframe Dasar</h3>
+            <iframe src="https://via.placeholder.com/600x400/673AB7/white?text=Demo+Iframe+Content"
+                    width="600"
+                    height="300"
+                    title="Demo konten iframe dengan placeholder"
+                    style="border: 3px solid #fff; border-radius: 8px;">
+                <p style="color: white;">Browser Anda tidak mendukung iframe.</p>
+            </iframe>
+            <p>Iframe menampilkan konten dari sumber eksternal</p>
+        </div>
+    </div>
+
+    <!-- Atribut Iframe -->
+    <div class="demo-section">
+        <h2>2. Atribut-Atribut Iframe</h2>
+        <p>Tag &lt;iframe&gt; memiliki berbagai atribut untuk mengontrol perilaku dan keamanan:</p>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Deskripsi</th>
+                    <th>Nilai</th>
+                    <th>Contoh Penggunaan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>src</code></td>
+                    <td>URL konten yang dimuat</td>
+                    <td>URL</td>
+                    <td><code>src="https://example.com"</code></td>
+                </tr>
+                <tr>
+                    <td><code>width</code></td>
+                    <td>Lebar iframe dalam piksel</td>
+                    <td>number</td>
+                    <td><code>width="600"</code></td>
+                </tr>
+                <tr>
+                    <td><code>height</code></td>
+                    <td>Tinggi iframe dalam piksel</td>
+                    <td>number</td>
+                    <td><code>height="400"</code></td>
+                </tr>
+                <tr>
+                    <td><code>title</code></td>
+                    <td>Deskripsi untuk aksesibilitas</td>
+                    <td>text</td>
+                    <td><code>title="Peta lokasi"</code></td>
+                </tr>
+                <tr>
+                    <td><code>allowfullscreen</code></td>
+                    <td>Izinkan mode fullscreen</td>
+                    <td>boolean</td>
+                    <td><code>allowfullscreen</code></td>
+                </tr>
+                <tr>
+                    <td><code>loading</code></td>
+                    <td>Strategi loading iframe</td>
+                    <td>lazy, eager</td>
+                    <td><code>loading="lazy"</code></td>
+                </tr>
+                <tr>
+                    <td><code>sandbox</code></td>
+                    <td>Pembatasan keamanan</td>
+                    <td>allow-*</td>
+                    <td><code>sandbox="allow-scripts"</code></td>
+                </tr>
+                <tr>
+                    <td><code>name</code></td>
+                    <td>Nama iframe untuk targeting</td>
+                    <td>text</td>
+                    <td><code>name="myFrame"</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Penggunaan Umum -->
+    <div class="demo-section">
+        <h2>3. Penggunaan Umum Iframe</h2>
+
+        <div class="feature-grid">
+            <!-- Google Maps -->
+            <div class="feature-card">
+                <h3>🗺️ Google Maps</h3>
+                <div class="loading-placeholder">
+                    <p>Maps akan dimuat di sini<br><small>(Demo placeholder)</small></p>
+                </div>
+                <div class="code-snippet">
+&lt;iframe src="https://maps.google.com/maps?embed=..."
+        width="100%"
+        height="300"
+        title="Peta lokasi sekolah"
+        loading="lazy"
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+                </div>
+                <p><strong>Kegunaan:</strong> Menampilkan lokasi atau peta interaktif</p>
+            </div>
+
+            <!-- YouTube Video -->
+            <div class="feature-card">
+                <h3>🎥 YouTube Video</h3>
+                <div class="iframe-16-9">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=0&end=30&rel=0&modestbranding=1"
+                            title="Demo YouTube video embed"
+                            allowfullscreen
+                            loading="lazy">
+                    </iframe>
+                </div>
+                <div class="code-snippet">
+&lt;iframe src="https://youtube.com/embed/VIDEO_ID"
+        width="560"
+        height="315"
+        title="Video pembelajaran"
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+                </div>
+                <p><strong>Kegunaan:</strong> Embed video YouTube tanpa meninggalkan situs</p>
+            </div>
+
+            <!-- Google Forms -->
+            <div class="feature-card">
+                <h3>📝 Google Forms</h3>
+                <div class="loading-placeholder">
+                    <p>Form akan dimuat di sini<br><small>(Demo placeholder)</small></p>
+                </div>
+                <div class="code-snippet">
+&lt;iframe src="https://docs.google.com/forms/d/e/.../viewform"
+        width="100%"
+        height="500"
+        title="Form pendaftaran"&gt;
+&lt;/iframe&gt;
+                </div>
+                <p><strong>Kegunaan:</strong> Embed form atau survei dari Google</p>
+            </div>
+
+            <!-- Konten Lokal -->
+            <div class="feature-card">
+                <h3>📄 Halaman Lokal</h3>
+                <iframe src="../README.md"
+                        class="responsive-iframe"
+                        title="Halaman README lokal"
+                        style="background: white;">
+                    <p>Konten tidak dapat dimuat.</p>
+                </iframe>
+                <div class="code-snippet">
+&lt;iframe src="halaman-lain.html"
+        width="100%"
+        height="300"
+        title="Halaman profil"&gt;
+&lt;/iframe&gt;
+                </div>
+                <p><strong>Kegunaan:</strong> Menampilkan halaman lokal dalam iframe</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Iframe -->
+    <div class="demo-section">
+        <h2>4. Iframe Responsif</h2>
+        <p>Membuat iframe yang menyesuaikan ukuran layar dengan CSS:</p>
+
+        <div class="code-snippet">
+/* CSS untuk iframe responsif */
+.responsive-iframe-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Untuk rasio 4:3 */
+.ratio-4-3 { padding-bottom: 75%; }
+
+/* Untuk rasio 1:1 (square) */
+.ratio-1-1 { padding-bottom: 100%; }
+        </div>
+
+        <div class="iframe-container">
+            <h3>📱 Demo Iframe Responsif</h3>
+            <div class="iframe-16-9">
+                <iframe src="https://via.placeholder.com/800x450/9C27B0/white?text=Responsive+Iframe+16:9"
+                        title="Demo iframe responsif dengan rasio 16:9"
+                        loading="lazy">
+                    <p style="color: white;">Iframe tidak dapat dimuat.</p>
+                </iframe>
+            </div>
+            <p>Iframe menyesuaikan ukuran container dengan rasio tetap</p>
+        </div>
+
+        <div class="success-box">
+            <h3>💡 Tips Responsif:</h3>
+            <ul>
+                <li><strong>16:9 ratio:</strong> <code>padding-bottom: 56.25%</code> - untuk video</li>
+                <li><strong>4:3 ratio:</strong> <code>padding-bottom: 75%</code> - untuk presentasi</li>
+                <li><strong>Square:</strong> <code>padding-bottom: 100%</code> - untuk konten persegi</li>
+                <li><strong>Custom ratio:</strong> <code>(height/width) * 100%</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Keamanan Iframe -->
+    <div class="demo-section">
+        <h2>5. Keamanan Iframe dengan Sandbox</h2>
+        <p>Atribut <code>sandbox</code> membatasi kemampuan konten iframe untuk keamanan:</p>
+
+        <div class="code-snippet">
+&lt;!-- Iframe tanpa pembatasan (tidak aman) --&gt;
+&lt;iframe src="https://untrusted-site.com"&gt;&lt;/iframe&gt;
+
+&lt;!-- Iframe dengan sandbox (aman) --&gt;
+&lt;iframe src="https://external-site.com"
+        sandbox="allow-scripts allow-same-origin"&gt;
+&lt;/iframe&gt;
+
+&lt;!-- Sandbox sangat ketat (hanya konten statis) --&gt;
+&lt;iframe src="content.html" sandbox&gt;&lt;/iframe&gt;
+        </div>
+
+        <div class="sandbox-demo">
+            <h3>🔒 Demo Sandbox Values</h3>
+            <table class="format-table">
+                <thead>
+                    <tr>
+                        <th>Sandbox Value</th>
+                        <th>Izin yang Diberikan</th>
+                        <th>Kegunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>allow-scripts</code></td>
+                        <td>Menjalankan JavaScript</td>
+                        <td>Konten interaktif</td>
+                    </tr>
+                    <tr>
+                        <td><code>allow-same-origin</code></td>
+                        <td>Akses ke origin yang sama</td>
+                        <td>API calls, cookies</td>
+                    </tr>
+                    <tr>
+                        <td><code>allow-forms</code></td>
+                        <td>Submit form</td>
+                        <td>Form submission</td>
+                    </tr>
+                    <tr>
+                        <td><code>allow-popups</code></td>
+                        <td>Membuka popup window</td>
+                        <td>External links</td>
+                    </tr>
+                    <tr>
+                        <td><code>allow-top-navigation</code></td>
+                        <td>Navigate top-level window</td>
+                        <td>Redirect parent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="danger-box">
+            <h3>⚠️ Peringatan Keamanan:</h3>
+            <ul>
+                <li><strong>Clickjacking:</strong> Gunakan <code>X-Frame-Options</code> header</li>
+                <li><strong>Data leakage:</strong> Hindari iframe dari sumber tidak terpercaya</li>
+                <li><strong>Malicious content:</strong> Selalu gunakan sandbox untuk konten eksternal</li>
+                <li><strong>Mixed content:</strong> HTTPS parent tidak boleh load HTTP iframe</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Optimasi Performance -->
+    <div class="demo-section">
+        <h2>6. Optimasi Performance Iframe</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>⚡ Lazy Loading</h3>
+                <div class="code-snippet">
+&lt;iframe src="content.html"
+        loading="lazy"
+        width="600"
+        height="400"&gt;
+&lt;/iframe&gt;
+                </div>
+                <ul style="text-align: left;">
+                    <li>Load iframe saat diperlukan</li>
+                    <li>Mengurangi initial page load</li>
+                    <li>Menghemat bandwidth</li>
+                    <li>Meningkatkan Core Web Vitals</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔗 Preconnect</h3>
+                <div class="code-snippet">
+&lt;head&gt;
+    &lt;link rel="preconnect"
+          href="https://www.youtube.com"&gt;
+    &lt;link rel="preconnect"
+          href="https://maps.googleapis.com"&gt;
+&lt;/head&gt;
+                </div>
+                <ul style="text-align: left;">
+                    <li>Establish koneksi lebih awal</li>
+                    <li>Mengurangi latency</li>
+                    <li>Mempercepat loading iframe</li>
+                    <li>Terutama untuk third-party content</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <h3>📦 Resource Hints</h3>
+                <div class="code-snippet">
+&lt;link rel="dns-prefetch"
+      href="//external-api.com"&gt;
+&lt;link rel="prefetch"
+      href="iframe-content.html"&gt;
+                </div>
+                <ul style="text-align: left;">
+                    <li>DNS prefetch untuk domain eksternal</li>
+                    <li>Prefetch untuk konten yang akan dimuat</li>
+                    <li>Preload untuk critical iframe</li>
+                    <li>Balance antara performance dan bandwidth</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Integration -->
+    <div class="demo-section">
+        <h2>7. Integrasi JavaScript dengan Iframe</h2>
+        <p>Komunikasi antara parent page dan iframe content:</p>
+
+        <div class="iframe-container">
+            <h3>🔄 Demo Komunikasi Iframe</h3>
+            <iframe id="communicationFrame"
+                    src="data:text/html;charset=utf-8,%3Chtml%3E%3Cbody%20style%3D%22font-family%3AArial%3Bpadding%3A20px%3Btext-align%3Acenter%3Bbackground%3A%23f0f8ff%22%3E%3Ch2%3EIframe%20Content%3C/h2%3E%3Cp%3EKlik%20tombol%20untuk%20mengirim%20pesan%20ke%20parent%3C/p%3E%3Cbutton%20onclick%3D%22parent.postMessage%28%27Hello%20from%20iframe%21%27%2C%20%27*%27%29%22%3ESend%20Message%3C/button%3E%3C/body%3E%3C/html%3E"
+                    width="400"
+                    height="200"
+                    title="Demo komunikasi iframe"
+                    style="border: 3px solid #fff; border-radius: 8px; background: white;">
+            </iframe>
+            <div style="margin-top: 15px;">
+                <button onclick="sendToIframe()" class="custom-button" style="background: #fff; color: #673AB7; border: 2px solid #fff; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                    📤 Send to Iframe
+                </button>
+                <p id="messageDisplay" style="color: #fff; margin-top: 10px; font-weight: bold;">Pesan akan muncul di sini...</p>
+            </div>
+        </div>
+
+        <div class="code-snippet">
+// Parent page JavaScript
+// Mengirim pesan ke iframe
+function sendToIframe() {
+    const iframe = document.getElementById('myIframe');
+    iframe.contentWindow.postMessage('Hello from parent!', '*');
+}
+
+// Menerima pesan dari iframe
+window.addEventListener('message', function(event) {
+    // Verifikasi origin untuk keamanan
+    if (event.origin !== 'https://trusted-domain.com') return;
+
+    console.log('Message from iframe:', event.data);
+    document.getElementById('messageDisplay').textContent = event.data;
+});
+
+// Iframe JavaScript
+// Mengirim pesan ke parent
+parent.postMessage('Hello from iframe!', '*');
+
+// Menerima pesan dari parent
+window.addEventListener('message', function(event) {
+    console.log('Message from parent:', event.data);
+});
+        </div>
+
+        <div class="warning-box">
+            <h3>🔒 Keamanan PostMessage:</h3>
+            <ul>
+                <li>Selalu verifikasi <code>event.origin</code> sebelum memproses pesan</li>
+                <li>Jangan kirim data sensitif melalui postMessage</li>
+                <li>Gunakan specific targetOrigin, hindari '*'</li>
+                <li>Validasi data yang diterima</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="demo-section">
+        <h2>8. Best Practices Iframe</h2>
+
+        <div class="success-box">
+            <h3>✅ Yang Harus Dilakukan:</h3>
+            <ul>
+                <li><strong>Selalu gunakan title</strong> untuk aksesibilitas</li>
+                <li><strong>Implementasikan lazy loading</strong> untuk iframe non-critical</li>
+                <li><strong>Gunakan sandbox</strong> untuk konten dari sumber tidak terpercaya</li>
+                <li><strong>Set dimensi eksplisit</strong> untuk menghindari layout shift</li>
+                <li><strong>Verifikasi origin</strong> saat menggunakan postMessage</li>
+                <li><strong>Test responsivitas</strong> di berbagai ukuran layar</li>
+                <li><strong>Gunakan HTTPS</strong> untuk konten iframe</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3>❌ Yang Harus Dihindari:</h3>
+            <ul>
+                <li><strong>Load iframe dari HTTP</strong> di halaman HTTPS</li>
+                <li><strong>Iframe tanpa title</strong> - buruk untuk accessibility</li>
+                <li><strong>Terlalu banyak iframe</strong> dalam satu halaman</li>
+                <li><strong>Iframe dari sumber tidak terpercaya</strong> tanpa sandbox</li>
+                <li><strong>Hardcode ukuran</strong> yang tidak responsif</li>
+                <li><strong>PostMessage tanpa verifikasi origin</strong></li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🛠️ Tools dan Testing:</h3>
+            <div class="feature-grid">
+                <div style="text-align: left;">
+                    <h4>🔍 Development Tools:</h4>
+                    <ul>
+                        <li>Chrome DevTools - Network tab</li>
+                        <li>Lighthouse - Performance audit</li>
+                        <li>WebPageTest - Loading analysis</li>
+                        <li>Browser dev tools - Security tab</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: left;">
+                    <h4>📊 Testing Checklist:</h4>
+                    <ul>
+                        <li>Test di berbagai browser</li>
+                        <li>Verifikasi responsive behavior</li>
+                        <li>Check loading performance</li>
+                        <li>Validate security headers</li>
+                        <li>Test accessibility dengan screen reader</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="demo-section">
+        <h2>9. Troubleshooting Iframe</h2>
+
+        <table class="format-table">
+            <thead>
+                <tr>
+                    <th>Problem</th>
+                    <th>Penyebab</th>
+                    <th>Solusi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Iframe tidak muncul</td>
+                    <td>X-Frame-Options: DENY</td>
+                    <td>Gunakan konten yang mengizinkan embedding</td>
+                </tr>
+                <tr>
+                    <td>Mixed content error</td>
+                    <td>HTTP iframe di HTTPS page</td>
+                    <td>Gunakan HTTPS untuk semua konten</td>
+                </tr>
+                <tr>
+                    <td>Iframe terlalu lambat</td>
+                    <td>Sumber eksternal lambat</td>
+                    <td>Implementasikan lazy loading</td>
+                </tr>
+                <tr>
+                    <td>PostMessage tidak bekerja</td>
+                    <td>Origin tidak match</td>
+                    <td>Verifikasi dan set origin yang benar</td>
+                </tr>
+                <tr>
+                    <td>Layout shift</td>
+                    <td>Ukuran tidak didefinisikan</td>
+                    <td>Set width dan height eksplisit</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+        <h2>🎉 Excellent!</h2>
+        <p>Anda telah menguasai semua aspek penggunaan tag &lt;iframe&gt; dalam HTML!</p>
+        <p><strong>Selanjutnya:</strong> <a href="../proyek-mini/galeri-multimedia.html" style="color: #fff; text-decoration: underline;">Proyek Mini</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 4</a></p>
+    </div>
+
+    <script>
+        // JavaScript untuk demo komunikasi iframe
+        function sendToIframe() {
+            const iframe = document.getElementById('communicationFrame');
+            const messages = [
+                'Hello from parent page! 👋',
+                'This is a test message 📨',
+                'Communication successful! ✅',
+                'Iframe integration works! 🚀'
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            // Simulasi mengirim pesan (karena iframe menggunakan data URL)
+            document.getElementById('messageDisplay').textContent = 'Sent: ' + randomMessage;
+
+            setTimeout(() => {
+                document.getElementById('messageDisplay').textContent = 'Iframe would respond here 💬';
+            }, 1000);
+        }
+
+        // Listener untuk pesan dari iframe
+        window.addEventListener('message', function(event) {
+            // In production, always verify origin
+            // if (event.origin !== 'https://trusted-domain.com') return;
+
+            console.log('Received message from iframe:', event.data);
+            document.getElementById('messageDisplay').textContent = 'Received: ' + event.data;
+        });
+
+        // Demo lazy loading simulation
+        function simulateLazyLoad() {
+            const lazyIframes = document.querySelectorAll('iframe[loading="lazy"]');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('Lazy iframe is now visible:', entry.target);
+                        // In real implementation, you might load the iframe src here
+                    }
+                });
+            });
+
+            lazyIframes.forEach(iframe => {
+                observer.observe(iframe);
+            });
+        }
+
+        // Initialize lazy loading demo
+        document.addEventListener('DOMContentLoaded', simulateLazyLoad);
+
+        // Error handling for iframes
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframes = document.querySelectorAll('iframe');
+
+            iframes.forEach(iframe => {
+                iframe.addEventListener('error', function() {
+                    console.error('Iframe failed to load:', this.src);
+                    this.style.backgroundColor = '#ffebee';
+                    this.style.color = '#d32f2f';
+                    this.innerHTML = '<p style="padding: 20px; text-align: center;">⚠️ Content failed to load</p>';
+                });
+
+                iframe.addEventListener('load', function() {
+                    console.log('Iframe loaded successfully:', this.src);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

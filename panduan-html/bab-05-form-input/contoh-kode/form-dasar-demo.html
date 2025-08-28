@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Form Dasar HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .demo-section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .code-snippet {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .form-example {
+            background: #e3f2fd;
+            border: 2px solid #2196F3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .form-example h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+
+        /* Basic form styling */
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button[type="reset"] {
+            background-color: #6c757d;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #545b62;
+        }
+
+        .info-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .output-area {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .attribute-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .attribute-table th,
+        .attribute-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .attribute-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background-color: yellow;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📝 Demo Form Dasar HTML</h1>
+    <p>Halaman ini mendemonstrasikan penggunaan dasar tag &lt;form&gt; dan elemen-elemen form dalam HTML.</p>
+
+    <!-- Struktur Form Dasar -->
+    <div class="demo-section">
+        <h2>1. Struktur Form Dasar</h2>
+        <p>Setiap form HTML dimulai dengan tag <code>&lt;form&gt;</code> dan berisi berbagai elemen input.</p>
+
+        <div class="code-snippet">
+&lt;form action="/submit" method="post"&gt;
+    &lt;label for="nama"&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama"&gt;
+
+    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;
+        </div>
+
+        <div class="form-example">
+            <h3>📋 Contoh Form Sederhana</h3>
+            <form action="#" method="post" onsubmit="handleSubmit(event, 'form1')">
+                <label for="nama-sederhana">Nama:</label>
+                <input type="text" id="nama-sederhana" name="nama" placeholder="Masukkan nama Anda">
+
+                <label for="email-sederhana">Email:</label>
+                <input type="email" id="email-sederhana" name="email" placeholder="nama@email.com">
+
+                <button type="submit">📤 Kirim</button>
+                <button type="reset">🔄 Reset</button>
+            </form>
+            <div id="output-form1" class="output-area" style="display: none;">
+                <strong>Data yang akan dikirim:</strong>
+                <div id="result-form1"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Atribut Form Penting -->
+    <div class="demo-section">
+        <h2>2. Atribut Form Penting</h2>
+        <p>Tag <code>&lt;form&gt;</code> memiliki beberapa atribut penting yang mengatur perilaku form:</p>
+
+        <table class="attribute-table">
+            <thead>
+                <tr>
+                    <th>Atribut</th>
+                    <th>Deskripsi</th>
+                    <th>Contoh Nilai</th>
+                    <th>Fungsi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>action</code></td>
+                    <td>URL tujuan pengiriman data</td>
+                    <td><code>/submit</code>, <code>https://api.example.com</code></td>
+                    <td>Menentukan kemana data dikirim</td>
+                </tr>
+                <tr>
+                    <td><code>method</code></td>
+                    <td>Metode HTTP untuk pengiriman</td>
+                    <td><code>get</code>, <code>post</code></td>
+                    <td>GET untuk data publik, POST untuk data sensitif</td>
+                </tr>
+                <tr>
+                    <td><code>enctype</code></td>
+                    <td>Tipe encoding data</td>
+                    <td><code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code></td>
+                    <td>multipart/form-data untuk upload file</td>
+                </tr>
+                <tr>
+                    <td><code>target</code></td>
+                    <td>Target pembukaan response</td>
+                    <td><code>_self</code>, <code>_blank</code></td>
+                    <td>Mengatur dimana response ditampilkan</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Method GET vs POST -->
+    <div class="demo-section">
+        <h2>3. Perbedaan Method GET dan POST</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-example">
+                <h3>📤 Method GET</h3>
+                <p><strong>Karakteristik:</strong></p>
+                <ul>
+                    <li>Data tampil di URL</li>
+                    <li>Batas data ~2000 karakter</li>
+                    <li>Tidak aman untuk data sensitif</li>
+                    <li>Bisa di-bookmark</li>
+                </ul>
+
+                <form action="#" method="get" onsubmit="handleSubmit(event, 'form-get')">
+                    <label for="search-term">Kata Kunci Pencarian:</label>
+                    <input type="text" id="search-term" name="q" placeholder="Cari sesuatu...">
+
+                    <label for="category">Kategori:</label>
+                    <select id="category" name="category">
+                        <option value="all">Semua</option>
+                        <option value="news">Berita</option>
+                        <option value="blog">Blog</option>
+                    </select>
+
+                    <button type="submit">🔍 Cari</button>
+                </form>
+                <div id="output-form-get" class="output-area" style="display: none;">
+                    <div id="result-form-get"></div>
+                </div>
+            </div>
+
+            <div class="form-example">
+                <h3>🔐 Method POST</h3>
+                <p><strong>Karakteristik:</strong></p>
+                <ul>
+                    <li>Data tersembunyi dari URL</li>
+                    <li>Tidak ada batas ukuran data</li>
+                    <li>Lebih aman untuk data sensitif</li>
+                    <li>Tidak bisa di-bookmark</li>
+                </ul>
+
+                <form action="#" method="post" onsubmit="handleSubmit(event, 'form-post')">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username Anda">
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password Anda">
+
+                    <button type="submit">🔑 Login</button>
+                </form>
+                <div id="output-form-post" class="output-area" style="display: none;">
+                    <div id="result-form-post"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Type Text Variations -->
+    <div class="demo-section">
+        <h2>4. Variasi Input Type Text</h2>
+        <p>HTML5 menyediakan berbagai jenis input text dengan validasi built-in:</p>
+
+        <div class="form-example">
+            <h3>📝 Demo Input Types</h3>
+            <form action="#" method="post" onsubmit="handleSubmit(event, 'form-types')">
+                <label for="text-regular">Text Regular:</label>
+                <input type="text" id="text-regular" name="text" placeholder="Teks biasa">
+
+                <label for="text-email">Email:</label>
+                <input type="email" id="text-email" name="email" placeholder="nama@domain.com">
+
+                <label for="text-password">Password:</label>
+                <input type="password" id="text-password" name="password" placeholder="Password minimum 6 karakter" minlength="6">
+
+                <label for="text-tel">Telepon:</label>
+                <input type="tel" id="text-tel" name="telepon" placeholder="+62 812 3456 7890">
+
+                <label for="text-url">Website:</label>
+                <input type="url" id="text-url" name="website" placeholder="https://example.com">
+
+                <label for="text-search">Pencarian:</label>
+                <input type="search" id="text-search" name="search" placeholder="Cari di situs...">
+
+                <button type="submit">✅ Submit</button>
+            </form>
+            <div id="output-form-types" class="output-area" style="display: none;">
+                <div id="result-form-types"></div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 Tips:</strong> Browser modern akan otomatis memvalidasi format email, URL, dan menampilkan keyboard yang sesuai di mobile untuk setiap tipe input.
+        </div>
+    </div>
+
+    <!-- Label dan Aksesibilitas -->
+    <div class="demo-section">
+        <h2>5. Label dan Aksesibilitas</h2>
+        <p>Tag <code>&lt;label&gt;</code> sangat penting untuk aksesibilitas dan user experience yang baik.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h4>❌ Contoh Buruk (Tanpa Label Proper)</h4>
+                <div class="form-example">
+                    <form>
+                        <input type="text" placeholder="Nama">
+                        <input type="email" placeholder="Email">
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <p><small>Problem: Screen reader tidak bisa membaca dengan baik, tidak bisa diklik untuk fokus.</small></p>
+            </div>
+
+            <div>
+                <h4>✅ Contoh Baik (Dengan Label Proper)</h4>
+                <div class="form-example">
+                    <form>
+                        <label for="nama-baik">Nama Lengkap:</label>
+                        <input type="text" id="nama-baik" name="nama" placeholder="Masukkan nama">
+
+                        <label for="email-baik">Alamat Email:</label>
+                        <input type="email" id="email-baik" name="email" placeholder="nama@email.com">
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <p><small>Keuntungan: Accessible, label bisa diklik, lebih SEO friendly.</small></p>
+            </div>
+        </div>
+
+        <div class="success-box">
+            <strong>✨ Best Practice:</strong> Selalu gunakan label dengan atribut <code>for</code> yang mengarah ke <code>id</code> input yang sesuai. Ini meningkatkan accessibility dan user experience.
+        </div>
+    </div>
+
+    <!-- Form dengan Multiple Elements -->
+    <div class="demo-section">
+        <h2>6. Form Komprehensif</h2>
+        <p>Demo form dengan berbagai elemen yang sering digunakan dalam aplikasi web:</p>
+
+        <div class="form-example">
+            <h3>📋 Form Pendaftaran Event</h3>
+            <form action="#" method="post" onsubmit="handleSubmit(event, 'form-comprehensive')">
+                <label for="nama-lengkap">Nama Lengkap: <span style="color: red;">*</span></label>
+                <input type="text" id="nama-lengkap" name="nama_lengkap" required placeholder="Nama sesuai KTP">
+
+                <label for="email-event">Email: <span style="color: red;">*</span></label>
+                <input type="email" id="email-event" name="email" required placeholder="email@domain.com">
+
+                <label for="telepon-event">Nomor Telepon:</label>
+                <input type="tel" id="telepon-event" name="telepon" placeholder="+62 812 3456 7890">
+
+                <label for="instansi">Instansi/Perusahaan:</label>
+                <input type="text" id="instansi" name="instansi" placeholder="Nama instansi">
+
+                <label for="pesan-tambahan">Pesan Tambahan:</label>
+                <textarea id="pesan-tambahan" name="pesan" rows="4" placeholder="Ada yang ingin Anda sampaikan?"></textarea>
+

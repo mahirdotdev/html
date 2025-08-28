@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Multimedia 1 - Galeri Foto Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .exercise-description {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 30px;
+        }
+
+        .task-list {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin-bottom: 30px;
+        }
+
+        .gallery-container {
+            /* TODO: Tambahkan CSS untuk grid layout galeri di sini */
+            /* Petunjuk: gunakan display: grid dengan 3 kolom */
+        }
+
+        .photo-item {
+            /* TODO: Tambahkan styling untuk item foto di sini */
+            /* Petunjuk: padding, border-radius, box-shadow */
+        }
+
+        .photo-item img {
+            /* TODO: Buat gambar responsive */
+            /* Petunjuk: width: 100%, height: auto */
+        }
+
+        .photo-description {
+            /* TODO: Styling untuk deskripsi foto */
+            /* Petunjuk: padding, text-align, color */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📸 Latihan Multimedia 1</h1>
+        <p>Membuat Galeri Foto Sederhana</p>
+    </div>
+
+    <div class="exercise-description">
+        <h2>📋 Deskripsi Latihan</h2>
+        <p>Dalam latihan ini, kalian akan membuat galeri foto sederhana menggunakan tag <code>&lt;img&gt;</code> dengan berbagai atribut yang telah dipelajari.</p>
+
+        <h3>🎯 Tujuan Pembelajaran:</h3>
+        <ul>
+            <li>Menggunakan tag <code>&lt;img&gt;</code> dengan benar</li>
+            <li>Menerapkan atribut <code>src</code>, <code>alt</code>, <code>width</code>, dan <code>height</code></li>
+            <li>Menggunakan <code>loading="lazy"</code> untuk optimasi</li>
+            <li>Membuat layout grid sederhana dengan CSS</li>
+            <li>Menerapkan prinsip aksesibilitas</li>
+        </ul>
+    </div>
+
+    <div class="task-list">
+        <h2>✅ Tugas yang Harus Diselesaikan:</h2>
+        <ol>
+            <li><strong>Buat 6 buah tag img</strong> dengan placeholder images dari via.placeholder.com</li>
+            <li><strong>Berikan alt text deskriptif</strong> untuk setiap gambar</li>
+            <li><strong>Gunakan ukuran yang konsisten</strong> (misalnya 300x200px)</li>
+            <li><strong>Tambahkan loading="lazy"</strong> untuk optimasi</li>
+            <li><strong>Buat layout grid 3 kolom</strong> dengan CSS</li>
+            <li><strong>Tambahkan deskripsi singkat</strong> di bawah setiap foto</li>
+        </ol>
+    </div>
+
+    <!-- MULAI MENGERJAKAN DI SINI -->
+    <div class="gallery-container">
+        <!-- TODO: Tambahkan 6 foto dengan deskripsi di sini -->
+
+        <!-- Contoh foto pertama (lengkapi yang lainnya) -->
+        <div class="photo-item">
+            <img src="https://via.placeholder.com/300x200/4CAF50/white?text=Foto+1"
+                 alt="TODO: Tambahkan deskripsi alt text yang sesuai"
+                 width="300"
+                 height="200"
+                 loading="lazy">
+            <div class="photo-description">
+                <h3>Judul Foto 1</h3>
+                <p>Deskripsi foto pertama...</p>
+            </div>
+        </div>
+
+        <!-- TODO: Tambahkan 5 foto lainnya dengan tema berbeda -->
+        <!-- Gunakan warna yang berbeda untuk setiap placeholder -->
+        <!-- Contoh warna: #2196F3, #FF9800, #E91E63, #9C27B0, #FF5722 -->
+
+    </div>
+    <!-- SELESAI MENGERJAKAN -->
+
+    <div style="background: #d1ecf1; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #bee5eb;">
+        <h3>💡 Tips Pengerjaan:</h3>
+        <ul>
+            <li>Gunakan warna yang berbeda untuk setiap placeholder agar terlihat menarik</li>
+            <li>Alt text harus mendeskripsikan isi gambar, bukan hanya "foto 1", "foto 2"</li>
+            <li>Test responsive dengan mengubah ukuran browser</li>
+            <li>Pastikan semua gambar memiliki ukuran yang konsisten</li>
+            <li>Gunakan tema yang berkaitan (misalnya: kegiatan sekolah, alam, teknologi)</li>
+        </ul>
+    </div>
+
+    <div style="background: #f8d7da; padding: 20px; border-radius: 8px; margin-top: 20px; border-left: 4px solid #f5c6cb;">
+        <h3>⚠️ Hal yang Perlu Diperhatikan:</h3>
+        <ul>
+            <li>Jangan lupa menambahkan CSS untuk .gallery-container, .photo-item, dll.</li>
+            <li>Pastikan layout tidak berantakan di mobile</li>
+            <li>Alt text harus deskriptif dan bermakna</li>
+            <li>Test loading lazy dengan scroll halaman</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+        <h3>🎉 Setelah Selesai</h3>
+        <p>Simpan file sebagai <code>galeri-foto-saya.html</code> dan buka di browser untuk melihat hasilnya!</p>
+        <p><strong>Bonus Challenge:</strong> Tambahkan hover effect pada gambar dengan CSS <code>:hover</code></p>
+    </div>
+</body>
+</html>
