@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profil & Berita Sekolah</title>
+  <meta name="description" content="Proyek mini Bab 9: struktur id dan class yang terorganisir.">
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;margin:0;line-height:1.6}
+    header,nav,main,footer{padding:16px}
+    header{background:#0ea5e9;color:#fff}
+    nav{background:#0284c7}
+    nav a{color:#fff;margin-right:12px}
+    .container{max-width:960px;margin:0 auto;padding:16px}
+    .card{border:1px solid #e5e7eb;border-radius:8px;padding:12px;margin:8px 0;background:#f9fafb}
+    .card-title{margin:0 0 8px}
+    .card-body{margin:0 0 8px}
+    .card-link{color:#0ea5e9}
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header id="site-header" class="site-header">
+    <div class="container">
+      <h1>Portal SMA Contoh</h1>
+    </div>
+  </header>
+
+  <nav id="main-nav" class="nav">
+    <div class="container">
+      <a class="nav-item" href="#profil">Profil</a>
+      <a class="nav-item" href="#berita">Berita</a>
+      <a class="nav-item" href="#kontak">Kontak</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="profil" class="section-profil">
+      <h2>Profil</h2>
+      <p>Sekilas tentang sekolah dan visi misi.</p>
+    </section>
+
+    <section id="berita" class="section-berita">
+      <h2>Berita</h2>
+      <article class="card">
+        <h3 class="card-title">Juara Lomba Sains</h3>
+        <p class="card-body">Tim sekolah meraih juara 1 tingkat kota.</p>
+        <a class="card-link" href="#">Baca Selengkapnya</a>
+      </article>
+      <article class="card">
+        <h3 class="card-title">Pengumuman Libur</h3>
+        <p class="card-body">Libur semester dimulai pekan depan.</p>
+        <a class="card-link" href="#">Baca Selengkapnya</a>
+      </article>
+    </section>
+
+    <section id="kontak" class="section-kontak">
+      <h2>Kontak</h2>
+      <p>Email: info@sekolah.id</p>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 SMA Contoh</small>
+    </div>
+  </footer>
+</body>
+</html>
+
