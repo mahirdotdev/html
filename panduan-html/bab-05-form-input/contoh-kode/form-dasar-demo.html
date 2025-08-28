@@ -410,3 +410,155 @@
                 <label for="pesan-tambahan">Pesan Tambahan:</label>
                 <textarea id="pesan-tambahan" name="pesan" rows="4" placeholder="Ada yang ingin Anda sampaikan?"></textarea>
 
+                <label for="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    Saya ingin menerima newsletter
+                </label>
+
+                <div style="margin: 15px 0;">
+                    <button type="submit">✅ Daftar Event</button>
+                    <button type="reset">🔄 Reset Form</button>
+                </div>
+            </form>
+            <div id="output-form-comprehensive" class="output-area" style="display: none;">
+                <strong>📊 Data Pendaftaran:</strong>
+                <div id="result-form-comprehensive"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Browser Form Features -->
+    <div class="demo-section">
+        <h2>7. Fitur Browser Modern</h2>
+        <p>Browser modern memiliki beberapa fitur built-in yang membantu user experience:</p>
+
+        <div class="form-example">
+            <h3>🔧 Demo Browser Features</h3>
+            <form action="#" method="post" onsubmit="handleSubmit(event, 'form-features')">
+                <label for="autocomplete-name">Nama (dengan autocomplete):</label>
+                <input type="text" id="autocomplete-name" name="name" autocomplete="name" placeholder="Browser akan mengingat">
+
+                <label for="autocomplete-email">Email (dengan autocomplete):</label>
+                <input type="email" id="autocomplete-email" name="email" autocomplete="email" placeholder="Browser akan suggest email">
+
+                <label for="pattern-code">Kode Produk (Pattern Validation):</label>
+                <input type="text" id="pattern-code" name="code" pattern="[A-Z]{3}[0-9]{3}"
+                       title="Format: 3 huruf besar + 3 angka (contoh: ABC123)" placeholder="ABC123">
+
+                <label for="required-field">Field Wajib:</label>
+                <input type="text" id="required-field" name="required" required placeholder="Wajib diisi">
+
+                <label for="maxlength-field">Teks Terbatas (max 50 karakter):</label>
+                <input type="text" id="maxlength-field" name="limited" maxlength="50"
+                       placeholder="Maksimal 50 karakter">
+
+                <button type="submit">🚀 Test Validasi</button>
+            </form>
+            <div id="output-form-features" class="output-area" style="display: none;">
+                <div id="result-form-features"></div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>🎯 Fitur yang Didemonstrasikan:</strong>
+            <ul>
+                <li><strong>Autocomplete:</strong> Browser mengingat input sebelumnya</li>
+                <li><strong>Pattern Validation:</strong> Validasi format dengan regex</li>
+                <li><strong>Required Validation:</strong> Field wajib diisi</li>
+                <li><strong>Maxlength:</strong> Pembatasan panjang karakter</li>
+                <li><strong>Type-specific keyboards:</strong> Keyboard yang sesuai di mobile</li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #007bff, #0056b3); color: white; border-radius: 10px;">
+        <h2>🎓 Selamat!</h2>
+        <p>Anda telah mempelajari dasar-dasar form HTML!</p>
+        <p><strong>Selanjutnya:</strong> <a href="input-types-demo.html" style="color: #fff; text-decoration: underline;">Demo Input Types</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 5</a></p>
+    </div>
+
+    <script>
+        function handleSubmit(event, formId) {
+            event.preventDefault(); // Mencegah form submit yang sebenarnya
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {};
+            const outputDiv = document.getElementById(`output-${formId}`);
+            const resultDiv = document.getElementById(`result-${formId}`);
+
+            // Mengumpulkan data form
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    // Jika key sudah ada, buat array
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+
+            // Tampilkan hasil
+            let resultHTML = '';
+            if (form.method.toLowerCase() === 'get') {
+                const params = new URLSearchParams(data);
+                resultHTML = `<strong>🌐 URL yang akan dibuat:</strong><br>
+                             <code>${window.location.origin}${form.action}?${params.toString()}</code><br><br>
+                             <strong>📊 Parameter yang dikirim:</strong><br>`;
+            } else {
+                resultHTML = `<strong>📦 Data yang akan dikirim via POST:</strong><br>`;
+            }
+
+            resultHTML += '<pre style="background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto;">';
+            resultHTML += JSON.stringify(data, null, 2);
+            resultHTML += '</pre>';
+
+            resultDiv.innerHTML = resultHTML;
+            outputDiv.style.display = 'block';
+
+            // Scroll ke hasil
+            outputDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Demo fitur autocomplete dan pattern
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight pattern validation
+            const patternInput = document.getElementById('pattern-code');
+            if (patternInput) {
+                patternInput.addEventListener('input', function() {
+                    const pattern = /^[A-Z]{3}[0-9]{3}$/;
+                    if (this.value && !pattern.test(this.value)) {
+                        this.style.borderColor = '#dc3545';
+                        this.title = 'Format tidak sesuai! Gunakan: 3 huruf besar + 3 angka';
+                    } else {
+                        this.style.borderColor = '#28a745';
+                        this.title = 'Format benar!';
+                    }
+                });
+            }
+
+            // Character counter untuk maxlength
+            const maxlengthInput = document.getElementById('maxlength-field');
+            if (maxlengthInput) {
+                const counter = document.createElement('small');
+                counter.style.color = '#6c757d';
+                maxlengthInput.parentNode.insertBefore(counter, maxlengthInput.nextSibling);
+
+                maxlengthInput.addEventListener('input', function() {
+                    const remaining = 50 - this.value.length;
+                    counter.textContent = `${this.value.length}/50 karakter`;
+                    counter.style.color = remaining < 10 ? '#dc3545' : '#6c757d';
+                });
+            }
+        });
+
+        // Console log untuk debugging
+        console.log('📝 Form Demo loaded successfully!');
+        console.log('🔧 Interactive form validation enabled');
+        console.log('📊 All form submissions are intercepted for demo purposes');
+    </script>
+</body>
+</html>

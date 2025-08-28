@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Input Types HTML5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .input-section {
+            margin: 30px 0;
+            padding: 25px;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            background: #fafafa;
+        }
+
+        .input-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .input-demo {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .input-demo h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .input-demo p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .input-info {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            color: #1565c0;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .code-preview {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #495057;
+            margin-top: 10px;
+            overflow-x: auto;
+        }
+
+        .output-display {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-family: monospace;
+            color: #495057;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+
+        .warning-badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+
+        .browser-support {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        .demo-button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .demo-button:hover {
+            background: #5a67d8;
+        }
+
+        .validation-demo {
+            border-left-color: #dc3545;
+        }
+
+        .html5-demo {
+            border-left-color: #28a745;
+        }
+
+        .mobile-demo {
+            border-left-color: #ffc107;
+        }
+
+        @media (max-width: 768px) {
+            .input-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            input, textarea, select {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Demo Input Types HTML5</h1>
+            <p>Eksplorasi lengkap berbagai jenis input HTML5 dengan fitur dan validasi built-in</p>
+        </div>
+
+        <!-- Text-based Inputs -->
+        <div class="input-section">
+            <h2>📝 Text-Based Input Types</h2>
+            <div class="input-grid">
+
+                <div class="input-demo">
+                    <h3>📄 Text <span class="feature-badge">Basic</span></h3>
+                    <p>Input teks standar untuk data umum seperti nama, alamat, dll.</p>
+                    <label for="input-text">Nama Lengkap:</label>
+                    <input type="text" id="input-text" name="text" placeholder="Masukkan nama lengkap Anda" maxlength="50">
+                    <div class="input-info">✨ Atribut: placeholder, maxlength, minlength, pattern, required</div>
+                    <div class="code-preview">&lt;input type="text" placeholder="Nama lengkap" maxlength="50"&gt;</div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>📧 Email <span class="feature-badge">HTML5</span></h3>
+                    <p>Validasi otomatis format email dan keyboard khusus di mobile.</p>
+                    <label for="input-email">Alamat Email:</label>
+                    <input type="email" id="input-email" name="email" placeholder="nama@domain.com" required>
+                    <div class="input-info">🔍 Browser akan validasi format email (@, domain valid)</div>
+                    <div class="code-preview">&lt;input type="email" placeholder="nama@domain.com" required&gt;</div>
+                    <div class="output-display" id="email-output">Ketik email untuk melihat validasi...</div>
+                </div>
+
+                <div class="input-demo validation-demo">
+                    <h3>🔒 Password <span class="feature-badge">Secure</span></h3>
+                    <p>Input yang menyembunyikan karakter untuk data sensitif.</p>
+                    <label for="input-password">Password:</label>
+                    <input type="password" id="input-password" name="password" placeholder="Minimal 8 karakter" minlength="8">
+                    <div class="input-info">🔐 Karakter otomatis tersembunyi, gunakan minlength untuk validasi</div>
+                    <div class="code-preview">&lt;input type="password" minlength="8" required&gt;</div>
+                    <div class="output-display" id="password-output">Password strength: <span id="strength">-</span></div>
+                </div>
+
+                <div class="input-demo mobile-demo">
+                    <h3>📱 Tel <span class="feature-badge">Mobile</span></h3>
+                    <p>Keyboard numerik di mobile dan link otomatis di beberapa browser.</p>
+                    <label for="input-tel">Nomor Telepon:</label>
+                    <input type="tel" id="input-tel" name="tel" placeholder="+62 812 3456 7890" pattern="[+0-9\s\-()]+">
+                    <div class="input-info">📞 Mobile menampilkan keyboard numerik</div>
+                    <div class="code-preview">&lt;input type="tel" pattern="[+0-9\s\-()]+"&gt;</div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>🌐 URL <span class="feature-badge">HTML5</span></h3>
+                    <p>Validasi format URL dan keyboard yang dioptimalkan untuk URL.</p>
+                    <label for="input-url">Website:</label>
+                    <input type="url" id="input-url" name="url" placeholder="https://example.com">
+                    <div class="input-info">🔗 Browser validasi format URL (http://, https://)</div>
+                    <div class="code-preview">&lt;input type="url" placeholder="https://example.com"&gt;</div>
+                </div>
+
+                <div class="input-demo">
+                    <h3>🔍 Search <span class="feature-badge">Enhanced</span></h3>
+                    <p>Input pencarian dengan X button untuk clear dan history.</p>
+                    <label for="input-search">Pencarian:</label>
+                    <input type="search" id="input-search" name="search" placeholder="Cari produk...">
+                    <div class="input-info">🔎 Beberapa browser menampilkan tombol clear (X)</div>
+                    <div class="code-preview">&lt;input type="search" placeholder="Cari produk..."&gt;</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Number and Range Inputs -->
+        <div class="input-section">
+            <h2>🔢 Numeric Input Types</h2>
+            <div class="input-grid">
+
+                <div class="input-demo html5-demo">
+                    <h3>🔢 Number <span class="feature-badge">HTML5</span></h3>
+                    <p>Input khusus angka dengan validasi min/max dan step.</p>
+                    <label for="input-number">Umur (17-65):</label>
+                    <input type="number" id="input-number" name="number" min="17" max="65" step="1" placeholder="25">
+                    <div class="input-info">⚡ Spinner controls, validasi min/max otomatis</div>
+                    <div class="code-preview">&lt;input type="number" min="17" max="65" step="1"&gt;</div>
+                    <div class="output-display" id="number-output">Nilai: <span id="number-value">-</span></div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>🎛️ Range <span class="feature-badge">HTML5</span></h3>
+                    <p>Slider untuk memilih nilai dalam rentang tertentu.</p>
+                    <label for="input-range">Rating (1-10): <span id="range-value">5</span></label>
+                    <input type="range" id="input-range" name="range" min="1" max="10" value="5" step="1">
+                    <div class="input-info">🎚️ UI slider, perfect untuk rating dan preferensi</div>
+                    <div class="code-preview">&lt;input type="range" min="1" max="10" value="5"&gt;</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Date and Time Inputs -->
+        <div class="input-section">
+            <h2>📅 Date and Time Input Types</h2>
+            <div class="input-grid">
+
+                <div class="input-demo html5-demo">
+                    <h3>📅 Date <span class="feature-badge">HTML5</span></h3>
+                    <p>Date picker built-in dengan validasi min/max date.</p>
+                    <label for="input-date">Tanggal Lahir:</label>
+                    <input type="date" id="input-date" name="date" min="1950-01-01" max="2010-12-31">
+                    <div class="input-info">📆 Browser menampilkan calendar picker</div>
+                    <div class="code-preview">&lt;input type="date" min="1950-01-01" max="2010-12-31"&gt;</div>
+                    <div class="browser-support">📱 Support: Chrome, Firefox, Safari. IE/Edge lama fallback ke text</div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>⏰ Time <span class="feature-badge">HTML5</span></h3>
+                    <p>Time picker untuk memilih jam dan menit.</p>
+                    <label for="input-time">Waktu Meeting:</label>
+                    <input type="time" id="input-time" name="time" min="08:00" max="18:00">
+                    <div class="input-info">🕐 Format 24 jam, dapat dibatasi dengan min/max</div>
+                    <div class="code-preview">&lt;input type="time" min="08:00" max="18:00"&gt;</div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>📅⏰ Datetime-local <span class="feature-badge">HTML5</span></h3>
+                    <p>Kombinasi date dan time dalam satu input.</p>
+                    <label for="input-datetime">Jadwal Event:</label>
+                    <input type="datetime-local" id="input-datetime" name="datetime">
+                    <div class="input-info">📅⏰ Date + time picker, timezone lokal</div>
+                    <div class="code-preview">&lt;input type="datetime-local"&gt;</div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>📊 Week <span class="feature-badge">HTML5</span></h3>
+                    <p>Pemilihan minggu dalam tahun (1-52).</p>
+                    <label for="input-week">Pilih Minggu:</label>
+                    <input type="week" id="input-week" name="week">
+                    <div class="input-info">📊 Format: 2024-W15 (tahun-minggu ke-)</div>
+                    <div class="code-preview">&lt;input type="week"&gt;</div>
+                </div>
+
+                <div class="input-demo html5-demo">
+                    <h3>📆 Month <span class="feature-badge">HTML5</span></h3>
+                    <p>Pemilihan bulan dan tahun saja.</p>
+                    <label for="input-month">Bulan Lahir:</label>
+                    <input type="month" id="input-month" name="month">
+                    <div class="input-info">📆 Format: 2024-03 (tahun-bulan)</div>
+                    <div class="code-preview">&lt;input type="month"&gt;</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Color and File Inputs -->
+        <div class="input-section">
+            <h2>🎨 Specialized Input Types</h2>
+            <div class="input-grid">
+
+                <div class="input-demo html5-demo">
+                    <h3>🎨 Color <span class="feature-badge">HTML5</span></h3>
+                    <p>Color picker untuk memilih warna dengan hex value.</p>
+                    <label for="input-color">Warna Favorit:</label>
+                    <input type="color" id="input-color" name="color" value="#667eea">
+                    <div class="input-info">🌈 Browser menampilkan color picker native</div>
+                    <div class="code-preview">&lt;input type="color" value="#667eea"&gt;</div>
+                    <div class="output-display" id="color-output">Warna terpilih: <span id="color-value">#667eea</span></div>
+                </div>
+
+                <div class="input-demo">
+                    <h3>📁 File <span class="feature-badge">Upload</span></h3>
+                    <p>File upload dengan filter tipe file dan multiple selection.</p>
+                    <label for="input-file">Upload Gambar:</label>
+                    <input type="file" id="input-file" name="file" accept="image/*" multiple>
+                    <div class="input-info">📎 Accept attribute memfilter tipe file</div>
+                    <div class="code-preview">&lt;input type="file" accept="image/*" multiple&gt;</div>
+                    <div class="output-display" id="file-output">File yang dipilih: <span id="file-list">Belum ada file</span></div>
+                </div>
+
+                <div class="input-demo">
+                    <h3>🔘 Radio <span class="feature-badge">Choice</span></h3>
+                    <p>Pilihan tunggal dari beberapa opsi (gunakan name yang sama).</p>
+                    <label>Jenis Kelamin:</label>
+                    <div style="display: flex; gap: 15px;">
+                        <label style="display: flex; align-items: center; font-weight: normal;">
+                            <input type="radio" id="radio-pria" name="gender" value="pria" style="width: auto; margin-right: 5px;">
+                            Pria
+                        </label>
+                        <label style="display: flex; align-items: center; font-weight: normal;">
+                            <input type="radio" id="radio-wanita" name="gender" value="wanita" style="width: auto; margin-right: 5px;">
+                            Wanita
+                        </label>
+                    </div>
+                    <div class="input-info">🔘 Name sama = satu group, hanya satu yang bisa dipilih</div>
+                    <div class="code-preview">&lt;input type="radio" name="gender" value="pria"&gt;</div>
+                </div>
+
+                <div class="input-demo">
+                    <h3>☑️ Checkbox <span class="feature-badge">Multiple</span></h3>
+                    <p>Multiple selection, bisa pilih lebih dari satu opsi.</p>
+                    <label>Hobi (pilih beberapa):</label>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <label style="display: flex; align-items: center; font-weight: normal;">
+                            <input type="checkbox" name="hobi" value="membaca" style="width: auto; margin-right: 5px;">
+                            Membaca
+                        </label>
+                        <label style="display: flex; align-items: center; font-weight: normal;">
+                            <input type="checkbox" name="hobi" value="olahraga" style="width: auto; margin-right: 5px;">
+                            Olahraga
+                        </label>
+                        <label style="display: flex; align-items: center; font-weight: normal;">
+                            <input type="checkbox" name="hobi" value="musik" style="width: auto; margin-right: 5px;">
+                            Musik
+                        </label>
+                        <label style="display: flex; align-items: center; font-weight: normal;">
+                            <input type="checkbox" name="hobi" value="traveling" style="width: auto; margin-right: 5px;">
+                            Traveling
+                        </label>
+                    </div>
+                    <div class="input-info">☑️ Bisa multiple selection, name bisa sama atau beda</div>
+                    <div class="code-preview">&lt;input type="checkbox" name="hobi" value="membaca"&gt;</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Hidden and Submit Types -->
+        <div class="input-section">
+            <h2>🔧 Control Input Types</h2>
+            <div class="input-grid">
+
+                <div class="input-demo">
+                    <h3>🔒 Hidden <span class="feature-badge">System</span></h3>
+                    <p>Data tersembunyi yang dikirim bersama form (tidak terlihat user).</p>
+                    <input type="hidden" id="input-hidden" name="user_id" value="12345">
+                    <div class="input-info">👻 Input tidak terlihat, tapi data tetap dikirim</div>
+                    <div class="code-preview">&lt;input type="hidden" name="user_id" value="12345"&gt;</div>
+                    <p style="color: #666; font-style: italic;">Hidden input dengan value "12345" sudah ada di form ini.</p>
+                </div>
+
+                <div class="input-demo">
+                    <h3>📤 Submit <span class="feature-badge">Action</span></h3>
+                    <p>Tombol untuk mengirim form data ke server.</p>
+                    <input type="submit" value="🚀 Kirim Form" class="demo-button" style="width: 100%; cursor: pointer;">
+                    <div class="input-info">📤 Trigger form submission saat diklik</div>
+                    <div class="code-preview">&lt;input type="submit" value="Kirim Form"&gt;</div>
+                </div>
+
+                <div class="input-demo">
+                    <h3>🔄 Reset <span class="feature-badge">Action</span></h3>
+                    <p>Tombol untuk mengembalikan form ke nilai awal.</p>
+                    <input type="reset" value="🔄 Reset Form" class="demo-button" style="width: 100%; background: #6c757d; cursor: pointer;">
+                    <div class="input-info">🔄 Reset semua field ke nilai default</div>
+                    <div class="code-preview">&lt;input type="reset" value="Reset Form"&gt;</div>
+                </div>
+
+                <div class="input-demo">
+                    <h3>🖱️ Button <span class="feature-badge">Custom</span></h3>
+                    <p>Button biasa untuk JavaScript action (tidak submit form).</p>
+                    <input type="button" value="🎭 Custom Action" class="demo-button" onclick="customAction()" style="width: 100%; cursor: pointer;">
+                    <div class="input-info">🎭 Tidak submit form, biasa untuk JavaScript</div>
+                    <div class="code-preview">&lt;input type="button" onclick="customAction()"&gt;</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Interactive Demo -->
+        <div class="input-section">
+            <h2>🧪 Interactive Testing Area</h2>
+            <div style="background: white; padding: 25px; border-radius: 8px; border: 2px solid #667eea;">
+                <h3>Test Form dengan Berbagai Input Types</h3>
+                <form id="test-form" style="margin: 0;">
+                    <div class="input-grid">
+                        <div>
+                            <label for="test-name">Nama Lengkap:</label>
+                            <input type="text" id="test-name" name="nama" required placeholder="Wajib diisi">
+                        </div>
+                        <div>
+                            <label for="test-email">Email:</label>
+                            <input type="email" id="test-email" name="email" required placeholder="Format email valid">
+                        </div>
+                        <div>
+                            <label for="test-age">Umur:</label>
+                            <input type="number" id="test-age" name="umur" min="13" max="120" placeholder="13-120">
+                        </div>
+                        <div>
+                            <label for="test-birth">Tanggal Lahir:</label>
+                            <input type="date" id="test-birth" name="tanggal_lahir">
+                        </div>
+                    </div>
+                    <button type="submit" class="demo-button" style="width: 100%; margin-top: 15px;">
+                        ✅ Test Validation
+                    </button>
+                </form>
+                <div id="form-result" class="output-display" style="display: none; margin-top: 15px;">
+                    <strong>Form Data:</strong>
+                    <pre id="form-data"></pre>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 15px;">
+            <h2>🎉 Fantastic!</h2>
+            <p>Anda telah menjelajahi semua jenis input HTML5!</p>
+            <p><strong>Selanjutnya:</strong> <a href="form-validation-demo.html" style="color: #fff; text-decoration: underline;">Demo Validasi Form</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 5</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Real-time validation dan interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Email validation demo
+            const emailInput = document.getElementById('input-email');
+            const emailOutput = document.getElementById('email-output');
+
+            emailInput.addEventListener('input', function() {
+                const email = this.value;
+                const isValid = this.checkValidity();
+                const hasValue = email.length > 0;
+
+                if (!hasValue) {
+                    emailOutput.innerHTML = 'Ketik email untuk melihat validasi...';
+                    emailOutput.style.background = '#f8f9fa';
+                } else if (isValid) {
+                    emailOutput.innerHTML = `✅ Email valid: <strong>${email}</strong>`;
+                    emailOutput.style.background = '#d4edda';
+                } else {
+                    emailOutput.innerHTML = `❌ Format email tidak valid: <strong>${email}</strong>`;
+                    emailOutput.style.background = '#f8d7da';
+                }
+            });
+
+            // Password strength indicator
+            const passwordInput = document.getElementById('input-password');
+            const strengthSpan = document.getElementById('strength');
+
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                let strength = 'Lemah';
+                let color = '#dc3545';
+
+                if (password.length >= 8) {
+                    strength = 'Cukup';
+                    color = '#ffc107';
+                }
+                if (password.length >= 12 && /[A-Z]/.test(password) && /[0-9]/.test(password)) {
+                    strength = 'Kuat';
+                    color = '#28a745';
+                }
+                if (password.length >= 16 && /[A-Z]/.test(password) && /[0-9]/.test(password) && /[!@#$%^&*]/.test(password)) {
+                    strength = 'Sangat Kuat';
+                    color = '#007bff';
+                }
+
+                strengthSpan.textContent = password.length > 0 ? strength : '-';
+                strengthSpan.style.color = color;
+            });
+
+            // Number input real-time display
+            const numberInput = document.getElementById('input-number');
+            const numberValue = document.getElementById('number-value');
+
+            numberInput.addEventListener('input', function() {
+                const value = this.value;
+                const isValid = this.checkValidity();
+
+                if (value) {
+                    numberValue.textContent = value + (isValid ? ' ✅' : ' ❌');
+                    numberValue.style.color = isValid ? '#28a745' : '#dc3545';
+                } else {
+                    numberValue.textContent = '-';
+                    numberValue.style.color = '#6c757d';
+                }
+            });
+
+            // Range slider value display
+            const rangeInput = document.getElementById('input-range');
+            const rangeValueSpan = document.getElementById('range-value');
+
+            rangeInput.addEventListener('input', function() {
+                rangeValueSpan.textContent = this.value;
+            });
+
+            // Color picker real-time update
+            const colorInput = document.getElementById('input-color');
+            const colorValue = document.getElementById('color-value');
+
+            colorInput.addEventListener('change', function() {
+                const color = this.value;
+                colorValue.textContent = color;
+                colorValue.style.color = color;
+                document.getElementById('color-output').style.borderLeft = `5px solid ${color}`;
+            });
+
+            // File input change handler
+            const fileInput = document.getElementById('input-file');
+            const fileList = document.getElementById('file-list');
+
+            fileInput.addEventListener('change', function() {
+                const files = this.files;
+                if (files.length === 0) {
+                    fileList.textContent = 'Belum ada file';
+                } else {
+                    const fileNames = Array.from(files).map(file =>
+                        `${file.name} (${(file.size/1024).toFixed(1)}KB)`
+                    ).join(', ');
+                    fileList.innerHTML = `<strong>${files.length} file:</strong> ${fileNames}`;
+                }
+            });
+
+            // Test form submission
+            const testForm = document.getElementById('test-form');
+            const formResult = document.getElementById('form-result');
+            const formData = document.getElementById('form-data');
+
+            testForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const data = new FormData(this);
+                const jsonData = {};
+
+                for (let [key, value] of data.entries()) {
+                    jsonData[key] = value;
+                }
+
+                formData.textContent = JSON.stringify(jsonData, null, 2);
+                formResult.style.display = 'block';
+                formResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+
+        });
+
+        // Custom button action
+        function customAction() {
+            alert('🎉 Custom JavaScript action triggered!\n\nIni contoh penggunaan input type="button" yang tidak men-submit form, tapi menjalankan JavaScript function.');
+        }
+
+        // Console welcome
+        console.log('🎯 HTML5 Input Types Demo loaded!');
+        console.log('✨ Interactive validation enabled');
+        console.log('📱 Mobile-optimized input types ready');
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            console.log(`⚡ Page loaded in ${(performance.now()).toFixed(2)}ms`);
+        });
+    </script>
+</body>
+</html>
