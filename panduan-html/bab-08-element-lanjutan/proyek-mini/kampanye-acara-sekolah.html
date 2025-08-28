@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kampanye Acara Sekolah</title>
+  <meta name="description" content="Kampanye acara sekolah dengan layout semantik, media, form, dan peta.">
+  <meta property="og:title" content="Acara Sekolah">
+  <meta property="og:description" content="Yuk ikut acara sekolah!">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Acara+Sekolah">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root{--primary:#0ea5e9;--dark:#111827}
+    body{font-family:system-ui,Arial,sans-serif;margin:0;line-height:1.6}
+    header,nav,main,aside,footer{padding:16px}
+    header{background:var(--primary);color:#fff}
+    nav{background:#0284c7;color:#fff}
+    a{color:#fff}
+    .grid{display:grid;gap:16px;grid-template-columns:2fr 1fr;padding:16px}
+    article,aside{background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px}
+    .hero{max-width:100%;height:auto;border-radius:8px}
+    .frame{width:100%;height:280px;border:0;border-radius:8px}
+    label{display:block;margin-top:8px}
+    input,button{padding:8px;margin-top:4px;width:100%}
+    :focus{outline:3px solid #3b82f6;outline-offset:2px}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#konten">Lewati ke konten</a>
+  <header>
+    <h1>Festival Kreativitas Siswa</h1>
+    <p>Sabtu, 21 September 2025</p>
+  </header>
+  <nav aria-label="Navigasi utama">
+    <a href="#acara">Tentang</a> | <a href="#daftar">Daftar</a> | <a href="#lokasi">Lokasi</a>
+  </nav>
+  <main id="konten" class="grid">
+    <article id="acara">
+      <h2>Tentang Acara</h2>
+      <img class="hero" src="https://via.placeholder.com/800x400.png?text=Festival" alt="Poster festival">
+      <video controls poster="https://via.placeholder.com/640x360/0F9D58/FFFFFF?text=Teaser" preload="metadata" style="width:100%;height:auto;margin-top:8px">
+        <source src="teaser.mp4" type="video/mp4">
+        <track src="subtitle-id.vtt" kind="subtitles" srclang="id" label="Indonesia" default>
+      </video>
+    </article>
+    <aside>
+      <section id="daftar" aria-labelledby="judul-daftar">
+        <h2 id="judul-daftar">Daftar Kehadiran</h2>
+        <form action="#" method="post" autocomplete="on">
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" required aria-describedby="hint-nama">
+          <div id="hint-nama" class="hint">Nama sesuai kartu pelajar.</div>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="nama@sekolah.id">
+
+          <label for="hadir">Akan hadir?</label>
+          <input list="opsi-hadir" id="hadir" name="hadir" placeholder="Ya">
+          <datalist id="opsi-hadir">
+            <option value="Ya"></option>
+            <option value="Tidak"></option>
+            <option value="Mungkin"></option>
+          </datalist>
+
+          <button type="submit">Kirim</button>
+        </form>
+      </section>
+      <section id="lokasi" style="margin-top:16px">
+        <h2>Lokasi</h2>
+        <iframe class="frame" title="Lokasi Festival" loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d106.845!3d-6.208!2m3!1f0!2f0!3f0!"></iframe>
+      </section>
+    </aside>
+  </main>
+  <footer>
+    <small>&copy; 2025 OSIS SMA Contoh</small>
+  </footer>
+</body>
+</html>
+

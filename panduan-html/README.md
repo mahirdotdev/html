@@ -78,7 +78,7 @@ panduan-html/
 ├── bab-05-form-input/
 ├── bab-06-atribut-form/
 ├── bab-07-non-semantic/
-├── bab-08-semantic/
+├── bab-08-element-lanjutan/
 ├── bab-09-atribut-id-class/
 ├── proyek-mini/
 ├── latihan/

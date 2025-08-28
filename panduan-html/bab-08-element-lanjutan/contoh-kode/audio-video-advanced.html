@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bab 8.1 - Audio & Video Advanced</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:24px;line-height:1.6}
+    .wrap{max-width:900px;margin:auto}
+    .player{margin:16px 0}
+    .video{max-width:100%;height:auto}
+  </style>
+  <!-- Screenshot placeholder: assets/bab8/audio-video.png -->
+  <!-- Diagram placeholder: assets/bab8/video-sources-diagram.png -->
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Demo audio dan video HTML5 dengan multi-source dan caption.">
+  <meta property="og:title" content="Demo Audio Video HTML5">
+  <meta property="og:description" content="Contoh penggunaan audio dan video modern.">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Audio & Video Advanced</h1>
+
+    <h2>Audio dengan Multi-source</h2>
+    <div class="player">
+      <audio controls preload="metadata">
+        <source src="mars-sekolah.mp3" type="audio/mpeg">
+        <source src="mars-sekolah.ogg" type="audio/ogg">
+        Peramban Anda tidak mendukung audio.
+        <a href="mars-sekolah.mp3">Unduh audio</a>
+      </audio>
+    </div>
+
+    <h2>Video dengan Poster dan Subtitle</h2>
+    <div class="player">
+      <video class="video" controls
+             poster="https://via.placeholder.com/640x360/0F9D58/FFFFFF?text=Teaser+Acara"
+             preload="metadata">
+        <source src="teaser.mp4" type="video/mp4">
+        <source src="teaser.webm" type="video/webm">
+        <track src="subtitle-id.vtt" kind="subtitles" srclang="id" label="Indonesia" default>
+        Peramban tidak mendukung video.
+      </video>
+    </div>
+  </div>
+</body>
+</html>
+

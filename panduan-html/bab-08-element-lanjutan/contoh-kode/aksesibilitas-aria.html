@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bab 8.7 - Aksesibilitas ARIA</title>
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;margin:24px}
+    button{padding:8px 12px}
+    [hidden]{display:none}
+    :focus{outline:3px solid #3b82f6;outline-offset:2px}
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const btn=document.getElementById('tombol-faq1');
+      const panel=document.getElementById('faq1');
+      btn.addEventListener('click',()=>{
+        const expanded=btn.getAttribute('aria-expanded')==='true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        panel.hidden=expanded;
+      });
+    });
+  </script>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <a href="#konten" class="skip">Lewati ke konten</a>
+  <h1>Accordion Aksesibel</h1>
+  <button aria-expanded="false" aria-controls="faq1" id="tombol-faq1">Apa itu HTML?</button>
+  <div id="faq1" role="region" aria-labelledby="tombol-faq1" hidden>
+    <p>HTML adalah HyperText Markup Language …</p>
+  </div>
+  <div id="konten"></div>
+</body>
+</html>
+

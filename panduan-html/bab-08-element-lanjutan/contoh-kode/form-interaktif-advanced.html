@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bab 8.2 - Form Interaktif</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:24px;line-height:1.6}
+    form{max-width:520px}
+    label{display:block;margin-top:12px}
+    input,select,button{padding:8px;margin-top:4px;width:100%}
+    .hint{font-size:.9em;color:#555}
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <h1>Form Pendaftaran Ekstrakurikuler</h1>
+  <form action="#" method="post" autocomplete="on">
+    <fieldset>
+      <legend>Data Siswa</legend>
+      <label for="nama">Nama Lengkap</label>
+      <input id="nama" name="nama" type="text" required aria-describedby="hint-nama">
+      <div class="hint" id="hint-nama">Gunakan nama asli sesuai kartu pelajar.</div>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="nama@sekolah.id" required>
+
+      <label for="tgl">Tanggal Lahir</label>
+      <input id="tgl" name="tgl" type="date" min="2005-01-01">
+
+      <label for="ekskul">Pilih Ekstrakurikuler</label>
+      <input list="opsi" id="ekskul" name="ekskul" placeholder="Basket">
+      <datalist id="opsi">
+        <option value="Basket"></option>
+        <option value="Paduan Suara"></option>
+        <option value="Paskibra"></option>
+        <option value="Pramuka"></option>
+      </datalist>
+
+      <button type="submit">Daftar</button>
+    </fieldset>
+  </form>
+</body>
+</html>
+

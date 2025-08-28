@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bab 8.3 - Layout Semantik Modern</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial,sans-serif;margin:0}
+    header,nav,main,aside,footer{padding:16px}
+    header{background:#0ea5e9;color:#fff}
+    nav{background:#0284c7;color:#fff}
+    .container{display:grid;grid-template-columns:3fr 1fr;gap:16px;padding:16px}
+    footer{background:#111827;color:#fff}
+    article{background:#f9fafb;padding:16px;border:1px solid #e5e7eb;border-radius:8px}
+    aside{background:#f1f5f9}
+    a{color:#fff}
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <a href="#main" style="position:absolute;left:-9999px;top:-9999px">Lewati ke konten</a>
+  <header>
+    <h1>Portal Sekolah</h1>
+  </header>
+  <nav aria-label="Navigasi utama">
+    <a href="#">Beranda</a> | <a href="#">Pengumuman</a> | <a href="#">Kegiatan</a>
+  </nav>
+  <main id="main" class="container">
+    <article>
+      <header><h2>Judul Artikel</h2></header>
+      <section>
+        <h3>Subtopik</h3>
+        <p>Konten artikel menggunakan struktur semantik.</p>
+      </section>
+      <footer><small>Dipublikasikan pada <time datetime="2025-08-01">1 Agustus 2025</time></small></footer>
+    </article>
+    <aside>
+      <h2>Sidebar</h2>
+      <p>Info terkait.</p>
+    </aside>
+  </main>
+  <footer>
+    <p>&copy; 2025 SMA Contoh</p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bab 8.8 - Responsive Elements</title>
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;margin:24px}
+    .hero{max-width:100%;height:auto;border-radius:8px}
+    .table-wrap{overflow:auto;border:1px solid #e5e7eb;border-radius:8px}
+    table{border-collapse:collapse;width:600px}
+    td,th{border:1px solid #e5e7eb;padding:8px}
+  </style>
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <h1>Responsive Elements</h1>
+  <img class="hero" alt="Gambar hero responsif"
+       src="https://via.placeholder.com/800x400.png?text=Hero"
+       srcset="https://via.placeholder.com/400x200.png?text=Hero+400 400w,
+               https://via.placeholder.com/800x400.png?text=Hero+800 800w"
+       sizes="(max-width: 600px) 90vw, 800px"
+       loading="lazy">
+
+  <h2>Tabel Dapat Digeser</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Mata Pelajaran</th><th>Guru</th><th>Ruang</th><th>Jam</th></tr></thead>
+      <tbody>
+        <tr><td>Matematika</td><td>Pak Budi</td><td>101</td><td>07:00</td></tr>
+        <tr><td>Biologi</td><td>Bu Sari</td><td>202</td><td>09:00</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+
