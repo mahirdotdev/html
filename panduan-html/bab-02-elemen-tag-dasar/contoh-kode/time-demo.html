@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tag Time HTML</title>
+    <style>
+        .example {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #0066cc;
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 5px;
+            font-family: monospace;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        time {
+            background: #e6f3ff;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Demo Tag &lt;time&gt; HTML</h1>
+
+    <!-- Pengenalan tag time -->
+    <h2>1. Apa itu Tag &lt;time&gt;?</h2>
+    <p>Tag <code>&lt;time&gt;</code> digunakan untuk menandai waktu, tanggal, atau durasi dalam format yang dapat dipahami oleh mesin (machine-readable) namun tetap dapat dibaca manusia.</p>
+
+    <!-- Format tanggal -->
+    <h2>2. Format Tanggal (YYYY-MM-DD)</h2>
+    <div class="example">
+        <p>Hari ini adalah <time datetime="2024-01-15">15 Januari 2024</time></p>
+        <p>Indonesia merdeka pada <time datetime="1945-08-17">17 Agustus 1945</time></p>
+        <p>Tahun baru: <time datetime="2024-01-01">1 Januari 2024</time></p>
+        <p>Hari Valentine: <time datetime="2024-02-14">14 Februari 2024</time></p>
+
+        <div class="code">
+            &lt;time datetime="2024-01-15"&gt;15 Januari 2024&lt;/time&gt;
+        </div>
+    </div>
+
+    <!-- Format waktu -->
+    <h2>3. Format Waktu (HH:MM atau HH:MM:SS)</h2>
+    <div class="example">
+        <p>Sekolah mulai pukul <time datetime="07:00">7 pagi</time></p>
+        <p>Istirahat pada <time datetime="09:30">09:30</time></p>
+        <p>Pulang sekolah <time datetime="14:00:00">2 siang</time></p>
+        <p>Waktu maghrib sekitar <time datetime="18:15">18:15</time></p>
+
+        <div class="code">
+            &lt;time datetime="07:00"&gt;7 pagi&lt;/time&gt;<br>
+            &lt;time datetime="14:00:00"&gt;2 siang&lt;/time&gt;
+        </div>
+    </div>
+
+    <!-- Format datetime lengkap -->
+    <h2>4. Format Datetime Lengkap (YYYY-MM-DDTHH:MM:SS)</h2>
+    <div class="example">
+        <p>Ujian dimulai pada <time datetime="2024-03-15T08:00:00">15 Maret 2024, pukul 08:00</time></p>
+        <p>Deadline tugas: <time datetime="2024-02-28T23:59:59">28 Februari 2024, 23:59</time></p>
+        <p>Workshop HTML: <time datetime="2024-01-20T13:00:00">20 Januari 2024, 13:00</time></p>
+
+        <div class="code">
+            &lt;time datetime="2024-03-15T08:00:00"&gt;15 Maret 2024, pukul 08:00&lt;/time&gt;
+        </div>
+    </div>
+
+    <!-- Dengan timezone -->
+    <h2>5. Dengan Timezone</h2>
+    <div class="example">
+        <p>Konferensi global: <time datetime="2024-06-10T14:00:00+07:00">10 Juni 2024, 14:00 WIB</time></p>
+        <p>Meeting dengan client US: <time datetime="2024-01-25T09:00:00-05:00">25 Januari 2024, 9 AM EST</time></p>
+        <p>Webinar: <time datetime="2024-02-15T19:00:00Z">15 Februari 2024, 19:00 UTC</time></p>
+
+        <div class="code">
+            &lt;time datetime="2024-06-10T14:00:00+07:00"&gt;10 Juni 2024, 14:00 WIB&lt;/time&gt;
+        </div>
+    </div>
+
+    <!-- Durasi -->
+    <h2>6. Format Durasi</h2>
+    <div class="example">
+        <p>Pelajaran HTML berlangsung selama <time datetime="PT2H">2 jam</time></p>
+        <p>Film ini berdurasi <time datetime="PT2H30M">2 jam 30 menit</time></p>
+        <p>Lagu favorit saya <time datetime="PT3M45S">3 menit 45 detik</time></p>
+        <p>Liburan semester: <time datetime="P2W">2 minggu</time></p>
+        <p>Proyek ini memakan waktu <time datetime="P1M2W3D">1 bulan 2 minggu 3 hari</time></p>
+
+        <div class="code">
+            &lt;time datetime="PT2H30M"&gt;2 jam 30 menit&lt;/time&gt;<br>
+            &lt;time datetime="P2W"&gt;2 minggu&lt;/time&gt;
+        </div>
+
+        <h3>Format Durasi ISO 8601:</h3>
+        <ul>
+            <li><strong>P</strong> = Period (dimulai dengan P)</li>
+            <li><strong>Y</strong> = Years (tahun)</li>
+            <li><strong>M</strong> = Months (bulan) atau Minutes (menit, setelah T)</li>
+            <li><strong>W</strong> = Weeks (minggu)</li>
+            <li><strong>D</strong> = Days (hari)</li>
+            <li><strong>T</strong> = Time separator</li>
+            <li><strong>H</strong> = Hours (jam)</li>
+            <li><strong>S</strong> = Seconds (detik)</li>
+        </ul>
+    </div>
+
+    <!-- Use cases praktis -->
+    <h2>7. Use Cases Praktis</h2>
+
+    <h3>📰 Artikel Blog</h3>
+    <div class="example">
+        <article>
+            <h4>Tips Belajar HTML untuk Pemula</h4>
+            <p>
+                <small>
+                    Published: <time datetime="2024-01-10">10 Januari 2024</time> |
+                    Updated: <time datetime="2024-01-15">15 Januari 2024</time> |
+                    Reading time: <time datetime="PT5M">5 menit</time>
+                </small>
+            </p>
+        </article>
+    </div>
+
+    <h3>📅 Event Schedule</h3>
+    <div class="example">
+        <h4>🎓 Workshop "HTML untuk SMA"</h4>
+        <p><strong>Tanggal:</strong> <time datetime="2024-02-20">20 Februari 2024</time></p>
+        <p><strong>Waktu:</strong> <time datetime="09:00">09:00</time> - <time datetime="12:00">12:00</time> WIB</p>
+        <p><strong>Durasi:</strong> <time datetime="PT3H">3 jam</time></p>
+        <p><strong>Registrasi ditutup:</strong> <time datetime="2024-02-15T17:00:00+07:00">15 Februari 2024, 17:00 WIB</time></p>
+    </div>
+
+    <h3>📚 Deadline Tugas</h3>
+    <div class="example">
+        <h4>📝 Tugas HTML Dasar</h4>
+        <p><strong>Diberikan:</strong> <time datetime="2024-01-15">15 Januari 2024</time></p>
+        <p><strong>Deadline:</strong> <time datetime="2024-01-29T23:59:59">29 Januari 2024, 23:59</time></p>
+        <p><strong>Estimasi waktu:</strong> <time datetime="PT4H">4 jam</time> untuk menyelesaikan</p>
+    </div>
+
+    <h3>🕐 Jadwal Harian</h3>
+    <div class="example">
+        <h4>Jadwal Belajar Mandiri</h4>
+        <ul>
+            <li><time datetime="06:00">06:00</time> - Bangun dan persiapan</li>
+            <li><time datetime="07:00">07:00</time> - Sarapan</li>
+            <li><time datetime="08:00">08:00</time> - Berangkat sekolah</li>
+            <li><time datetime="14:00">14:00</time> - Pulang sekolah</li>
+            <li><time datetime="15:00">15:00</time> - Istirahat</li>
+            <li><time datetime="16:00">16:00</time> - Belajar HTML (<time datetime="PT1H30M">1.5 jam</time>)</li>
+            <li><time datetime="19:00">19:00</time> - Makan malam</li>
+            <li><time datetime="20:00">20:00</time> - Mengerjakan PR (<time datetime="PT2H">2 jam</time>)</li>
+        </ul>
+    </div>
+
+    <!-- Timeline project -->
+    <h2>8. Timeline Project</h2>
+    <div class="example">
+        <h3>🚀 Timeline Belajar Web Development</h3>
+        <ol>
+            <li><strong>Fase 1 - HTML Basics</strong>
+                <ul>
+                    <li>Mulai: <time datetime="2024-01-01">1 Januari 2024</time></li>
+                    <li>Target selesai: <time datetime="2024-01-31">31 Januari 2024</time></li>
+                    <li>Durasi: <time datetime="P1M">1 bulan</time></li>
+                </ul>
+            </li>
+            <li><strong>Fase 2 - CSS Styling</strong>
+                <ul>
+                    <li>Mulai: <time datetime="2024-02-01">1 Februari 2024</time></li>
+                    <li>Target selesai: <time datetime="2024-03-15">15 Maret 2024</time></li>
+                    <li>Durasi: <time datetime="P1M2W">1 bulan 2 minggu</time></li>
+                </ul>
+            </li>
+            <li><strong>Fase 3 - JavaScript Basics</strong>
+                <ul>
+                    <li>Mulai: <time datetime="2024-03-16">16 Maret 2024</time></li>
+                    <li>Target selesai: <time datetime="2024-05-31">31 Mei 2024</time></li>
+                    <li>Durasi: <time datetime="P2M2W">2 bulan 2 minggu</time></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Format khusus -->
+    <h2>9. Format Khusus</h2>
+    <div class="example">
+        <h3>Hanya Tahun:</h3>
+        <p>Saya lahir tahun <time datetime="2008">2008</time></p>
+
+        <h3>Hanya Bulan-Tahun:</h3>
+        <p>Lulus SMA: <time datetime="2025-06">Juni 2025</time></p>
+
+        <h3>Minggu (YYYY-Www):</h3>
+        <p>Ujian tengah semester: <time datetime="2024-W12">Minggu ke-12 tahun 2024</time></p>
+
+        <h3>Hari dalam Tahun (YYYY-DDD):</h3>
+        <p>Hari ke-100: <time datetime="2024-100">Hari ke-100 tahun 2024</time></p>
+
+        <div class="code">
+            &lt;time datetime="2008"&gt;2008&lt;/time&gt;<br>
+            &lt;time datetime="2025-06"&gt;Juni 2025&lt;/time&gt;
+        </div>
+    </div>
+
+    <!-- Accessibility dan SEO -->
+    <h2>10. Benefits untuk SEO dan Accessibility</h2>
+    <div class="example">
+        <h3>✅ Benefits:</h3>
+        <ul>
+            <li><strong>SEO:</strong> Search engines dapat memahami waktu/tanggal dengan lebih baik</li>
+            <li><strong>Accessibility:</strong> Screen readers dapat membaca waktu dengan format yang benar</li>
+            <li><strong>Structured Data:</strong> Dapat digunakan untuk rich snippets</li>
+            <li><strong>JavaScript:</strong> Mudah dimanipulasi dengan JavaScript Date API</li>
+            <li><strong>Internationalization:</strong> Browser dapat menampilkan waktu sesuai locale user</li>
+        </ul>
+
+        <h3>🔧 JavaScript Integration:</h3>
+        <div class="code">
+            const timeElement = document.querySelector('time');<br>
+            const date = new Date(timeElement.dateTime);<br>
+            console.log(date.toLocaleDateString());
+        </div>
+    </div>
+
+    <!-- Best practices -->
+    <h2>11. Best Practices</h2>
+    <div class="example">
+        <h3>✅ Good:</h3>
+        <ul>
+            <li>Selalu gunakan atribut <code>datetime</code> untuk machine-readable format</li>
+            <li>Buat konten yang human-readable di dalam tag</li>
+            <li>Gunakan format ISO 8601 untuk konsistensi</li>
+            <li>Tambahkan timezone untuk event global</li>
+        </ul>
+
+        <h3>❌ Avoid:</h3>
+        <ul>
+            <li>Format tanggal yang ambigu (01/02/2024 - apakah 1 Feb atau 2 Jan?)</li>
+            <li>Missing datetime attribute untuk dates yang penting</li>
+            <li>Inconsistent date formats dalam satu halaman</li>
+        </ul>
+
+        <h3>📝 Examples:</h3>
+        <div style="background: #e6ffe6; padding: 10px; margin: 5px 0;">
+            <strong>✅ Good:</strong><br>
+            <code>&lt;time datetime="2024-01-15T14:30:00+07:00"&gt;15 Januari 2024, 14:30 WIB&lt;/time&gt;</code>
+        </div>
+
+        <div style="background: #ffe6e6; padding: 10px; margin: 5px 0;">
+            <strong>❌ Bad:</strong><br>
+            <code>&lt;time&gt;15/1/24 at 2:30 PM&lt;/time&gt;</code> (no datetime attribute)
+        </div>
+    </div>
+
+    <hr>
+    <p><small><em>Demo ini menunjukkan berbagai penggunaan tag &lt;time&gt; HTML untuk menandai waktu, tanggal, dan durasi secara semantic.</em></small></p>
+</body>
+</html>

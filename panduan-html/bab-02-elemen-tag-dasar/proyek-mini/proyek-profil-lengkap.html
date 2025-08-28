@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil lengkap siswa dengan berbagai elemen HTML untuk proyek Bab 2">
+    <meta name="author" content="[Nama Anda]">
+    <meta name="keywords" content="profil siswa, HTML, web development, belajar">
+    <title>Profil Lengkap - [Nama Anda]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            background: #333;
+            border-radius: 5px;
+        }
+        nav ul li {
+            display: inline-block;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav ul li a:hover {
+            background: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background: #f2f2f2;
+        }
+        .center { text-align: center; }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 5px solid #ccc;
+            margin: 1em 10px;
+            padding: 0.5em 10px;
+            font-style: italic;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        details {
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+            background: #e9e9e9;
+            margin: -10px -10px 10px -10px;
+            border-radius: 5px 5px 0 0;
+        }
+        .highlight {
+            background: yellow;
+            padding: 2px;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #ccc, transparent);
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>🎓 Profil Lengkap: [Nama Anda]</h1>
+            <p><em>Siswa SMA yang passionate dengan <mark>teknologi web</mark> dan programming</em></p>
+        </header>
+
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#tentang">Tentang Saya</a></li>
+                <li><a href="#hobi">Hobi & Minat</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+                <li><a href="#jadwal">Jadwal</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+
+        <!-- About Section -->
+        <section id="tentang">
+            <h2>👋 Tentang Saya</h2>
+            <p>Halo! Saya <strong>[Nama Anda]</strong>, siswa kelas <strong>[Kelas Anda]</strong>
+            di <em>[Nama Sekolah Anda]</em>. Saya sangat <mark>tertarik dengan teknologi</mark>
+            dan sedang belajar web development untuk mempersiapkan masa depan di bidang IT.</p>
+
+            <p>Menurut saya, seperti yang dikatakan <q>Steve Jobs: Innovation distinguishes
+            between a leader and a follower.</q> Oleh karena itu, saya berusaha untuk selalu
+            berinovasi dan belajar hal-hal baru, terutama di bidang teknologi.</p>
+
+            <h3>📊 Data Pribadi</h3>
+            <table>
+                <tr>
+                    <th>Nama Lengkap</th>
+                    <td>[Nama Lengkap Anda]</td>
+                </tr>
+                <tr>
+                    <th>Kelas</th>
+                    <td>[Kelas Anda]</td>
+                </tr>
+                <tr>
+                    <th>Sekolah</th>
+                    <td>[Nama Sekolah]</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><a href="mailto:email@example.com">email@example.com</a></td>
+                </tr>
+                <tr>
+                    <th>Mulai Belajar HTML</th>
+                    <td><time datetime="2024-01-01">1 Januari 2024</time></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Quote Section -->
+        <section>
+            <h2>💭 Quote Inspiratif</h2>
+            <blockquote>
+                <p>The best time to plant a tree was 20 years ago. The second best time is now.</p>
+                <cite>- Chinese Proverb</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>Code is like humor. When you have to explain it, it's bad.</p>
+                <cite>- Cory House</cite>
+            </blockquote>
+        </section>
+
+        <!-- Hobbies -->
+        <section id="hobi">
+            <h2>🎯 Hobi dan Minat</h2>
+
+            <h3>🔥 Hobi Utama:</h3>
+            <ul>
+                <li>💻 <strong>Programming</strong> - HTML, CSS, JavaScript (sedang belajar)</li>
+                <li>📚 <strong>Membaca</strong> - Novel fiksi ilmiah dan tutorial programming</li>
+                <li>🎮 <strong>Gaming</strong> - Strategy games dan puzzle games</li>
+                <li>🎵 <strong>Musik</strong> - Mendengarkan musik indie dan belajar gitar</li>
+                <li>🏸 <strong>Olahraga</strong> - Badminton dan jogging</li>
+            </ul>
+
+            <h3>🚀 Minat di Bidang Teknologi:</h3>
+            <ol>
+                <li><strong>Web Development</strong> - Frontend dan Backend</li>
+                <li><strong>Mobile App Development</strong> - Android dan iOS</li>
+                <li><strong>Data Science</strong> - Analisis data dan machine learning</li>
+                <li><strong>Cybersecurity</strong> - Keamanan jaringan dan ethical hacking</li>
+                <li><strong>Game Development</strong> - Membuat game sederhana</li>
+            </ol>
+
+            <!-- Programming Skills -->
+            <h3>💾 Skill Programming Saat Ini:</h3>
+            <p>Saya baru mulai belajar web development dan sudah bisa membuat halaman HTML sederhana:</p>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Website Pertama Saya&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;p&gt;Ini adalah website pertama yang saya buat!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <p>Untuk menjalankan file HTML, saya biasa menggunakan shortcut <kbd>Ctrl</kbd> + <kbd>O</kbd>
+            di browser atau extension Live Server di VS Code dengan shortcut <kbd>Alt</kbd> + <kbd>L</kbd> → <kbd>Alt</kbd> + <kbd>O</kbd>.</p>
+
+            <h3>🎯 Tools yang Saya Gunakan:</h3>
+            <dl>
+                <dt><strong>Text Editor</strong></dt>
+                <dd>Visual Studio Code dengan extension Live Server, HTML Snippets, dan Prettier</dd>
+
+                <dt><strong>Browser untuk Testing</strong></dt>
+                <dd>Google Chrome (utama) dan Mozilla Firefox untuk cross-browser testing</dd>
+
+                <dt><strong>Version Control</strong></dt>
+                <dd>Git dan GitHub untuk menyimpan project (sedang belajar)</dd>
+
+                <dt><strong>Design Tools</strong></dt>
+                <dd>Figma untuk wireframe dan mockup sederhana</dd>
+            </dl>
+        </section>
+
+        <!-- Achievements -->
+        <section id="prestasi">
+            <h2>🏆 Prestasi dan Pencapaian</h2>
+
+            <h3>📚 Prestasi Akademik:</h3>
+            <ol>
+                <li><strong>Juara 2 Olimpiade Matematika</strong> - Tingkat Sekolah
+                    <time datetime="2023-05">Mei 2023</time></li>
+                <li><strong>Peringkat 3 Besar</strong> - Ulangan Harian Fisika
+                    <time datetime="2023-09">September 2023</time></li>
+                <li><strong>Best Project Award</strong> - Tugas Akhir TIK
+                    <time datetime="2023-11">November 2023</time></li>
+                <li><strong>Sertifikat HTML Basics</strong> - Online Course
+                    <time datetime="2024-01">Januari 2024</time></li>
+            </ol>
+
+            <h3>🎭 Aktivitas Ekstrakurikuler:</h3>
+            <ol>
+                <li><strong>Anggota Klub Komputer</strong> - Sejak <time datetime="2023-08">Agustus 2023</time></li>
+                <li><strong>Volunteer Event Sekolah</strong> - Tech Fair <time datetime="2023-12">Desember 2023</time></li>
+                <li><strong>Panitia Website Sekolah</strong> - Redesign project <time datetime="2024-01">Januari 2024</time></li>
+                <li><strong>Mentor HTML untuk Junior</strong> - Peer teaching <time datetime="2024-02">Februari 2024</time></li>
+            </ol>
+
+            <h3>🏅 Sertifikat dan Course Online:</h3>
+            <table>
+                <caption>Daftar Sertifikat yang Sudah Diperoleh</caption>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Platform</th>
+                        <th>Completion Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML Fundamentals</td>
+                        <td>Codecademy</td>
+                        <td><time datetime="2024-01-15">15 Jan 2024</time></td>
+                        <td class="center">✅ Complete</td>
+                    </tr>
+                    <tr>
+                        <td>CSS Basics</td>
+                        <td>freeCodeCamp</td>
+                        <td><time datetime="2024-02-01">1 Feb 2024</time></td>
+                        <td class="center">🔄 In Progress</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript Intro</td>
+                        <td>Khan Academy</td>
+                        <td><time datetime="2024-03-01">1 Mar 2024</time></td>
+                        <td class="center">📅 Planned</td>
+                    </tr>
+                    <tr>
+                        <td>Git & GitHub</td>
+                        <td>GitHub Learning Lab</td>
+                        <td><time datetime="2024-02-15">15 Feb 2024</time></td>
+                        <td class="center">🔄 In Progress</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Schedule -->
+        <section id="jadwal">
+            <h2>📅 Jadwal Belajar Mingguan</h2>
+            <table>
+                <caption>Jadwal Belajar Mandiri di Rumah (Setelah Pulang Sekolah)</caption>
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Senin</th>
+                        <th>Selasa</th>
+                        <th>Rabu</th>
+                        <th>Kamis</th>
+                        <th>Jumat</th>
+                        <th>Weekend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><time datetime="16:00">16:00-17:00</time></td>
+                        <td>Istirahat & Snack</td>
+                        <td>Istirahat & Snack</td>
+                        <td>Istirahat & Snack</td>
+                        <td>Istirahat & Snack</td>
+                        <td>Istirahat & Snack</td>
+                        <td rowspan="3" class="center" style="background: #e6ffe6;">
+                            <strong>PROJECT TIME</strong><br>
+                            <em>Membuat website<br>atau belajar teknologi baru</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="17:00">17:00-18:30</time></td>
+                        <td>Matematika & Fisika</td>
+                        <td>HTML & CSS</td>
+                        <td>Bahasa Indonesia & Inggris</td>
+                        <td>JavaScript Tutorial</td>
+                        <td>Review & Practice</td>
+                    </tr>
+                    <tr>
+                        <td><time datetime="19:00">19:00-20:30</time></td>
+                        <td>PR Sekolah</td>
+                        <td>Coding Practice</td>
+                        <td>PR Sekolah</td>
+                        <td>Git & GitHub</td>
+                        <td>Personal Project</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>⏰ Rutinitas Harian Programming:</h3>
+            <ul>
+                <li><time datetime="06:30">06:30</time> - Bangun pagi dan morning routine</li>
+                <li><time datetime="07:00">07:00</time> - Sarapan sambil baca artikel tech</li>
+                <li><time datetime="15:00">15:00</time> - Pulang sekolah dan istirahat</li>
+                <li><time datetime="16:30">16:30</time> - <strong>Coding time</strong> (<time datetime="PT1H30M">1.5 jam</time>)</li>
+                <li><time datetime="18:00">18:00</time> - Makan malam dan family time</li>
+                <li><time datetime="20:00">20:00</time> - PR dan belajar sekolah (<time datetime="PT2H">2 jam</time>)</li>
+                <li><time datetime="22:00">22:00</time> - Personal project atau reading time</li>
+            </ul>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline">
+            <h2>🚀 Timeline Belajar Web Development</h2>
+
+            <h3>📈 Progress Yang Sudah Dicapai:</h3>
+            <ul>
+                <li><time datetime="2024-01-01">1 Januari 2024</time> - <strong>Start:</strong> Mulai belajar HTML dari nol</li>
+                <li><time datetime="2024-01-15">15 Januari 2024</time> - <strong>Milestone:</strong> Menguasai HTML dasar (tags, structure)</li>
+                <li><time datetime="2024-01-25">25 Januari 2024</time> - <strong>Achievement:</strong> Membuat website pertama</li>
+                <li><time datetime="2024-02-01">1 Februari 2024</time> - <strong>Progress:</strong> Mulai belajar CSS styling</li>
+            </ul>
+
+            <h3>🎯 Target Ke Depan:</h3>
+            <ol>
+                <li><strong>Fase HTML Lanjutan</strong>
+                    <ul>
+                        <li>Target: <time datetime="2024-02-15">15 Februari 2024</time></li>
+                        <li>Durasi: <time datetime="P2W">2 minggu</time></li>
+                        <li>Focus: Forms, multimedia, semantic HTML</li>
+                    </ul>
+                </li>
+                <li><strong>Fase CSS Mastery</strong>
+                    <ul>
+                        <li>Target: <time datetime="2024-04-01">1 April 2024</time></li>
+                        <li>Durasi: <time datetime="P1M2W">1 bulan 2 minggu</time></li>
+                        <li>Focus: Layout, responsive design, animations</li>
+                    </ul>
+                </li>
+                <li><strong>Fase JavaScript Fundamentals</strong>
+                    <ul>
+                        <li>Target: <time datetime="2024-07-01">1 Juli 2024</time></li>
+                        <li>Durasi: <time datetime="P3M">3 bulan</time></li>
+                        <li>Focus: DOM manipulation, events, APIs</li>
+                    </ul>
+                </li>
+                <li><strong>Fase Full-Stack Preparation</strong>
+                    <ul>
+                        <li>Target: <time datetime="2024-12-31">31 Desember 2024</time></li>
+                        <li>Durasi: <time datetime="P6M">6 bulan</time></li>
+                        <li>Focus: React/Vue, Node.js, databases</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>❓ Frequently Asked Questions</h2>
+
+            <details>
+                <summary>🤔 Mengapa saya tertarik dengan web development?</summary>
+                <div>
+                    <p>Saya tertarik dengan web development karena beberapa alasan:</p>
+                    <ul>
+                        <li><strong>Kreativitas:</strong> Bisa membuat website yang indah dan fungsional</li>
+                        <li><strong>Problem Solving:</strong> Setiap project adalah puzzle yang menarik untuk diselesaikan</li>
+                        <li><strong>Career Opportunity:</strong> Prospek karir yang bagus di era digital</li>
+                        <li><strong>Continuous Learning:</strong> Teknologi web selalu berkembang, tidak akan bosan</li>
+                        <li><strong>Impact:</strong> Bisa membuat aplikasi yang bermanfaat untuk banyak orang</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>📚 Bagaimana cara saya belajar programming?</summary>
+                <div>
+                    <h4>Metode belajar yang saya gunakan:</h4>
+                    <ol>
+                        <li><strong>70% Practice:</strong> Langsung coding dan buat project</li>
+                        <li><strong>20% Theory:</strong> Baca dokumentasi dan tutorial</li>
+                        <li><strong>10% Community:</strong> Join forum dan tanya senior</li>
+                    </ol>
+
+                    <h4>Resources favorit saya:</h4>
+                    <ul>
+                        <li>🌐 <a href="https://www.w3schools.com" target="_blank">W3Schools</a> - Tutorial dasar</li>
+                        <li>📚 <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a> - Dokumentasi lengkap</li>
+                        <li>🎥 YouTube channels: WebDevSimplified, Traversy Media</li>
+                        <li>💻 <a href="https://codepen.io" target="_blank">CodePen</a> - Eksperimen dan inspirasi</li>
+                        <li>🏆 <a href="https://freecodecamp.org" target="_blank">freeCodeCamp</a> - Structured learning</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>⏰ Bagaimana saya manage waktu antara sekolah dan coding?</summary>
+                <div>
+                    <p>Time management adalah kunci sukses belajar programming sambil sekolah:</p>
+
+                    <h4>🎯 Prioritas saya:</h4>
+                    <ol>
+                        <li><strong>Sekolah:</strong> Tetap prioritas utama, nilai harus bagus</li>
+                        <li><strong>Programming:</strong> Minimal <time datetime="PT1H">1 jam</time> per hari</li>
+                        <li><strong>Rest & Social:</strong> Balanced life itu penting</li>
+                    </ol>
+
+                    <h4>💡 Tips yang saya terapkan:</h4>
+                    <ul>
+                        <li>📱 <strong>Pomodoro Technique:</strong> <time datetime="PT25M">25 menit</time> focus, <time datetime="PT5M">5 menit</time> break</li>
+                        <li>📝 <strong>To-Do List:</strong> Prioritize tasks setiap pagi</li>
+                        <li>🚫 <strong>Time Blocking:</strong> Dedikasi waktu khusus untuk coding</li>
+                        <li>📱 <strong>Limit Social Media:</strong> Max <time datetime="PT30M">30 menit</time> per hari</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>🎯 Apa target karir saya di bidang tech?</summary>
+                <div>
+                    <h4>🚀 Short-term goals (1-2 tahun):</h4>
+                    <ul>
+                        <li>Menguasai <strong>HTML, CSS, JavaScript</strong> dengan baik</li>
+                        <li>Bisa membuat <strong>responsive websites</strong> yang professional</li>
+                        <li>Memahami <strong>version control</strong> (Git) dan deployment</li>
+                        <li>Build <strong>portfolio</strong> dengan 5-10 project</li>
+                    </ul>
+
+                    <h4>🎓 Long-term goals (3-5 tahun):</h4>
+                    <ul>
+                        <li><strong>Kuliah:</strong> Jurusan Informatika atau Sistem Informasi</li>
+                        <li><strong>Internship:</strong> Magang di startup atau tech company</li>
+                        <li><strong>Specialization:</strong> Frontend Developer atau Full-stack Developer</li>
+                        <li><strong>Entrepreneurship:</strong> Mungkin bikin startup sendiri</li>
+                    </ul>
+
+                    <h4>💼 Dream companies:</h4>
+                    <ul>
+                        <li>🚀 <strong>Tech Startups:</strong> Gojek, Tokopedia, Traveloka</li>
+                        <li>🌐 <strong>Global Companies:</strong> Google, Microsoft, Meta</li>
+                        <li>🏢 <strong>Local Companies:</strong> Bank digital, e-commerce</li>
+                        <li>🚀 <strong>Own Startup:</strong> EdTech atau FinTech</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>🤝 Bagaimana teman-teman bisa collaborate dengan saya?</summary>
+                <div>
+                    <p>Saya terbuka untuk berkolaborasi dalam berbagai project! 🚀</p>
+
+                    <h4>💡 Jenis collaboration yang saya tertarik:</h4>
+                    <ul>
+                        <li><strong>Study Group:</strong> Belajar bareng HTML/CSS/JS</li>
+                        <li><strong>Project Team:</strong> Bikin website untuk event sekolah</li>
+                        <li><strong>Code Review:</strong> Review code masing-masing</li>
+                        <li><strong>Hackathon:</strong> Ikut kompetisi programming</li>
+                        <li><strong>Teaching:</strong> Ngajarin HTML ke teman yang belum tau</li>
+                    </ul>
+
+                    <h4>📞 Cara menghubungi saya:</h4>
+                    <ul>
+                        <li>📧 Email: <a href="mailto:nama@email.com">nama@email.com</a></li>
+                        <li>💬 WhatsApp: <a href="tel:+628123456789">+62 812-3456-789</a></li>
+                        <li>📱 Instagram: <a href="https://instagram.com/username" target="_blank">@username</a></li>
+                        <li>💻 GitHub: <a href="https://github.com/username" target="_blank">github.com/username</a></li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <hr>
+
+        <!-- Contact Section -->
+        <section id="kontak">
+            <h2>📧 Kontak dan Media Sosial</h2>
+            <p>Jangan ragu untuk menghubungi saya jika ingin diskusi tentang programming, collaborate project, atau just say hi! 😊</p>
+
+            <address>
+                <strong>[Nama Lengkap Anda]</strong><br>
+                📍 [Alamat Kota Anda]<br>
+                📧 Email: <a href="mailto:nama@email.com">nama@email.com</a><br>
+                📱 WhatsApp: <a href="tel:+628123456789">+62 812-3456-789</a><br><br>
+
+                <strong>Social Media:</strong><br>
+                🔗 Instagram: <a href="https://instagram.com/username" target="_blank" rel="noopener noreferrer">@username</a><br>
+                💻 GitHub: <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">github.com/username</a><br>
+                🐦 Twitter: <a href="https://twitter.com/username" target="_blank" rel="noopener noreferrer">@username</a><br>
+                💼 LinkedIn: <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer">linkedin.com/in/username</a>
+            </address>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                <small>
+                    ✨ Halaman ini dibuat dengan ❤️ menggunakan <strong>HTML murni</strong><br>
+                    🚀 Next step: Tambahkan <em>CSS styling</em> dan <em>JavaScript interactivity</em><br>
+                    📅 Last updated: <time datetime="2024-01-15">15 Januari 2024</time> |
+                    📊 Total coding time: <time datetime="PT20H">20 jam</time>
+                </small>
+            </p>
+            <p><a href="#top" style="color: #ccc;">⬆️ Back to Top</a></p>
+        </footer>
+    </div>
+
+    <!--
+    ===========================================
+    TODO LIST untuk pengembangan selanjutnya:
+    ===========================================
+
+    1. CSS IMPROVEMENTS:
+       - Responsive design untuk mobile
+       - Better color scheme dan typography
+       - Hover effects dan animations
+       - Grid/Flexbox layout
+
+    2. JAVASCRIPT FEATURES:
+       - Dark/light mode toggle
+       - Smooth scrolling navigation
+       - Progress bar for reading
+       - Dynamic content loading
+
+    3. CONTENT ADDITIONS:
+       - Photo gallery/portfolio
+       - Blog section
+       - Testimonials dari teman
+       - Achievement badges
+
+    4. TECHNICAL OPTIMIZATIONS:
+       - SEO optimization
+       - Performance improvements
+       - Accessibility enhancements
+       - Progressive Web App features
+
+    5. SOCIAL FEATURES:
+       - Contact form
+       - Newsletter signup
+       - Social sharing buttons
+       - Comments section
+
+    ===========================================
+    HTML ELEMENTS YANG SUDAH DIGUNAKAN:
+    ===========================================
+
+    ✅ DOCTYPE dan struktur dasar HTML5
+    ✅ Meta tags lengkap (charset, viewport, description, author, keywords)
+    ✅ Semantic HTML (header, nav, section, article, aside, footer, address)
+    ✅ Heading hierarchy (h1, h2, h3, h4)
+    ✅ Paragraf dengan berbagai format text (p, strong, em, mark, small)
+    ✅ Links (internal anchor, external, email, phone, dengan target dan rel)
+    ✅ Lists (ul, ol, dl dengan dt/dd)
+    ✅ Tables dengan struktur lengkap (caption, thead, tbody, th, td, colspan, rowspan)
+    ✅ Quotes (blockquote dengan cite, q untuk inline quote)
+    ✅ Code display (pre, code, kbd untuk keyboard shortcuts)
+    ✅ Time elements dengan berbagai format datetime
+    ✅ Details/Summary untuk FAQ dan collapsible content
+    ✅ Line breaks (br) dan horizontal rules (hr)
+    ✅ Komentar HTML untuk dokumentasi
+    ✅ Inline CSS untuk basic styling
+
+    SCORE: Menggunakan hampir semua elemen HTML yang diajarkan di Bab 2! 🎉
+    -->
+
+</body>
+</html>

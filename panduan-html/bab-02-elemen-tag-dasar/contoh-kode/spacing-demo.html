@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Spacing HTML - BR dan HR</title>
+</head>
+<body>
+    <h1>Demo Tag Spacing: &lt;br&gt; dan &lt;hr&gt;</h1>
+
+    <!-- Contoh line break dengan <br> -->
+    <h2>1. Line Break dengan &lt;br&gt;</h2>
+    <p>Baris pertama<br>
+    Baris kedua<br>
+    Baris ketiga</p>
+
+    <!-- Contoh horizontal rule dengan <hr> -->
+    <h2>2. Horizontal Rule dengan &lt;hr&gt;</h2>
+    <p>Konten bagian pertama</p>
+    <hr>
+    <p>Konten bagian kedua setelah garis pemisah</p>
+
+    <!-- Penggunaan yang benar: Alamat -->
+    <h2>3. ✅ Penggunaan yang Benar - Alamat</h2>
+    <address>
+        <strong>SMA Negeri 1 Jakarta</strong><br>
+        Jl. Merdeka No. 123<br>
+        Jakarta Pusat, 10110<br>
+        Telepon: (021) 123-4567<br>
+        Email: <a href="mailto:info@sma1jakarta.sch.id">info@sma1jakarta.sch.id</a>
+    </address>
+
+    <!-- Penggunaan yang benar: Puisi -->
+    <h2>4. ✅ Penggunaan yang Benar - Puisi</h2>
+    <p>
+        <strong>Ode to HTML</strong><br><br>
+        HTML is the structure<br>
+        CSS is the style<br>
+        JavaScript adds the magic<br>
+        That makes websites worthwhile
+    </p>
+
+    <!-- Section separator dengan <hr> -->
+    <h2>5. ✅ Section Separator</h2>
+    <p>Ini adalah bagian tentang HTML basics yang mencakup struktur dasar dan tag-tag penting.</p>
+    <hr>
+    <p>Bagian selanjutnya akan membahas tentang CSS styling dan bagaimana mengintegrasikannya dengan HTML.</p>
+    <hr>
+    <p>Dan bagian terakhir akan membahas JavaScript untuk membuat website yang interaktif.</p>
+
+    <!-- Penggunaan yang SALAH -->
+    <h2>6. ❌ Penggunaan yang Salah (Jangan Ditiru)</h2>
+    <h3>Contoh yang SALAH:</h3>
+    <div style="background: #ffe6e6; padding: 10px; border: 1px solid #ff0000;">
+        <p><strong>❌ JANGAN lakukan ini:</strong></p>
+        <code>
+            &lt;p&gt;Paragraf 1&lt;/p&gt;<br>
+            &lt;br&gt;&lt;br&gt;&lt;br&gt;<br>
+            &lt;p&gt;Paragraf 2&lt;/p&gt;
+        </code>
+    </div>
+
+    <h3>Yang BENAR:</h3>
+    <div style="background: #e6ffe6; padding: 10px; border: 1px solid #00ff00;">
+        <p><strong>✅ Lakukan ini:</strong></p>
+        <code>
+            &lt;p&gt;Paragraf 1&lt;/p&gt;<br>
+            &lt;p&gt;Paragraf 2&lt;/p&gt;<br>
+            &lt;!-- Gunakan CSS untuk spacing custom --&gt;
+        </code>
+    </div>
+
+    <!-- Kombinasi br dan hr -->
+    <h2>7. Kombinasi &lt;br&gt; dan &lt;hr&gt;</h2>
+    <p>
+        <strong>Kontak Darurat:</strong><br>
+        Rumah Sakit: 118<br>
+        Pemadam Kebakaran: 113<br>
+        Polisi: 110
+    </p>
+    <hr>
+    <p>
+        <strong>Kontak Sekolah:</strong><br>
+        Kepala Sekolah: (021) 111-1111<br>
+        Bagian TU: (021) 111-1112<br>
+        Bagian Kesiswaan: (021) 111-1113
+    </p>
+
+    <!-- Tips dan catatan -->
+    <hr>
+    <h2>💡 Tips Penggunaan</h2>
+    <ul>
+        <li><strong>&lt;br&gt;</strong>: Gunakan untuk line break yang memang diperlukan (alamat, puisi, kontak)</li>
+        <li><strong>&lt;hr&gt;</strong>: Gunakan untuk memisahkan section atau topik yang berbeda</li>
+        <li><strong>Jangan gunakan</strong> multiple &lt;br&gt; untuk spacing - gunakan CSS</li>
+        <li><strong>Jangan gunakan</strong> &lt;hr&gt; hanya untuk dekorasi visual</li>
+    </ul>
+
+    <hr>
+    <p><small><em>Demo ini menunjukkan penggunaan yang benar dan salah dari tag spacing HTML.</em></small></p>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Link HTML</title>
+</head>
+<body>
+    <h1>Demo Tag Link &lt;a&gt;</h1>
+
+    <!-- Link eksternal -->
+    <h2>1. Link Eksternal</h2>
+    <p>Kunjungi website populer:</p>
+    <ul>
+        <li><a href="https://www.google.com">Google</a> - Search engine</li>
+        <li><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a> (buka di tab baru)</li>
+        <li><a href="https://www.youtube.com" target="_blank">YouTube</a> (buka di tab baru)</li>
+        <li><a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a> (dengan security)</li>
+    </ul>
+
+    <!-- Link internal -->
+    <h2>2. Link Internal (Same Website)</h2>
+    <p>Navigasi dalam website:</p>
+    <ul>
+        <li><a href="paragraf-demo.html">Demo Paragraf</a></li>
+        <li><a href="spacing-demo.html">Demo Spacing</a></li>
+        <li><a href="../README.md">Kembali ke README Bab 2</a></li>
+        <li><a href="../../README.md">Kembali ke README Utama</a></li>
+    </ul>
+
+    <!-- Link ke email -->
+    <h2>3. Link Email</h2>
+    <p>Hubungi kami via email:</p>
+    <ul>
+        <li><a href="mailto:admin@example.com">Email Sederhana</a></li>
+        <li><a href="mailto:support@example.com?subject=Butuh Bantuan">Email dengan Subject</a></li>
+        <li><a href="mailto:info@example.com?subject=Pertanyaan&body=Halo,%20saya%20ingin%20bertanya...">Email dengan Subject dan Body</a></li>
+        <li><a href="mailto:multiple@example.com?cc=copy@example.com&bcc=blind@example.com&subject=Multiple Recipients">Email Multiple Recipients</a></li>
+    </ul>
+
+    <!-- Link ke telepon -->
+    <h2>4. Link Telepon</h2>
+    <p>Hubungi via telepon:</p>
+    <ul>
+        <li><a href="tel:+628123456789">+62 812-3456-789</a> (HP)</li>
+        <li><a href="tel:+62211234567">(021) 123-4567</a> (Kantor)</li>
+        <li><a href="tel:911">911</a> (Emergency - US)</li>
+        <li><a href="tel:112">112</a> (Emergency - Indonesia)</li>
+    </ul>
+
+    <!-- Anchor links (jump to section) -->
+    <h2>5. Anchor Links (Jump to Section)</h2>
+    <p>Navigasi cepat dalam halaman ini:</p>
+    <nav>
+        <ul>
+            <li><a href="#section1">Pergi ke Bagian 1</a></li>
+            <li><a href="#section2">Pergi ke Bagian 2</a></li>
+            <li><a href="#section3">Pergi ke Bagian 3</a></li>
+            <li><a href="#tips">Tips dan Tricks</a></li>
+        </ul>
+    </nav>
+
+    <!-- Link dengan atribut tambahan -->
+    <h2>6. Link dengan Atribut Tambahan</h2>
+    <p>Link dengan berbagai atribut:</p>
+    <ul>
+        <li><a href="https://www.google.com" title="Kunjungi Google Search Engine">Link dengan Tooltip</a></li>
+        <li><a href="document.pdf" download="panduan-html.pdf">Download PDF</a></li>
+        <li><a href="https://external-site.com" target="_blank" rel="nofollow noopener">External dengan No Follow</a></li>
+        <li><a href="#" onclick="alert('Hello!'); return false;">Link dengan JavaScript</a></li>
+    </ul>
+
+    <!-- Contoh bagian untuk anchor links -->
+    <hr>
+    <div style="margin-top: 50px;">
+        <h2 id="section1">📍 Bagian 1 - HTML Basics</h2>
+        <p>Ini adalah bagian 1 yang dapat diakses melalui anchor link. HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur halaman web.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <h2 id="section2">📍 Bagian 2 - CSS Styling</h2>
+        <p>Ini adalah bagian 2 tentang CSS. CSS (Cascading Style Sheets) digunakan untuk mengatur tampilan dan layout halaman web.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <h2 id="section3">📍 Bagian 3 - JavaScript Interactivity</h2>
+        <p>Ini adalah bagian 3 tentang JavaScript. JavaScript digunakan untuk menambahkan interaktivitas pada halaman web.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <!-- Tips section -->
+    <div style="margin-top: 50px;">
+        <h2 id="tips">💡 Tips dan Tricks</h2>
+
+        <h3>✅ Best Practices:</h3>
+        <ul>
+            <li><strong>Deskriptif</strong>: Gunakan teks link yang jelas dan deskriptif</li>
+            <li><strong>External links</strong>: Gunakan target="_blank" untuk link eksternal</li>
+            <li><strong>Security</strong>: Tambahkan rel="noopener noreferrer" untuk link eksternal</li>
+            <li><strong>Accessibility</strong>: Gunakan title untuk informasi tambahan</li>
+        </ul>
+
+        <h3>❌ Yang Harus Dihindari:</h3>
+        <ul>
+            <li>❌ <a href="#">"Klik di sini"</a> - tidak deskriptif</li>
+            <li>❌ <a href="#">"Read more"</a> - terlalu generic</li>
+            <li>❌ Link tanpa konteks yang jelas</li>
+        </ul>
+
+        <h3>✅ Contoh Yang Baik:</h3>
+        <ul>
+            <li>✅ <a href="tutorial-html.html">Baca tutorial HTML lengkap untuk pemula</a></li>
+            <li>✅ <a href="download-guide.pdf" download>Download panduan PDF (2MB)</a></li>
+            <li>✅ <a href="https://developer.mozilla.org" target="_blank" rel="noopener">Mozilla Developer Network</a></li>
+        </ul>
+    </div>
+
+    <!-- Back to top link -->
+    <div style="margin-top: 50px; text-align: center;">
+        <hr>
+        <p><a href="#top" style="font-size: 18px;">⬆️ Kembali ke Atas</a></p>
+    </div>
+
+    <!-- Footer dengan berbagai jenis link -->
+    <footer style="margin-top: 50px; padding: 20px; background: #f0f0f0;">
+        <h3>Kontak dan Media Sosial</h3>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <div>
+                <h4>📧 Email:</h4>
+                <a href="mailto:admin@sekolah.sch.id">admin@sekolah.sch.id</a>
+            </div>
+            <div>
+                <h4>📱 Sosial Media:</h4>
+                <a href="https://instagram.com/username" target="_blank">Instagram</a> |
+                <a href="https://facebook.com/page" target="_blank">Facebook</a> |
+                <a href="https://twitter.com/username" target="_blank">Twitter</a>
+            </div>
+            <div>
+                <h4>📞 Telepon:</h4>
+                <a href="tel:+62211234567">(021) 123-4567</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 20px;">
+            <small>
+                <a href="#section1">Bagian 1</a> |
+                <a href="#section2">Bagian 2</a> |
+                <a href="#section3">Bagian 3</a> |
+                <a href="#tips">Tips</a>
+            </small>
+        </p>
+    </footer>
+</body>
+</html>

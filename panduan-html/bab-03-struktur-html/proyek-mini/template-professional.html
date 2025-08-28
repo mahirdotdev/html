@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- ========================================= -->
+    <!-- CRITICAL META TAGS -->
+    <!-- ========================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ========================================= -->
+    <!-- SEO ESSENTIAL -->
+    <!-- ========================================= -->
+    <title>[Judul Halaman] - [Nama Website]</title>
+    <meta name="description" content="[Deskripsi halaman 150-160 karakter untuk search engine results]">
+    <meta name="author" content="[Nama Author]">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="[URL canonical halaman ini]">
+
+    <!-- ========================================= -->
+    <!-- OPEN GRAPH / SOCIAL MEDIA -->
+    <!-- ========================================= -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="[Judul untuk social media]">
+    <meta property="og:description" content="[Deskripsi untuk social media preview]">
+    <meta property="og:image" content="[URL gambar preview 1200x630px]">
+    <meta property="og:url" content="[URL halaman ini]">
+    <meta property="og:site_name" content="[Nama website]">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[Judul Twitter]">
+    <meta name="twitter:description" content="[Deskripsi Twitter]">
+    <meta name="twitter:image" content="[URL gambar Twitter]">
+
+    <!-- ========================================= -->
+    <!-- FAVICON PACKAGE -->
+    <!-- ========================================= -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- ========================================= -->
+    <!-- PERFORMANCE HINTS -->
+    <!-- ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- ========================================= -->
+    <!-- STYLES -->
+    <!-- ========================================= -->
+    <link rel="preload" href="css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/critical.css"></noscript>
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Inline Critical CSS for Performance -->
+    <style>
+        /* Critical above-the-fold styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+        }
+        .skip-link:focus { top: 0; }
+        header { background: #2563eb; color: white; padding: 1rem 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        nav ul { list-style: none; display: flex; gap: 1rem; }
+        nav a { color: white; text-decoration: none; padding: 0.5rem 1rem; }
+        main { min-height: 70vh; padding: 2rem 0; }
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; margin: 2rem 0 1rem; }
+        p { margin-bottom: 1rem; }
+        footer { background: #1e40af; color: white; padding: 2rem 0; margin-top: 2rem; }
+    </style>
+
+    <!-- ========================================= -->
+    <!-- STRUCTURED DATA (JSON-LD) -->
+    <!-- ========================================= -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "[Judul Halaman]",
+        "description": "[Deskripsi halaman]",
+        "url": "[URL halaman]",
+        "author": {
+            "@type": "Person",
+            "name": "[Nama Author]"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "[Nama Organisasi]",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "[URL logo]"
+            }
+        },
+        "dateModified": "2024-01-15",
+        "inLanguage": "id-ID"
+    }
+    </script>
+</head>
+
+<body>
+    <!-- ========================================= -->
+    <!-- ACCESSIBILITY SKIP LINKS -->
+    <!-- ========================================= -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#navigation" class="skip-link">Skip to navigation</a>
+
+    <!-- ========================================= -->
+    <!-- HEADER -->
+    <!-- ========================================= -->
+    <header role="banner">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <!-- Logo/Brand -->
+                <div class="brand">
+                    <a href="/" aria-label="Home" style="color: white; text-decoration: none;">
+                        <img src="logo.png" alt="[Nama Website] Logo" width="120" height="40" style="vertical-align: middle; margin-right: 1rem;">
+                        <span style="font-size: 1.5rem; font-weight: 600;">[Nama Website]</span>
+                    </a>
+                </div>
+
+                <!-- Main Navigation -->
+                <nav id="navigation" role="navigation" aria-label="Main Navigation">
+                    <ul style="margin: 0;">
+                        <li><a href="/" aria-current="page">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+
+                    <!-- Mobile menu button (requires JavaScript) -->
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" style="display: none; background: none; border: 1px solid white; color: white; padding: 0.5rem;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span>☰</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================================= -->
+    <main id="main-content" role="main">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+                <ol style="list-style: none; display: flex; gap: 0.5rem; font-size: 0.9rem; color: #666;">
+                    <li><a href="/" style="color: #2563eb;">Home</a></li>
+                    <li>→</li>
+                    <li><a href="/category" style="color: #2563eb;">Category</a></li>
+                    <li>→</li>
+                    <li aria-current="page">Current Page</li>
+                </ol>
+            </nav>
+
+            <!-- Page Header -->
+            <header class="page-header" style="text-align: center; margin-bottom: 3rem;">
+                <h1>🎯 Template HTML Professional</h1>
+                <p style="font-size: 1.25rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    Template HTML5 yang lengkap dengan struktur semantic, meta tags optimal,
+                    dan best practices untuk production website.
+                </p>
+            </header>
+
+            <!-- Content Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 300px; gap: 3rem; margin-bottom: 3rem;">
+                <!-- Primary Content -->
+                <div class="primary-content">
+                    <!-- Hero Section -->
+                    <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem; border-radius: 8px; text-align: center; margin-bottom: 3rem;">
+                        <h2 style="color: white; margin-bottom: 1rem;">Selamat Datang di Template Professional</h2>
+                        <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
+                            Template ini menggunakan semua best practices HTML5, SEO optimization,
+                            accessibility features, dan performance hints.
+                        </p>
+                        <a href="#features" style="background: white; color: #667eea; padding: 1rem 2rem; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block;">
+                            Explore Features
+                        </a>
+                    </section>
+
+                    <!-- Features Section -->
+                    <section id="features">
+                        <h2>✨ Template Features</h2>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                            <article style="background: #f8fafc; padding: 2rem; border-radius: 8px; border-left: 4px solid #2563eb;">
+                                <h3 style="color: #2563eb; margin-bottom: 1rem;">🔍 SEO Optimized</h3>
+                                <ul style="line-height: 1.8;">
+                                    <li>Complete meta tags package</li>
+                                    <li>Open Graph and Twitter Cards</li>
+                                    <li>Structured data JSON-LD</li>
+                                    <li>Canonical URLs</li>
+                                    <li>Semantic HTML structure</li>
+                                </ul>
+                            </article>
+
+                            <article style="background: #f0fdf4; padding: 2rem; border-radius: 8px; border-left: 4px solid #10b981;">
+                                <h3 style="color: #10b981; margin-bottom: 1rem;">♿ Accessible</h3>
+                                <ul style="line-height: 1.8;">
+                                    <li>ARIA roles and labels</li>
+                                    <li>Skip links for screen readers</li>
+                                    <li>Keyboard navigation support</li>
+                                    <li>Alt texts for images</li>
+                                    <li>Proper heading hierarchy</li>
+                                </ul>
+                            </article>
+
+                            <article style="background: #fefce8; padding: 2rem; border-radius: 8px; border-left: 4px solid #eab308;">
+                                <h3 style="color: #eab308; margin-bottom: 1rem;">⚡ Performance</h3>
+                                <ul style="line-height: 1.8;">
+                                    <li>Critical CSS inlined</li>
+                                    <li>Preconnect to external resources</li>
+                                    <li>Optimized font loading</li>
+                                    <li>Deferred non-critical scripts</li>
+                                    <li>Compressed and minified assets</li>
+                                </ul>
+                            </article>
+
+                            <article style="background: #f3e8ff; padding: 2rem; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                                <h3 style="color: #8b5cf6; margin-bottom: 1rem;">📱 Responsive</h3>
+                                <ul style="line-height: 1.8;">
+                                    <li>Mobile-first design</li>
+                                    <li>Flexible grid system</li>
+                                    <li>Touch-friendly navigation</li>
+                                    <li>Optimized for all devices</li>
+                                    <li>Progressive enhancement</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Technical Details -->
+                    <section>
+                        <h2>🔧 Technical Implementation</h2>
+
+                        <article style="margin-bottom: 2rem;">
+                            <h3>HTML5 Semantic Structure</h3>
+                            <p>Template ini menggunakan struktur HTML5 semantic yang benar:</p>
+                            <pre style="background: #f8fafc; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.9rem;"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;!-- Meta tags, styles, scripts --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header role="banner"&gt;...&lt;/header&gt;
+    &lt;main role="main"&gt;
+        &lt;section&gt;...&lt;/section&gt;
+        &lt;article&gt;...&lt;/article&gt;
+    &lt;/main&gt;
+    &lt;aside role="complementary"&gt;...&lt;/aside&gt;
+    &lt;footer role="contentinfo"&gt;...&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </article>
+
+                        <article style="margin-bottom: 2rem;">
+                            <h3>Performance Optimization</h3>
+                            <div style="background: #f1f5f9; padding: 1.5rem; border-radius: 8px;">
+                                <h4>Critical Resource Hints:</h4>
+                                <ul style="margin: 1rem 0;">
+                                    <li><code>preconnect</code> - Establish early connections</li>
+                                    <li><code>dns-prefetch</code> - Resolve DNS early</li>
+                                    <li><code>preload</code> - Priority loading for critical resources</li>
+                                </ul>
+
+                                <h4>Loading Strategy:</h4>
+                                <ul style="margin: 1rem 0;">
+                                    <li>Critical CSS inlined in head</li>
+                                    <li>Non-critical CSS loaded asynchronously</li>
+                                    <li>JavaScript deferred until DOM ready</li>
+                                    <li>Images optimized with proper sizing</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+
+                    <!-- CTA Section -->
+                    <section style="text-align: center; background: #f8fafc; padding: 3rem 2rem; border-radius: 8px; margin: 3rem 0;">
+                        <h2>🚀 Ready to Use This Template?</h2>
+                        <p style="font-size: 1.125rem; color: #666; margin-bottom: 2rem;">
+                            Download atau copy template ini dan customize sesuai kebutuhan project Anda.
+                        </p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="#" style="background: #2563eb; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 6px; font-weight: 500;">
+                                📥 Download Template
+                            </a>
+                            <a href="#" style="background: transparent; color: #2563eb; border: 2px solid #2563eb; padding: 1rem 2rem; text-decoration: none; border-radius: 6px; font-weight: 500;">
+                                📖 View Documentation
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ========================================= -->
+                <!-- SIDEBAR -->
+                <!-- ========================================= -->
+                <aside role="complementary" aria-label="Sidebar">
+                    <section style="background: #f8fafc; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: #1f2937;">🎯 Template Checklist</h3>
+                        <div style="font-size: 0.9rem;">
+                            <div style="margin-bottom: 0.5rem;">✅ DOCTYPE HTML5</div>
+                            <div style="margin-bottom: 0.5rem;">✅ UTF-8 Charset</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Viewport Meta</div>
+                            <div style="margin-bottom: 0.5rem;">✅ SEO Meta Tags</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Open Graph</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Favicon Package</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Semantic HTML</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Accessibility</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Performance Hints</div>
+                            <div style="margin-bottom: 0.5rem;">✅ Structured Data</div>
+                        </div>
+                    </section>
+
+                    <section style="background: #ecfdf5; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: #1f2937;">📊 Page Metrics</h3>
+                        <div style="font-size: 0.9rem;" id="page-metrics">
+                            <div>Loading metrics...</div>
+                        </div>
+                    </section>
+
+                    <section style="background: #fef3c7; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem; color: #1f2937;">🛠️ Development Tools</h3>
+                        <ul style="font-size: 0.9rem; line-height: 1.6;">
+                            <li><a href="https://validator.w3.org" target="_blank" rel="noopener">HTML Validator</a></li>
+                            <li><a href="https://web.dev/measure" target="_blank" rel="noopener">PageSpeed Insights</a></li>
+                            <li><a href="https://wave.webaim.org" target="_blank" rel="noopener">WAVE Accessibility</a></li>
+                            <li><a href="https://developers.facebook.com/tools/debug" target="_blank" rel="noopener">Facebook Debugger</a></li>
+                        </ul>
+                    </section>
+
+                    <section style="background: #fce7f3; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="margin-bottom: 1rem; color: #1f2937;">💡 Quick Tips</h3>
+                        <div style="font-size: 0.85rem; line-height: 1.6; color: #4b5563;">
+                            <p><strong>Customization:</strong> Replace all [placeholder] text with your actual content.</p>
+                            <p><strong>Images:</strong> Optimize images and use appropriate alt texts.</p>
+                            <p><strong>Testing:</strong> Validate HTML and test accessibility before launch.</p>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+    <footer role="contentinfo">
+        <div class="container">
+            <!-- Footer Content -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <section>
+                    <h4 style="margin-bottom: 1rem;">About [Website Name]</h4>
+                    <p style="color: #e2e8f0; line-height: 1.6;">
+                        Template HTML professional ini dirancang untuk memberikan foundation yang solid
+                        bagi website modern dengan performa tinggi dan user experience yang optimal.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 style="margin-bottom: 1rem;">Quick Links</h4>
+                    <nav aria-label="Footer Navigation">
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 0.5rem;"><a href="/about" style="color: #e2e8f0; text-decoration: none;">About Us</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="/services" style="color: #e2e8f0; text-decoration: none;">Services</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="/blog" style="color: #e2e8f0; text-decoration: none;">Blog</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="/contact" style="color: #e2e8f0; text-decoration: none;">Contact</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <section>
+                    <h4 style="margin-bottom: 1rem;">Contact Info</h4>
+                    <address style="font-style: normal; color: #e2e8f0; line-height: 1.6;">
+                        <p>123 Street Name<br>
+                        City, State 12345</p>
+                        <p>Phone: <a href="tel:+1234567890" style="color: #e2e8f0;">(123) 456-7890</a></p>
+                        <p>Email: <a href="mailto:info@example.com" style="color: #e2e8f0;">info@example.com</a></p>
+                    </address>
+                </section>
+
+                <section>
+                    <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                    <nav aria-label="Social Media">
+                        <ul style="list-style: none; display: flex; gap: 1rem;">
+                            <li><a href="#" target="_blank" rel="noopener" aria-label="Facebook" style="color: #e2e8f0; text-decoration: none;">Facebook</a></li>
+                            <li><a href="#" target="_blank" rel="noopener" aria-label="Twitter" style="color: #e2e8f0; text-decoration: none;">Twitter</a></li>
+                            <li><a href="#" target="_blank" rel="noopener" aria-label="Instagram" style="color: #e2e8f0; text-decoration: none;">Instagram</a></li>
+                            <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" style="color: #e2e8f0; text-decoration: none;">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #3b82f6;">
+                <p style="color: #e2e8f0; margin-bottom: 1rem;">
+                    &copy; 2024 [Website Name]. All rights reserved.
+                </p>
+                <nav aria-label="Legal">
+                    <ul style="list-style: none; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <li><a href="/privacy" style="color: #e2e8f0; text-decoration: none; font-size: 0.9rem;">Privacy Policy</a></li>
+                        <li><a href="/terms" style="color: #e2e8f0; text-decoration: none; font-size: 0.9rem;">Terms of Service</a></li>
+                        <li><a href="/cookies" style="color: #e2e8f0; text-decoration: none; font-size: 0.9rem;">Cookie Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- SCRIPTS -->
+    <!-- ========================================= -->
+    <!-- Critical JavaScript -->
+    <script>
+        // Critical inline JavaScript
+        console.log('🎯 Template HTML Professional loaded successfully');
+
+        // Performance monitoring
+        const startTime = performance.now();
+        window.addEventListener('load', function() {
+            const loadTime = performance.now() - startTime;
+            console.log(`⏱️ Page load time: ${Math.round(loadTime)}ms`);
+
+            // Update page metrics
+            updatePageMetrics();
+        });
+
+        function updatePageMetrics() {
+            const metricsEl = document.getElementById('page-metrics');
+            if (metricsEl) {
+                const elements = document.querySelectorAll('*').length;
+                const images = document.querySelectorAll('img').length;
+                const links = document.querySelectorAll('a').length;
+                const loadTime = Math.round(performance.now() - startTime);
+
+                metricsEl.innerHTML = `
+                    <div style="margin-bottom: 0.5rem;"><strong>Load Time:</strong> ${loadTime}ms</div>
+                    <div style="margin-bottom: 0.5rem;"><strong>Elements:</strong> ${elements}</div>
+                    <div style="margin-bottom: 0.5rem;"><strong>Images:</strong> ${images}</div>
+                    <div style="margin-bottom: 0.5rem;"><strong>Links:</strong> ${links}</div>
+                    <div><strong>Status:</strong> ✅ Optimized</div>
+                `;
+            }
+        }
+    </script>
+
+    <!-- External Scripts (defer untuk performance) -->
+    <script src="js/main.js" defer></script>
+
+    <!-- Analytics (async) - Replace with your GA ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Service Worker Registration for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+
+    <!--
+    ============================================================================
+    📋 CUSTOMIZATION CHECKLIST FOR YOUR PROJECT:
+    ============================================================================
+
+    1. REPLACE ALL PLACEHOLDERS:
+       - [Judul Halaman] → Your page title
+       - [Nama Website] → Your website name
+       - [Nama Author] → Your name
+       - [URL canonical halaman ini] → Your page URL
+       - [Deskripsi halaman] → Your page description
+       - [URL gambar preview] → Your social media preview image
+       - All other [placeholder] text
+
+    2. UPDATE FAVICON PACKAGE:
+       - Generate favicon package from favicon.io
+       - Replace favicon.ico and all favicon files
+       - Update site.webmanifest
+
+    3. CUSTOMIZE STYLES:
+       - Update color scheme in CSS variables
+       - Modify fonts and typography
+       - Adjust layout and spacing
+       - Add your branding
+
+    4. ADD YOUR CONTENT:
+       - Replace demo content with real content
+       - Update navigation menu
+       - Add your images with proper alt texts
+       - Update contact information
+
+    5. CONFIGURE ANALYTICS:
+       - Replace GA_MEASUREMENT_ID with your Google Analytics ID
+       - Add other tracking codes if needed
+
+    6. OPTIMIZATION:
+       - Optimize images (WebP format recommended)
+       - Minify CSS and JavaScript
+       - Set up proper caching headers
+       - Test performance with PageSpeed Insights
+
+    7. TESTING:
+       - Validate HTML with W3C Validator
+       - Test accessibility with WAVE
+       - Test on different devices and browsers
+       - Verify social media previews
+
+    8. DEPLOYMENT:
+       - Set up proper server configuration
+       - Configure HTTPS
+       - Set up CDN if needed
+       - Submit sitemap to search engines
+
+    ============================================================================
+    -->
+</body>
+</html>

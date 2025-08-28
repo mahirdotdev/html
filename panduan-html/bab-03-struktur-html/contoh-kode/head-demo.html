@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- ========================================= -->
+    <!-- DEMO LENGKAP TAG HEAD -->
+    <!-- ========================================= -->
+
+    <!-- Basic Meta Tags (WAJIB) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>Demo Tag Head HTML - Belajar Struktur HTML</title>
+    <meta name="description" content="Contoh lengkap penggunaan tag head HTML dengan berbagai meta tags untuk SEO, social media, dan performance optimization.">
+    <meta name="keywords" content="HTML head, meta tags, SEO, web development">
+    <meta name="author" content="Tim Pengajar HTML">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (Social Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Demo Tag Head HTML">
+    <meta property="og:description" content="Pelajari cara menggunakan tag head HTML dengan benar">
+    <meta property="og:image" content="https://example.com/images/html-head-demo.jpg">
+    <meta property="og:url" content="https://example.com/head-demo">
+    <meta property="og:site_name" content="Belajar HTML">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Demo Tag Head HTML">
+    <meta name="twitter:description" content="Contoh penggunaan tag head HTML yang benar">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .demo-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: yellow;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .meta-info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+
+    <!-- Performance Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="//example.com">
+
+    <!-- Mobile/PWA Meta -->
+    <meta name="theme-color" content="#2196f3">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Custom Scripts in Head (hati-hati performance) -->
+    <script>
+        // Critical JavaScript yang harus load dulu
+        console.log('🧠 Head loaded - Meta information ready!');
+
+        // Performance monitoring
+        const startTime = performance.now();
+        window.addEventListener('load', function() {
+            const loadTime = performance.now() - startTime;
+            console.log(`⏱️ Page load time: ${Math.round(loadTime)}ms`);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="demo-section">
+        <h1>🧠 Demo Tag &lt;head&gt; HTML</h1>
+        <p>Halaman ini mendemonstrasikan penggunaan lengkap tag <code>&lt;head&gt;</code> dengan berbagai meta tags dan konfigurasi.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>📋 Meta Tags yang Digunakan</h2>
+        <div class="meta-info">
+            <h3>✅ Basic Meta Tags (WAJIB)</h3>
+            <div class="code-block">
+&lt;meta charset="UTF-8"&gt;<br>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+            </div>
+        </div>
+
+        <div class="meta-info">
+            <h3>🔍 SEO Meta Tags</h3>
+            <div class="code-block">
+&lt;title&gt;Demo Tag Head HTML - Belajar Struktur HTML&lt;/title&gt;<br>
+&lt;meta name="description" content="Contoh lengkap penggunaan tag head..."&gt;<br>
+&lt;meta name="keywords" content="HTML head, meta tags, SEO"&gt;<br>
+&lt;meta name="author" content="Tim Pengajar HTML"&gt;
+            </div>
+        </div>
+
+        <div class="meta-info">
+            <h3>📱 Social Media Meta Tags</h3>
+            <div class="code-block">
+&lt;meta property="og:title" content="Demo Tag Head HTML"&gt;<br>
+&lt;meta property="og:description" content="Pelajari cara menggunakan..."&gt;<br>
+&lt;meta name="twitter:card" content="summary"&gt;
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🎯 Fungsi Setiap Bagian Head</h2>
+
+        <h3>1. Character Encoding</h3>
+        <p>Tag <code>&lt;meta charset="UTF-8"&gt;</code> memungkinkan halaman ini menampilkan berbagai karakter:</p>
+        <ul>
+            <li>🌍 Emoji: 🚀 🎉 💻 📚 ⭐</li>
+            <li>© Simbol: © ® ™ € £ ¥</li>
+            <li>Aksen: café, naïve, résumé</li>
+            <li>中文: 你好世界</li>
+            <li>العربية: مرحبا بالعالم</li>
+        </ul>
+
+        <h3>2. Viewport Meta</h3>
+        <p>Tag viewport membuat halaman ini <span class="highlight">responsive</span> di mobile device. Coba buka di smartphone!</p>
+
+        <h3>3. Title Tag</h3>
+        <p>Judul yang muncul di tab browser: <strong>"Demo Tag Head HTML - Belajar Struktur HTML"</strong></p>
+
+        <h3>4. Description Meta</h3>
+        <p>Deskripsi yang akan muncul di Google search results dan social media preview.</p>
+
+        <h3>5. Open Graph Tags</h3>
+        <p>Ketika halaman ini dibagikan di Facebook, WhatsApp, atau LinkedIn, meta tags OG akan menentukan preview card.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>🔬 Testing Head Tags</h2>
+
+        <h3>Browser DevTools Test:</h3>
+        <ol>
+            <li>Tekan <kbd>F12</kbd> untuk buka DevTools</li>
+            <li>Pergi ke tab <strong>Elements</strong></li>
+            <li>Expand tag <code>&lt;head&gt;</code></li>
+            <li>Lihat semua meta tags yang tersedia</li>
+        </ol>
+
+        <h3>Network Test:</h3>
+        <ol>
+            <li>Buka tab <strong>Network</strong> di DevTools</li>
+            <li>Refresh halaman (<kbd>F5</kbd>)</li>
+            <li>Lihat request untuk font Google Fonts</li>
+            <li>Perhatikan preconnect yang mempercepat loading</li>
+        </ol>
+
+        <h3>Mobile Test:</h3>
+        <ol>
+            <li>Klik icon <strong>Toggle Device Toolbar</strong> di DevTools</li>
+            <li>Pilih device: iPhone, iPad, Samsung, dll</li>
+            <li>Lihat bagaimana viewport meta bekerja</li>
+            <li>Coba zoom in/out untuk test responsiveness</li>
+        </ol>
+    </div>
+
+    <div class="demo-section">
+        <h2>⚡ Performance Optimization</h2>
+        <p>Head section ini menggunakan beberapa optimization techniques:</p>
+
+        <ul>
+            <li><strong>Preconnect:</strong> Mempercepat koneksi ke Google Fonts</li>
+            <li><strong>DNS Prefetch:</strong> Resolve DNS lebih awal</li>
+            <li><strong>Critical CSS:</strong> Inline styling untuk above-the-fold content</li>
+            <li><strong>Font Display Swap:</strong> Mencegah FOIT (Flash of Invisible Text)</li>
+        </ul>
+
+        <div class="meta-info">
+            <h3>💡 Tips Performance:</h3>
+            <ul>
+                <li>Letakkan critical CSS di head</li>
+                <li>Defer non-critical JavaScript</li>
+                <li>Gunakan preconnect untuk external resources</li>
+                <li>Optimize meta tags untuk SEO</li>
+                <li>Minimize JavaScript di head section</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🛠️ Tools untuk Testing</h2>
+
+        <h3>SEO Testing:</h3>
+        <ul>
+            <li><a href="https://search.google.com/test/mobile-friendly" target="_blank">Google Mobile-Friendly Test</a></li>
+            <li><a href="https://developers.google.com/speed/pagespeed/insights" target="_blank">PageSpeed Insights</a></li>
+            <li><a href="https://validator.w3.org" target="_blank">W3C Markup Validator</a></li>
+        </ul>
+
+        <h3>Social Media Testing:</h3>
+        <ul>
+            <li><a href="https://developers.facebook.com/tools/debug" target="_blank">Facebook Sharing Debugger</a></li>
+            <li><a href="https://cards-dev.twitter.com/validator" target="_blank">Twitter Card Validator</a></li>
+            <li><a href="https://www.linkedin.com/post-inspector" target="_blank">LinkedIn Post Inspector</a></li>
+        </ul>
+    </div>
+
+    <footer class="demo-section">
+        <h3>📚 Kesimpulan</h3>
+        <p>Tag <code>&lt;head&gt;</code> adalah bagian krusial dari dokumen HTML yang:</p>
+        <ul>
+            <li>✅ Tidak terlihat user tapi sangat penting</li>
+            <li>✅ Menentukan SEO performance</li>
+            <li>✅ Mengatur tampilan di social media</li>
+            <li>✅ Mengontrol mobile responsiveness</li>
+            <li>✅ Mempengaruhi loading performance</li>
+        </ul>
+
+        <p><strong>Remember:</strong> Good head = Good website! 🚀</p>
+    </footer>
+
+    <!-- Scripts di akhir body untuk performance -->
+    <script>
+        // JavaScript yang tidak critical
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 Body content loaded!');
+
+            // Demo interactivity
+            const codeBlocks = document.querySelectorAll('.code-block');
+            codeBlocks.forEach(block => {
+                block.addEventListener('click', function() {
+                    this.style.background = '#e8f5e8';
+                    setTimeout(() => {
+                        this.style.background = '#f8f9fa';
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

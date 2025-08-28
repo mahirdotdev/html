@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tabel HTML</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        caption {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .center { text-align: center; }
+        .right { text-align: right; }
+    </style>
+</head>
+<body>
+    <h1>Demo Tabel HTML &lt;table&gt;</h1>
+
+    <!-- Tabel sederhana -->
+    <h2>1. Tabel Sederhana</h2>
+    <table>
+        <tr>
+            <td>Baris 1, Kolom 1</td>
+            <td>Baris 1, Kolom 2</td>
+            <td>Baris 1, Kolom 3</td>
+        </tr>
+        <tr>
+            <td>Baris 2, Kolom 1</td>
+            <td>Baris 2, Kolom 2</td>
+            <td>Baris 2, Kolom 3</td>
+        </tr>
+    </table>
+
+    <!-- Tabel dengan header -->
+    <h2>2. Tabel dengan Header</h2>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>Umur</th>
+            <th>Kelas</th>
+            <th>Nilai</th>
+        </tr>
+        <tr>
+            <td>Ahmad Rizki</td>
+            <td>16</td>
+            <td>XI IPA 1</td>
+            <td class="center">85</td>
+        </tr>
+        <tr>
+            <td>Siti Nurhaliza</td>
+            <td>17</td>
+            <td>XI IPS 2</td>
+            <td class="center">92</td>
+        </tr>
+        <tr>
+            <td>Budi Santoso</td>
+            <td>16</td>
+            <td>XI IPA 2</td>
+            <td class="center">78</td>
+        </tr>
+    </table>
+
+    <!-- Tabel dengan section (thead, tbody, tfoot) -->
+    <h2>3. Tabel dengan Section (thead, tbody, tfoot)</h2>
+    <table>
+        <caption>Laporan Nilai Ujian Semester</caption>
+        <thead>
+            <tr>
+                <th>Mata Pelajaran</th>
+                <th>UTS</th>
+                <th>UAS</th>
+                <th>Rata-rata</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Matematika</td>
+                <td class="center">82</td>
+                <td class="center">88</td>
+                <td class="center">85</td>
+                <td class="center"><strong>A</strong></td>
+            </tr>
+            <tr>
+                <td>Bahasa Indonesia</td>
+                <td class="center">90</td>
+                <td class="center">87</td>
+                <td class="center">88.5</td>
+                <td class="center"><strong>A</strong></td>
+            </tr>
+            <tr>
+                <td>Bahasa Inggris</td>
+                <td class="center">75</td>
+                <td class="center">80</td>
+                <td class="center">77.5</td>
+                <td class="center"><strong>B</strong></td>
+            </tr>
+            <tr>
+                <td>Fisika</td>
+                <td class="center">78</td>
+                <td class="center">82</td>
+                <td class="center">80</td>
+                <td class="center"><strong>B</strong></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr style="background-color: #f9f9f9; font-weight: bold;">
+                <td>TOTAL RATA-RATA</td>
+                <td class="center">81.25</td>
+                <td class="center">84.25</td>
+                <td class="center"><strong>82.75</strong></td>
+                <td class="center"><strong>A</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Tabel dengan colspan -->
+    <h2>4. Tabel dengan Colspan (Merge Columns)</h2>
+    <table>
+        <caption>Jadwal Ujian Semester</caption>
+        <tr>
+            <th>Hari</th>
+            <th colspan="2">Sesi Pagi (08:00-10:00)</th>
+            <th colspan="2">Sesi Siang (13:00-15:00)</th>
+        </tr>
+        <tr>
+            <td><strong>Senin</strong></td>
+            <td>Matematika</td>
+            <td>Kelas XI</td>
+            <td>Fisika</td>
+            <td>Kelas X</td>
+        </tr>
+        <tr>
+            <td><strong>Selasa</strong></td>
+            <td>B. Indonesia</td>
+            <td>Kelas XII</td>
+            <td>Kimia</td>
+            <td>Kelas XI</td>
+        </tr>
+        <tr>
+            <td><strong>Rabu</strong></td>
+            <td colspan="4" class="center"><em>LIBUR UJIAN</em></td>
+        </tr>
+    </table>
+
+    <!-- Tabel dengan rowspan -->
+    <h2>5. Tabel dengan Rowspan (Merge Rows)</h2>
+    <table>
+        <caption>Pembagian Kelas per Jurusan</caption>
+        <tr>
+            <th>Kelas</th>
+            <th>Jurusan</th>
+            <th>Nama Siswa</th>
+            <th>No. Absen</th>
+        </tr>
+        <tr>
+            <td rowspan="3">XI</td>
+            <td rowspan="2">IPA</td>
+            <td>Ahmad Rizki</td>
+            <td class="center">01</td>
+        </tr>
+        <tr>
+            <td>Siti Aminah</td>
+            <td class="center">02</td>
+        </tr>
+        <tr>
+            <td>IPS</td>
+            <td>Budi Santoso</td>
+            <td class="center">01</td>
+        </tr>
+    </table>
+
+    <!-- Tabel kompleks dengan kombinasi colspan dan rowspan -->
+    <h2>6. Tabel Kompleks - Jadwal Pelajaran</h2>
+    <table>
+        <caption>Jadwal Pelajaran Kelas XI IPA 1 - Semester Ganjil</caption>
+        <thead>
+            <tr>
+                <th>Waktu</th>
+                <th>Senin</th>
+                <th>Selasa</th>
+                <th>Rabu</th>
+                <th>Kamis</th>
+                <th>Jumat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>07:00-08:30</strong></td>
+                <td>Matematika<br><small>Pak Budi</small></td>
+                <td>Fisika<br><small>Bu Sari</small></td>
+                <td>Kimia<br><small>Pak Joko</small></td>
+                <td>B. Indonesia<br><small>Bu Nina</small></td>
+                <td>B. Inggris<br><small>Mr. John</small></td>
+            </tr>
+            <tr>
+                <td><strong>08:30-10:00</strong></td>
+                <td>Fisika<br><small>Bu Sari</small></td>
+                <td>Matematika<br><small>Pak Budi</small></td>
+                <td>B. Indonesia<br><small>Bu Nina</small></td>
+                <td>Kimia<br><small>Pak Joko</small></td>
+                <td>Matematika<br><small>Pak Budi</small></td>
+            </tr>
+            <tr style="background-color: #ffffcc;">
+                <td><strong>10:00-10:15</strong></td>
+                <td colspan="5" class="center"><strong>ISTIRAHAT</strong></td>
+            </tr>
+            <tr>
+                <td><strong>10:15-11:45</strong></td>
+                <td>Biologi<br><small>Bu Ani</small></td>
+                <td>PKn<br><small>Pak Harto</small></td>
+                <td>Olahraga<br><small>Pak Agus</small></td>
+                <td>Biologi<br><small>Bu Ani</small></td>
+                <td rowspan="2" class="center" style="background-color: #e6ffe6;"><strong>JUMAT<br>BERSIH</strong></td>
+            </tr>
+            <tr>
+                <td><strong>11:45-13:15</strong></td>
+                <td>Sejarah<br><small>Bu Dewi</small></td>
+                <td>Seni Budaya<br><small>Pak Yanto</small></td>
+                <td>TIK<br><small>Bu Lisa</small></td>
+                <td>Agama<br><small>Pak Usman</small></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Tabel data statistik -->
+    <h2>7. Tabel Data Statistik</h2>
+    <table>
+        <caption>Statistik Website Sekolah - Bulan Januari 2024</caption>
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Pengunjung</th>
+                <th>Page Views</th>
+                <th>Bounce Rate</th>
+                <th>Avg. Session</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1 Jan 2024</td>
+                <td class="right">1,245</td>
+                <td class="right">3,456</td>
+                <td class="right">45.2%</td>
+                <td class="right">2m 34s</td>
+            </tr>
+            <tr>
+                <td>2 Jan 2024</td>
+                <td class="right">1,389</td>
+                <td class="right">4,123</td>
+                <td class="right">42.8%</td>
+                <td class="right">2m 51s</td>
+            </tr>
+            <tr>
+                <td>3 Jan 2024</td>
+                <td class="right">1,156</td>
+                <td class="right">3,234</td>
+                <td class="right">48.1%</td>
+                <td class="right">2m 12s</td>
+            </tr>
+            <tr style="background-color: #f0f0f0; font-weight: bold;">
+                <td>RATA-RATA</td>
+                <td class="right">1,263</td>
+                <td class="right">3,604</td>
+                <td class="right">45.4%</td>
+                <td class="right">2m 32s</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Tips dan best practices -->
+    <hr>
+    <h2>💡 Tips Tabel HTML</h2>
+    <div style="background: #f9f9f9; padding: 15px; border-left: 4px solid #0066cc;">
+        <h3>✅ Best Practices:</h3>
+        <ul>
+            <li><strong>Gunakan caption</strong> untuk menjelaskan isi tabel</li>
+            <li><strong>Gunakan thead, tbody, tfoot</strong> untuk struktur semantic</li>
+            <li><strong>Gunakan th untuk header</strong> agar accessible</li>
+            <li><strong>Align numbers ke kanan</strong> untuk mudah dibaca</li>
+            <li><strong>Gunakan CSS untuk styling</strong>, bukan atribut HTML</li>
+        </ul>
+
+        <h3>❌ Yang Harus Dihindari:</h3>
+        <ul>
+            <li>❌ Menggunakan tabel untuk layout (gunakan CSS Grid/Flexbox)</li>
+            <li>❌ Tabel tanpa header yang jelas</li>
+            <li>❌ Colspan/rowspan yang terlalu kompleks</li>
+            <li>❌ Tabel yang tidak responsive di mobile</li>
+        </ul>
+
+        <h3>🔧 Atribut Penting:</h3>
+        <ul>
+            <li><code>colspan="2"</code> - Merge 2 kolom</li>
+            <li><code>rowspan="3"</code> - Merge 3 baris</li>
+            <li><code>scope="col"</code> - Header untuk kolom</li>
+            <li><code>scope="row"</code> - Header untuk baris</li>
+        </ul>
+    </div>
+
+    <hr>
+    <p><small><em>Demo ini menunjukkan berbagai penggunaan tabel HTML untuk menampilkan data terstruktur.</em></small></p>
+</body>
+</html>

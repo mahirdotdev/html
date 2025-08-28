@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Tag Body HTML - Struktur Semantic</title>
+    <meta name="description" content="Contoh lengkap penggunaan tag body HTML dengan struktur semantic yang benar">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            z-index: 1000;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a:focus {
+            background: rgba(255,255,255,0.1);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        aside {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        aside section {
+            margin-bottom: 1rem;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside li {
+            margin-bottom: 0.5rem;
+        }
+
+        aside a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        aside a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .demo-highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .content-container {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ========================================= -->
+    <!-- ACCESSIBILITY SKIP LINKS -->
+    <!-- ========================================= -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#navigation" class="skip-link">Skip to navigation</a>
+
+    <!-- ========================================= -->
+    <!-- HEADER SECTION -->
+    <!-- ========================================= -->
+    <header role="banner">
+        <div class="header-container">
+            <div class="logo">
+                <h1>🏗️ Demo Tag Body HTML</h1>
+                <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Struktur Semantic HTML</p>
+            </div>
+
+            <nav id="navigation" role="navigation" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#semantic-structure" aria-current="page">Struktur</a></li>
+                    <li><a href="#accessibility">Accessibility</a></li>
+                    <li><a href="#semantic-tags">Tags</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================= -->
+    <!-- MAIN CONTENT AREA -->
+    <!-- ========================================= -->
+    <main id="main-content" role="main">
+        <div class="content-container">
+            <!-- Primary Content -->
+            <div class="primary-content">
+                <!-- Page Header -->
+                <header class="page-header">
+                    <h1>Demonstrasi Tag &lt;body&gt; HTML</h1>
+                    <p>Halaman ini menunjukkan struktur semantic yang benar dalam tag body HTML dengan berbagai elemen dan best practices.</p>
+                </header>
+
+                <!-- Semantic Structure Section -->
+                <section id="semantic-structure">
+                    <h2>🏗️ Struktur Semantic HTML</h2>
+
+                    <div class="demo-highlight">
+                        <h3>💡 Apa itu Semantic HTML?</h3>
+                        <p>Semantic HTML menggunakan tag yang memiliki <strong>makna</strong>, bukan hanya untuk styling. Ini membantu:</p>
+                        <ul>
+                            <li>🔍 SEO - Search engines memahami struktur konten</li>
+                            <li>♿ Accessibility - Screen readers dapat navigasi dengan mudah</li>
+                            <li>👨‍💻 Maintainability - Code lebih mudah dipahami developer</li>
+                        </ul>
+                    </div>
+
+                    <h3>Struktur Body Halaman Ini:</h3>
+                    <div class="code-example">
+&lt;body&gt;
+    &lt;header role="banner"&gt;
+        &lt;!-- Logo dan navigasi utama --&gt;
+    &lt;/header&gt;
+
+    &lt;main role="main"&gt;
+        &lt;!-- Konten utama halaman --&gt;
+        &lt;section&gt;
+            &lt;!-- Bagian-bagian konten --&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;aside role="complementary"&gt;
+        &lt;!-- Konten sampingan/sidebar --&gt;
+    &lt;/aside&gt;
+
+    &lt;footer role="contentinfo"&gt;
+        &lt;!-- Footer informasi --&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+                    </div>
+                </section>
+
+                <!-- Accessibility Features -->
+                <section id="accessibility">
+                    <h2>♿ Fitur Accessibility</h2>
+
+                    <article>
+                        <h3>1. Skip Links</h3>
+                        <p>Coba tekan <kbd>Tab</kbd> di keyboard - akan muncul "Skip to main content" untuk user screen reader.</p>
+
+                        <div class="code-example">
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+                        </div>
+                    </article>
+
+                    <article>
+                        <h3>2. ARIA Roles dan Labels</h3>
+                        <p>Halaman ini menggunakan ARIA roles untuk memberikan konteks tambahan:</p>
+                        <ul>
+                            <li><code>role="banner"</code> - Header utama</li>
+                            <li><code>role="main"</code> - Konten utama</li>
+                            <li><code>role="navigation"</code> - Area navigasi</li>
+                            <li><code>aria-label</code> - Label deskriptif</li>
+                            <li><code>aria-current="page"</code> - Halaman aktif</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <h3>3. Keyboard Navigation</h3>
+                        <p>Semua elemen interaktif dapat diakses dengan keyboard:</p>
+                        <ul>
+                            <li><kbd>Tab</kbd> - Navigasi maju</li>
+                            <li><kbd>Shift + Tab</kbd> - Navigasi mundur</li>
+                            <li><kbd>Enter</kbd> - Aktivasi link/button</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- Semantic Tags Explanation -->
+                <section id="semantic-tags">
+                    <h2>🏷️ Tag Semantic dalam Body</h2>
+
+                    <div class="demo-highlight">
+                        <h3>Tags yang Digunakan di Halaman Ini:</h3>
+
+                        <dl>
+                            <dt><code>&lt;header&gt;</code></dt>
+                            <dd>Bagian header/kepala halaman atau section</dd>
+
+                            <dt><code>&lt;nav&gt;</code></dt>
+                            <dd>Area navigasi/menu</dd>
+
+                            <dt><code>&lt;main&gt;</code></dt>
+                            <dd>Konten utama halaman (hanya satu per halaman)</dd>
+
+                            <dt><code>&lt;section&gt;</code></dt>
+                            <dd>Bagian/seksi konten yang terkait</dd>
+
+                            <dt><code>&lt;article&gt;</code></dt>
+                            <dd>Konten independen yang dapat berdiri sendiri</dd>
+
+                            <dt><code>&lt;aside&gt;</code></dt>
+                            <dd>Konten sampingan/sidebar</dd>
+
+                            <dt><code>&lt;footer&gt;</code></dt>
+                            <dd>Bagian footer/kaki halaman atau section</dd>
+                        </dl>
+                    </div>
+                </section>
+
+                <!-- Interactive Demo -->
+                <section>
+                    <h2>🎮 Demo Interaktif</h2>
+
+                    <article>
+                        <h3>Body Event Handlers</h3>
+                        <p>Body dapat memiliki event handlers untuk JavaScript:</p>
+
+                        <div class="code-example">
+&lt;body onload="pageLoaded()" onresize="handleResize()"&gt;
+    &lt;!-- Content --&gt;
+&lt;/body&gt;
+                        </div>
+
+                        <p>
+                            <button onclick="showWindowSize()">🖥️ Show Window Size</button>
+                            <button onclick="showBodyInfo()">📄 Show Body Info</button>
+                        </p>
+
+                        <div id="demo-output" style="background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-radius: 4px; min-height: 50px;">
+                            <em>Click buttons above to see JavaScript interaction with body element.</em>
+                        </div>
+                    </article>
+                </section>
+            </div>
+
+            <!-- ========================================= -->
+            <!-- SIDEBAR/ASIDE CONTENT -->
+            <!-- ========================================= -->
+            <aside role="complementary" aria-label="Sidebar">
+                <section>
+                    <h3>📚 Quick Reference</h3>
+                    <ul>
+                        <li><a href="#semantic-structure">Semantic Structure</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#semantic-tags">Semantic Tags</a></li>
+                        <li><a href="#best-practices">Best Practices</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>🛠️ Tools</h3>
+                    <ul>
+                        <li><a href="https://validator.w3.org" target="_blank" rel="noopener">HTML Validator</a></li>
+                        <li><a href="https://wave.webaim.org" target="_blank" rel="noopener">WAVE Accessibility</a></li>
+                        <li><a href="https://www.accessibilityinsights.io" target="_blank" rel="noopener">Accessibility Insights</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>💡 Tips</h3>
+                    <div style="font-size: 0.9rem;">
+                        <p><strong>Semantic HTML:</strong> Gunakan tag sesuai makna, bukan tampilan.</p>
+                        <p><strong>Accessibility:</strong> Test dengan screen reader atau keyboard saja.</p>
+                        <p><strong>Performance:</strong> Letakkan script di akhir body.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>📊 Page Stats</h3>
+                    <div style="font-size: 0.9rem;" id="page-stats">
+                        <p>Loading page statistics...</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Best Practices Section -->
+    <section id="best-practices" style="max-width: 1200px; margin: 0 auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2>✅ Best Practices Tag Body</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div>
+                <h3>✅ Do:</h3>
+                <ul>
+                    <li>Gunakan semantic HTML elements</li>
+                    <li>Sertakan skip links untuk accessibility</li>
+                    <li>Struktur konten secara logical</li>
+                    <li>Letakkan scripts di akhir body</li>
+                    <li>Gunakan proper heading hierarchy</li>
+                    <li>Test dengan keyboard navigation</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>❌ Don't:</h3>
+                <ul>
+                    <li>Gunakan deprecated attributes (bgcolor, etc)</li>
+                    <li>Letakkan semua JavaScript di head</li>
+                    <li>Lupa struktur semantic</li>
+                    <li>Skip heading levels (h1 → h3)</li>
+                    <li>Ignore accessibility guidelines</li>
+                    <li>Use div for everything</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER SECTION -->
+    <!-- ========================================= -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <section>
+                <h4>🏗️ About This Demo</h4>
+                <p>Halaman ini mendemonstrasikan struktur body HTML yang semantic dan accessible. Dibuat dengan HTML5 murni tanpa framework.</p>
+            </section>
+
+            <section>
+                <h4>📖 Learning Resources</h4>
+                <ul>
+                    <li><a href="../README.md" style="color: #ecf0f1;">Kembali ke Bab 3</a></li>
+                    <li><a href="head-demo.html" style="color: #ecf0f1;">Demo Tag Head</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" style="color: #ecf0f1;">MDN HTML Docs</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h4>♿ Accessibility</h4>
+                <p>Halaman ini dirancang dengan memperhatikan accessibility guidelines dan dapat digunakan dengan screen reader atau keyboard navigation.</p>
+            </section>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #7f8c8d;">
+            <p>&copy; 2024 Demo HTML Body Structure. Built with semantic HTML5.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT (DI AKHIR BODY) -->
+    <!-- ========================================= -->
+    <script>
+        // Page loaded handler
+        function pageLoaded() {
+            console.log('🏗️ Body loaded successfully!');
+        }
+
+        // Window resize handler
+        function handleResize() {
+            console.log(`📐 Window resized to: ${window.innerWidth}x${window.innerHeight}`);
+        }
+
+        // Demo functions
+        function showWindowSize() {
+            const output = document.getElementById('demo-output');
+            output.innerHTML = `
+                <h4>🖥️ Window Information:</h4>
+                <ul>
+                    <li><strong>Window Size:</strong> ${window.innerWidth}x${window.innerHeight} px</li>
+                    <li><strong>Screen Size:</strong> ${screen.width}x${screen.height} px</li>
+                    <li><strong>Device Pixel Ratio:</strong> ${window.devicePixelRatio}</li>
+                    <li><strong>User Agent:</strong> ${navigator.userAgent.slice(0, 50)}...</li>
+                </ul>
+            `;
+        }
+
+        function showBodyInfo() {
+            const body = document.body;
+            const output = document.getElementById('demo-output');
+            output.innerHTML = `
+                <h4>📄 Body Element Information:</h4>
+                <ul>
+                    <li><strong>Tag Name:</strong> ${body.tagName}</li>
+                    <li><strong>Child Elements:</strong> ${body.children.length}</li>
+                    <li><strong>Text Content Length:</strong> ${body.textContent.length} characters</li>
+                    <li><strong>Client Width:</strong> ${body.clientWidth} px</li>
+                    <li><strong>Client Height:</strong> ${body.clientHeight} px</li>
+                    <li><strong>Scroll Height:</strong> ${body.scrollHeight} px</li>
+                </ul>
+            `;
+        }
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM Content Loaded');
+            pageLoaded();
+
+            // Update page stats
+            const stats = document.getElementById('page-stats');
+            if (stats) {
+                const elementCount = document.querySelectorAll('*').length;
+                const linkCount = document.querySelectorAll('a').length;
+                const headingCount = document.querySelectorAll('h1, h2, h3, h4, h5, h6').length;
+
+                stats.innerHTML = `
+                    <p><strong>Elements:</strong> ${elementCount}</p>
+                    <p><strong>Links:</strong> ${linkCount}</p>
+                    <p><strong>Headings:</strong> ${headingCount}</p>
+                    <p><strong>Sections:</strong> ${document.querySelectorAll('section').length}</p>
+                `;
+            }
+        });
+
+        // Window load event
+        window.addEventListener('load', function() {
+            console.log('🚀 All resources loaded');
+        });
+
+        // Window resize event
+        window.addEventListener('resize', handleResize);
+
+        // Keyboard navigation enhancement
+        document.addEventListener('keydown', function(e) {
+            // ESC key to show help
+            if (e.key === 'Escape') {
+                alert('🔤 Keyboard Navigation:\nTab - Next element\nShift+Tab - Previous element\nEnter - Activate link\nEsc - This help');
+            }
+        });
+    </script>
+</body>
+</html>
