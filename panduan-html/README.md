@@ -105,3 +105,30 @@ Gunakan glossarium dan troubleshooting guide yang tersedia untuk mengatasi masal
 ---
 
 *Panduan ini disusun dengan pendekatan pembelajaran bertahap dan praktis untuk memastikan pemahaman yang mendalam tentang HTML.*
+
+
+
+Buatlah buku panduan belajar HTML yang komprehensif untuk siswa SMA pemula yang belum pernah mempelajari HTML sebelumnya. Buku harus ditulis dengan bahasa Indonesia yang mudah dipahami dan menggunakan pendekatan pembelajaran bertahap dari dasar hingga menengah.
+
+Untuk setiap materi yang tercantum dalam daftar @/list-materi.md, susunlah penjelasan yang mencakup:
+
+1. Definisi dan konsep dasar dengan analogi sederhana yang relatable untuk siswa SMA
+2. Tujuan dan fungsi praktis dalam pengembangan website
+3. Sintaks lengkap dengan penjelasan setiap komponen
+4. Aturan penulisan yang benar dan kesalahan umum yang harus dihindari
+5. Atribut wajib, opsional, dan yang tidak diperbolehkan
+6. Contoh kode praktis dengan output visual yang jelas
+7. Variasi penggunaan dari tingkat dasar hingga menengah
+8. Tips dan trik untuk optimalisasi
+9. Latihan soal progresif dengan tingkat kesulitan bertahap
+10. Troubleshooting untuk masalah umum yang sering dialami pemula
+
+Strukturkan buku dengan:
+- Pengenalan HTML dan persiapan environment
+- Penjelasan setiap materi sesuai urutan logis pembelajaran
+- Proyek mini di akhir setiap bab untuk mengaplikasikan materi
+- Rangkuman poin-poin penting
+- Glossarium istilah teknis
+- Appendix dengan referensi tag HTML dan cheat sheet
+
+Pastikan setiap penjelasan disertai screenshot, diagram, dan contoh kode yang dapat langsung dicoba siswa.

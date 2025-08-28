@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Atribut Form 1 - Validasi Form Dasar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2196F3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .exercise-header {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2196F3;
+        }
+
+        .task-list {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #2196F3;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1976D2;
+        }
+
+        .hint-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+
+        .output-area {
+            background: #e8f5e8;
+            border: 2px dashed #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            display: none;
+        }
+
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .area-kerja {
+            background: #fff;
+            padding: 25px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Latihan Atribut Form 1</h1>
+        <h2>Validasi Form Dasar dengan Atribut HTML</h2>
+
+        <div class="exercise-header">
+            <h3>📚 Deskripsi Latihan</h3>
+            <p>Dalam latihan ini, kalian akan mempraktikkan penggunaan atribut form HTML untuk validasi data dasar.</p>
+
+            <h4>🎯 Tujuan Pembelajaran:</h4>
+            <ul>
+                <li>Menggunakan atribut <code>required</code> untuk field wajib</li>
+                <li>Menerapkan atribut <code>minlength</code> dan <code>maxlength</code></li>
+                <li>Menggunakan atribut <code>min</code> dan <code>max</code> untuk input numerik</li>
+                <li>Menerapkan atribut <code>pattern</code> untuk validasi format khusus</li>
+                <li>Memahami perbedaan antara validasi client-side dan server-side</li>
+            </ul>
+        </div>
+
+        <div class="task-list">
+            <h3>✅ Tugas yang Harus Diselesaikan:</h3>
+            <ol>
+                <li><strong>Tambahkan atribut <code>required</code> pada field wajib</strong></li>
+                <li><strong>Gunakan <code>minlength</code> dan <code>maxlength</code> untuk username</strong></li>
+                <li><strong>Terapkan <code>min</code> dan <code>max</code> untuk umur</strong></li>
+                <li><strong>Gunakan <code>pattern</code> untuk validasi kode pos</strong></li>
+                <li><strong>Tambahkan <code>placeholder</code> yang informatif</strong></li>
+                <li><strong>Gunakan <code>title</code> untuk pesan bantuan</strong></li>
+            </ol>
+        </div>
+
+        <!-- AREA KERJA SISWA -->
+        <div class="area-kerja">
+            <h3 style="color: #333; text-align: center;">🛠️ AREA KERJA SISWA</h3>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">Lengkapi form di bawah ini dengan atribut yang sesuai</p>
+
+            <form id="validationForm" action="#" method="post">
+                <!-- Nama Lengkap -->
+                <div class="form-group">
+                    <label for="namaLengkap">Nama Lengkap <span class="required"></span></label>
+                    <!-- TODO: Tambahkan atribut required -->
+                    <input type="text"
+                           id="namaLengkap"
+                           name="nama_lengkap"
+                           placeholder="Nama lengkap sesuai KTP">
+                </div>
+
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Username <span class="required"></span></label>
+                    <!-- TODO: Tambahkan minlength, maxlength, required, dan placeholder -->
+                    <input type="text"
+                           id="username"
+                           name="username"
+                           placeholder="Min 3, max 15 karakter">
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email <span class="required"></span></label>
+                    <!-- TODO: Tambahkan atribut required dan placeholder -->
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           placeholder="email@domain.com">
+                </div>
+
+                <!-- Umur -->
+                <div class="form-group">
+                    <label for="umur">Umur (17-65 tahun) <span class="required"></span></label>
+                    <!-- TODO: Tambahkan type number, min, max, required -->
+                    <input type="text"
+                           id="umur"
+                           name="umur"
+                           placeholder="17-65">
+                </div>
+
+                <!-- Kode Pos -->
+                <div class="form-group">
+                    <label for="kodePos">Kode Pos <span class="required"></span></label>
+                    <!-- TODO: Tambahkan pattern untuk 5 digit angka, required, placeholder, dan title -->
+                    <input type="text"
+                           id="kodePos"
+                           name="kode_pos"
+                           placeholder="5 digit angka">
+                </div>
+
+                <!-- Website -->
+                <div class="form-group">
+                    <label for="website">Website (Opsional)</label>
+                    <!-- TODO: Tambahkan type url dan placeholder -->
+                    <input type="text"
+                           id="website"
+                           name="website"
+                           placeholder="https://example.com">
+                </div>
+
+                <!-- Biografi -->
+                <div class="form-group">
+                    <label for="biografi">Biografi Singkat</label>
+                    <!-- TODO: Tambahkan maxlength dan placeholder -->
+                    <textarea id="biografi"
+                              name="biografi"
+                              rows="4"
+                              placeholder="Ceritakan sedikit tentang diri Anda..."></textarea>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="form-group">
+                    <!-- TODO: Tambahkan type submit -->
+                    <button>Kirim Form</button>
+                </div>
+            </form>
+        </div>
+        <!-- AKHIR AREA KERJA SISWA -->
+
+        <div class="hint-box">
+            <h4>💡 Petunjuk Pengerjaan:</h4>
+            <ul>
+                <li>Gunakan <code>type="email"</code> untuk input email agar dapat validasi otomatis</li>
+                <li>Untuk kode pos, gunakan pattern <code>[0-9]{5}</code> untuk memastikan 5 digit angka</li>
+                <li>Tambahkan atribut <code>title</code> pada kode pos untuk pesan bantuan</li>
+                <li>Gunakan <code>type="number"</code> untuk input umur</li>
+                <li>Test form dengan mengisi data yang tidak sesuai untuk melihat validasi</li>
+            </ul>
+
+            <div class="code-example">
+                <!-- Contoh penggunaan atribut -->
+                <input type="text"
+                       name="username"
+                       required
+                       minlength="3"
+                       maxlength="15"
+                       placeholder="Min 3, max 15 karakter">
+            </div>
+        </div>
+
+        <div style="background: #ffebee; padding: 20px; border-radius: 8px; border-left: 4px solid #f44336; margin-top: 20px;">
+            <h4>⚠️ Hal yang Perlu Diperhatikan:</h4>
+            <ul>
+                <li>Pastikan semua field wajib memiliki atribut <code>required</code></li>
+                <li>Gunakan tipe input yang sesuai (<code>email</code>, <code>number</code>, <code>url</code>)</li>
+                <li>Atribut <code>pattern</code> hanya bekerja dengan input <code>text</code>, <code>search</code>, <code>tel</code>, <code>url</code>, atau <code>email</code></li>
+                <li>Validasi HTML5 adalah client-side, jangan lupa validasi server-side juga</li>
+            </ul>
+        </div>
+
+        <!-- Output Area (akan muncul setelah submit) -->
+        <div id="outputArea" class="output-area">
+            <h3>📊 Data yang Dikirim:</h3>
+            <pre id="outputData"></pre>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk demo submit form
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('validationForm');
+            const outputArea = document.getElementById('outputArea');
+            const outputData = document.getElementById('outputData');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Mencegah pengiriman form yang sebenarnya
+
+                // Mengumpulkan data form
+                const formData = new FormData(form);
+                const data = {};
+
+                for (let [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+
+                // Menampilkan data
+                outputData.textContent = JSON.stringify(data, null, 2);
+                outputArea.style.display = 'block';
+
+                // Scroll ke output
+                outputArea.scrollIntoView({ behavior: 'smooth' });
+
+                // Tampilkan pesan sukses
+                alert('✅ Form berhasil disubmit! Cek data yang dikirim di bawah.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Div dan Span HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .demo-section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: #2196F3;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .demo-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .demo-card h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Div styling */
+        .div-example {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 2px solid #4a5568;
+        }
+
+        .nested-div {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Span styling */
+        .highlight {
+            background: #FFEB3B;
+            color: #333;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .error {
+            background: #F44336;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #4CAF50;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background: #FF9800;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            background: #2196F3;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .block-example {
+            display: block;
+            background: #E3F2FD;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .inline-example {
+            display: inline;
+            background: #F3E5F5;
+            padding: 2px 6px;
+            margin: 0 5px;
+            border-bottom: 2px solid #9C27B0;
+        }
+
+        .layout-demo {
+            background: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .layout-header {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .layout-content {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .layout-sidebar {
+            flex: 1;
+            background: #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .layout-main {
+            flex: 3;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .layout-footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+            margin: 10px 5px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .demo-section {
+                padding: 20px 15px;
+            }
+
+            .layout-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Demo Div dan Span HTML</h1>
+            <p>Eksplorasi lengkap penggunaan elemen non-semantic untuk layout dan styling</p>
+        </div>
+
+        <!-- Section 1: Pengenalan Div -->
+        <div class="demo-section">
+            <h2 class="section-title">📦 Pengenalan Elemen <div></h2>
+            <p>Div (division) adalah elemen block-level yang digunakan untuk grouping dan layout:</p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>📝 Div Dasar</h3>
+                    <div class="div-example">
+                        <h4>Ini adalah div container</h4>
+                        <p>Div digunakan untuk mengelompokkan elemen-elemen HTML</p>
+                    </div>
+                    <div class="code-block">
+<div class="container">
+    <h4>Ini adalah div container</h4>
+    <p>Div digunakan untuk grouping</p>
+</div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3> nesting</h3>
+                    <div class="div-example">
+                        <div class="nested-div">
+                            <p>Div dalam div (nested div)</p>
+                            <div class="nested-div">
+                                <p>Level ketiga nesting</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-block">
+<div class="outer">
+    <div class="inner">
+        <div class="deepest">
+            Nested div
+        </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Pengenalan Span -->
+        <div class="demo-section">
+            <h2 class="section-title">🏷️ Pengenalan Elemen <span></h2>
+            <p>Span adalah elemen inline-level untuk styling bagian teks:</p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Span untuk Styling</h3>
+                    <p>Ini adalah paragraf dengan <span class="highlight">teks yang di-highlight</span> menggunakan span.</p>
+                    <p>Status: <span class="success">Berhasil</span> | <span class="error">Error</span> | <span class="warning">Peringatan</span></p>
+                    <div class="code-block">
+<p>Paragraf dengan <span class="highlight">highlight</span></p>
+<span class="success">Berhasil</span>
+<span class="error">Error</span>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🔤 Span dalam Konteks</h3>
+                    <p>Nama produk: <span class="highlight">Laptop Gaming Pro</span></p>
+                    <p>Harga: <span class="success">Rp 15.000.000</span> <span class="error">Diskon 20%</span></p>
+                    <p>Kategori: <span class="warning">Elektronik</span> | <span class="highlight">Baru</span></p>
+                    <div class="code-block">
+<p>Nama: <span class="highlight">Produk</span></p>
+<p>Harga: <span class="success">Rp 15jt</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Perbedaan Block vs Inline -->
+        <div class="demo-section">
+            <h2 class="section-title">⚖️ Perbedaan Block vs Inline</h2>
+            <p>Memahami karakteristik block dan inline elements:</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Karakteristik</th>
+                        <th>Block Element</th>
+                        <th>Inline Element</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Baris Baru</td>
+                        <td>✅ Dimulai baris baru</td>
+                        <td>❌ Tidak baris baru</td>
+                    </tr>
+                    <tr>
+                        <td>Lebar</td>
+                        <td>✅ Full width container</td>
+                        <td>❌ Sesuai konten</td>
+                    </tr>
+                    <tr>
+                        <td>Padding/Margin</td>
+                        <td>✅ Semua sisi efektif</td>
+                        <td>✅ Hanya horizontal</td>
+                    </tr>
+                    <tr>
+                        <td>Konten</td>
+                        <td>✅ Block & inline elements</td>
+                        <td>❌ Hanya teks & inline</td>
+                    </tr>
+                    <tr>
+                        <td>Contoh</td>
+                        <td><div>, <p>, <h1></td>
+                        <td><span>, <a>, <strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="demo-card">
+                <h3>👁️ Visualisasi Perbedaan</h3>
+                <div class="block-example">
+                    <strong>Block Element (div):</strong>
+                    <p>Dimulai dari baris baru dan memenuhi lebar container</p>
+                </div>
+                <p>Ini adalah teks biasa dengan <span class="inline-example">inline element (span)</span> di tengah kalimat. Span tidak memulai baris baru dan hanya selebar kontennya.</p>
+                <div class="block-example">
+                    <strong>Block Element lainnya:</strong>
+                    <p>Setiap block element dimulai dari baris baru</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Layout dengan Div -->
+        <div class="demo-section">
+            <h2 class="section-title">🏗️ Layout dengan Div</h2>
+            <p>Membuat struktur halaman menggunakan div untuk layout:</p>
+
+            <div class="layout-demo">
+                <div class="layout-header">
+                    <h3>Header Website</h3>
+                </div>
+
+                <div class="layout-content">
+                    <div class="layout-sidebar">
+                        <h4>_sidebar</h4>
+                        <ul>
+                            <li>Beranda</li>
+                            <li>Tentang</li>
+                            <li>Kontak</li>
+                        </ul>
+                    </div>
+
+                    <div class="layout-main">
+                        <h4>Konten Utama</h4>
+                        <p>Ini adalah area konten utama website. Div digunakan untuk membuat layout yang terstruktur dan mudah di-styling dengan CSS.</p>
+                        <p>Contoh penggunaan div untuk <span class="highlight">card produk</span>:</p>
+                        <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin: 10px 0;">
+                            <h5>📱 Smartphone Pro</h5>
+                            <p>Harga: <span class="success">Rp 12.000.000</span></p>
+                            <button type="button">Beli Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layout-footer">
+                    <p>&copy; 2024 Footer Website</p>
+                </div>
+            </div>
+
+            <div class="code-block">
+<div class="wrapper">
+    <div class="header">Header</div>
+    <div class="content">
+        <div class="sidebar">Menu</div>
+        <div class="main">Konten</div>
+    </div>
+    <div class="footer">Footer</div>
+</div>
+            </div>
+        </div>
+
+        <!-- Section 5: Styling dengan Span -->
+        <div class="demo-section">
+            <h2 class="section-title">🎨 Styling dengan Span</h2>
+            <p>Menggunakan span untuk styling teks yang presisi:</p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>📝 Highlight Teks</h3>
+                    <p>Artikel terbaru: <span class="highlight">Pengembangan Web Modern</span> telah dirilis.</p>
+                    <p>Penulis: <span class="highlight">Ahmad Rifai</span> | Tanggal: <span class="highlight">15 Maret 2024</span></p>
+                    <p>Tag: <span class="warning">HTML</span> <span class="warning">CSS</span> <span class="warning">JavaScript</span></p>
+                </div>
+
+                <div class="demo-card">
+                    <h3>📊 Status dan Notifikasi</h3>
+                    <p>Status server: <span class="success">Online</span></p>
+                    <p>Database: <span class="success">Connected</span></p>
+                    <p>Cache: <span class="warning">Warning</span> (85% full)</p>
+                    <p>Backup: <span class="error">Failed</span> (Last: 2 hours ago)</p>
+                </div>
+
+                <div class="demo-card">
+                    <h3>💰 Informasi Harga</h3>
+                    <p>Produk A: <span class="success">Rp 1.500.000</span></p>
+                    <p>Produk B: <span class="error">Rp 2.300.000</span> <span class="highlight">Diskon 15%</span></p>
+                    <p>Produk C: <span class="warning">Rp 1.800.000</span> (Stok terbatas)</p>
+                </div>
+
+                <div class="demo-card">
+                    <h3>📋 Form Validation</h3>
+                    <p>Nama: <span class="success">✓ Valid</span></p>
+                    <p>Email: <span class="error">✗ Format tidak valid</span></p>
+                    <p>Password: <span class="warning">⚠ Minimal 8 karakter</span></p>
+                    <p>Konfirmasi: <span class="success">✓ Cocok</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Best Practices -->
+        <div class="demo-section">
+            <h2 class="section-title">✅ Best Practices Div dan Span</h2>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎯 Kapan Menggunakan Div</h3>
+                    <ul>
+                        <li>Grouping konten untuk styling</li>
+                        <li>Membuat layout halaman</li>
+                        <li>Wrapper untuk komponen</li>
+                        <li>Ketika tidak ada elemen semantic</li>
+                    </ul>
+                    <button type="button" onclick="alert('Div digunakan untuk layout!')">Contoh Div</button>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🏷️ Kapan Menggunakan Span</h3>
+                    <ul>
+                        <li>Styling bagian teks spesifik</li>
+                        <li>Highlight kata/frasa</li>
+                        <li>Menambahkan atribut ke teks</li>
+                        <li>Inline styling presisi</li>
+                    </ul>
+                    <p>Contoh: <span class="highlight">Span untuk highlight</span></p>
+                </div>
+
+                <div class="demo-card">
+                    <h3>❌ Hindari Penggunaan Ini</h3>
+                    <ul>
+                        <li>Div untuk semua hal (gunakan semantic)</li>
+                        <li>Class tidak bermakna (div1, div2)</li>
+                        <li>Nesting terlalu dalam</li>
+                        <li>Span dalam block elements</li>
+                    </ul>
+                    <div class="code-block">
+<!-- ❌ Tidak disarankan -->
+<div class="div1">
+    <div class="div2">Konten</div>
+</div>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>✅ Gunakan Seperti Ini</h3>
+                    <ul>
+                        <li>Class bermakna (product-card, user-info)</li>
+                        <li>ID untuk elemen unik</li>
+                        <li>Struktur yang jelas</li>
+                        <li>Pertimbangkan semantic elements</li>
+                    </ul>
+                    <div class="code-block">
+<!-- ✅ Lebih baik -->
+<div class="product-card" id="product-123">
+    <div class="product-title">Nama Produk</div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+            <h2>🎉 Luar Biasa!</h2>
+            <p>Anda telah mempelajari penggunaan div dan span dalam HTML!</p>
+            <p><strong>Selanjutnya:</strong> <a href="../proyek-mini/layout-halaman.html" style="color: #fff; text-decoration: underline;">Proyek Layout Halaman</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 7</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Interactive demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add interactivity to buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('Button clicked:', this.textContent);
+                });
+            });
+
+            // Demo dynamic content
+            console.log('🎯 Demo Div dan Span HTML Loaded');
+            console.log('✨ Interactive elements ready');
+            console.log('📱 Mobile-responsive design');
+        });
+    </script>
+</body>
+</html>

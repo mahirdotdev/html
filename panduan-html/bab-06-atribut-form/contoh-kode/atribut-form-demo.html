@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Atribut Form HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .demo-section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: #2196F3;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .demo-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .demo-card h3 {
+            color: #495057;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.95rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #2196F3;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+
+        .required::after {
+            content: " *";
+            color: #dc3545;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .attribute-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .attribute-table th,
+        .attribute-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .attribute-table th {
+            background: #2196F3;
+            color: white;
+            font-weight: 600;
+        }
+
+        .attribute-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            color: #0d47a1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        .validation-message {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .character-count {
+            font-size: 0.85rem;
+            color: #6c757d;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .demo-section {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Demo Atribut Form HTML</h1>
+            <p>Eksplorasi lengkap atribut-atribut form HTML untuk pengalaman pengguna yang lebih baik</p>
+        </div>
+
+        <!-- Section 1: Atribut Validasi -->
+        <div class="demo-section">
+            <h2 class="section-title">✅ Atribut Validasi Form</h2>
+            <p>Atribut validasi membantu memastikan data yang dimasukkan sesuai dengan format yang diharapkan.</p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>📝 Required Attribute</h3>
+                    <div class="form-group">
+                        <label for="requiredField">Nama Lengkap <span class="required"></span></label>
+                        <input type="text"
+                               id="requiredField"
+                               name="required_field"
+                               required
+                               placeholder="Wajib diisi">
+                        <div class="validation-message" id="requiredError">Field ini wajib diisi</div>
+                    </div>
+                    <div class="code-block">
+<input type="text" required>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>📏 Min/Max Length</h3>
+                    <div class="form-group">
+                        <label for="lengthField">Username (3-20 karakter) <span class="required"></span></label>
+                        <input type="text"
+                               id="lengthField"
+                               name="length_field"
+                               minlength="3"
+                               maxlength="20"
+                               required
+                               placeholder="min 3, max 20 karakter">
+                        <div class="character-count" id="lengthCount">0/20 karakter</div>
+                    </div>
+                    <div class="code-block">
+<input type="text" minlength="3" maxlength="20">
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🔢 Min/Max Value</h3>
+                    <div class="form-group">
+                        <label for="numberField">Umur (17-65 tahun) <span class="required"></span></label>
+                        <input type="number"
+                               id="numberField"
+                               name="number_field"
+                               min="17"
+                               max="65"
+                               required
+                               placeholder="17-65">
+                    </div>
+                    <div class="code-block">
+<input type="number" min="17" max="65">
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🔍 Pattern Validation</h3>
+                    <div class="form-group">
+                        <label for="patternField">Kode Pos (5 digit) <span class="required"></span></label>
+                        <input type="text"
+                               id="patternField"
+                               name="pattern_field"
+                               pattern="[0-9]{5}"
+                               title="5 digit angka"
+                               required
+                               placeholder="12345">
+                    </div>
+                    <div class="code-block">
+<input type="text" pattern="[0-9]{5}" title="5 digit">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Atribut UX -->
+        <div class="demo-section">
+            <h2 class="section-title">🎨 Atribut User Experience</h2>
+            <p>Atribut UX meningkatkan kenyamanan dan efisiensi pengguna saat mengisi form.</p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>💡 Placeholder</h3>
+                    <div class="form-group">
+                        <label for="placeholderField">Email</label>
+                        <input type="email"
+                               id="placeholderField"
+                               name="placeholder_field"
+                               placeholder="nama@domain.com">
+                    </div>
+                    <div class="code-block">
+<input type="email" placeholder="nama@domain.com">
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🤖 Autocomplete</h3>
+                    <div class="form-group">
+                        <label for="autocompleteField">Nama Lengkap</label>
+                        <input type="text"
+                               id="autocompleteField"
+                               name="autocomplete_field"
+                               autocomplete="name"
+                               placeholder="Nama lengkap Anda">
+                    </div>
+                    <div class="code-block">
+<input type="text" autocomplete="name">
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🎯 Autofocus</h3>
+                    <div class="form-group">
+                        <label for="autofocusField">Kata Kunci Pencarian</label>
+                        <input type="text"
+                               id="autofocusField"
+                               name="autofocus_field"
+                               autofocus
+                               placeholder="Cari produk...">
+                    </div>
+                    <div class="code-block">
+<input type="text" autofocus>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>📱 Input Mode</h3>
+                    <div class="form-group">
+                        <label for="inputmodeField">Nomor Telepon</label>
+                        <input type="text"
+                               id="inputmodeField"
+                               name="inputmode_field"
+                               inputmode="tel"
+                               placeholder="+62 812 3456 7890">
+                    </div>
+                    <div class="code-block">
+<input type="text" inputmode="tel">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Atribut Aksesibilitas -->
+        <div class="demo-section">
+            <h2 class="section-title">♿ Atribut Aksesibilitas</h2>
+            <p>Atribut aksesibilitas memastikan form dapat digunakan oleh semua pengguna, termasuk yang memiliki kebutuhan khusus.</p>
+
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🏷️ ARIA Labels</h3>
+                    <div class="form-group">
+                        <label for="ariaField">Cari Produk</label>
+                        <input type="text"
+                               id="ariaField"
+                               name="aria_field"
+                               aria-label="Kotak pencarian produk"
+                               aria-describedby="ariaHelp"
+                               placeholder="Masukkan nama produk">
+                        <small id="ariaHelp" style="color: #6c757d; font-size: 0.85rem;">Masukkan nama produk yang ingin dicari</small>
+                    </div>
+                    <div class="code-block">
+<input aria-label="Kotak pencarian"
+       aria-describedby="helpText">
+<small id="helpText">Bantuan pencarian</small>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>⌨️ Tab Index</h3>
+                    <div class="form-group">
+                        <label for="tab1">Field 1</label>
+                        <input type="text"
+                               id="tab1"
+                               name="tab1"
+                               tabindex="1"
+                               placeholder="Tab index 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="tab2">Field 2</label>
+                        <input type="text"
+                               id="tab2"
+                               name="tab2"
+                               tabindex="2"
+                               placeholder="Tab index 2">
+                    </div>
+                    <div class="code-block">
+<input tabindex="1">
+<input tabindex="2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Tabel Referensi Atribut -->
+        <div class="demo-section">
+            <h2 class="section-title">📋 Referensi Atribut Form</h2>
+            <p>Tabel lengkap atribut form HTML yang paling sering digunakan:</p>
+
+            <table class="attribute-table">
+                <thead>
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Fungsi</th>
+                        <th>Contoh Penggunaan</th>
+                        <th>Elemen yang Mendukung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>required</code></td>
+                        <td>Field wajib diisi</td>
+                        <td><code><input required></code></td>
+                        <td>input, select, textarea</td>
+                    </tr>
+                    <tr>
+                        <td><code>minlength</code></td>
+                        <td>Min karakter</td>
+                        <td><code><input minlength="3"></code></td>
+                        <td>input, textarea</td>
+                    </tr>
+                    <tr>
+                        <td><code>maxlength</code></td>
+                        <td>Max karakter</td>
+                        <td><code><input maxlength="20"></code></td>
+                        <td>input, textarea</td>
+                    </tr>
+                    <tr>
+                        <td><code>min</code></td>
+                        <td>Nilai minimum</td>
+                        <td><code><input min="0"></code></td>
+                        <td>input[type="number/date"]</td>
+                    </tr>
+                    <tr>
+                        <td><code>max</code></td>
+                        <td>Nilai maksimum</td>
+                        <td><code><input max="100"></code></td>
+                        <td>input[type="number/date"]</td>
+                    </tr>
+                    <tr>
+                        <td><code>pattern</code></td>
+                        <td>Regex validation</td>
+                        <td><code><input pattern="[A-Z]{3}"></code></td>
+                        <td>input</td>
+                    </tr>
+                    <tr>
+                        <td><code>placeholder</code></td>
+                        <td>Teks petunjuk</td>
+                        <td><code><input placeholder="Email"></code></td>
+                        <td>input, textarea</td>
+                    </tr>
+                    <tr>
+                        <td><code>autocomplete</code></td>
+                        <td>Browser autocomplete</td>
+                        <td><code><input autocomplete="on"></code></td>
+                        <td>input, form</td>
+                    </tr>
+                    <tr>
+                        <td><code>autofocus</code></td>
+                        <td>Fokus otomatis</td>
+                        <td><code><input autofocus></code></td>
+                        <td>input, select, textarea, button</td>
+                    </tr>
+                    <tr>
+                        <td><code>readonly</code></td>
+                        <td>Hanya bisa dibaca</td>
+                        <td><code><input readonly></code></td>
+                        <td>input, textarea</td>
+                    </tr>
+                    <tr>
+                        <td><code>disabled</code></td>
+                        <td>Dinonaktifkan</td>
+                        <td><code><input disabled></code></td>
+                        <td>Semua form elements</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-label</code></td>
+                        <td>Label aksesibilitas</td>
+                        <td><code><input aria-label="Cari"></code></td>
+                        <td>Semua elemen</td>
+                    </tr>
+                    <tr>
+                        <td><code>tabindex</code></td>
+                        <td>Urutan tab</td>
+                        <td><code><input tabindex="1"></code></td>
+                        <td>Semua elemen focusable</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 5: Form Demo Lengkap -->
+        <div class="demo-section">
+            <h2 class="section-title">🧪 Form Demo dengan Atribut Lengkap</h2>
+            <p>Contoh form komprehensif dengan berbagai atribut yang telah dipelajari:</p>
+
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; margin-top: 20px;">
+                <form id="demoForm" novalidate>
+                    <div class="demo-grid">
+                        <div class="demo-card">
+                            <h3>👤 Informasi Pribadi</h3>
+
+                            <div class="form-group">
+                                <label for="demoName">Nama Lengkap <span class="required"></span></label>
+                                <input type="text"
+                                       id="demoName"
+                                       name="demo_name"
+                                       required
+                                       minlength="2"
+                                       maxlength="50"
+                                       placeholder="Nama lengkap Anda"
+                                       autocomplete="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="demoEmail">Email <span class="required"></span></label>
+                                <input type="email"
+                                       id="demoEmail"
+                                       name="demo_email"
+                                       required
+                                       placeholder="email@domain.com"
+                                       autocomplete="email"
+                                       inputmode="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="demoPhone">Nomor Telepon</label>
+                                <input type="tel"
+                                       id="demoPhone"
+                                       name="demo_phone"
+                                       pattern="[0-9+\-\s()]+"
+                                       placeholder="+62 812 3456 7890"
+                                       inputmode="tel">
+                            </div>
+                        </div>
+
+                        <div class="demo-card">
+                            <h3>🎯 Preferensi</h3>
+
+                            <div class="form-group">
+                                <label for="demoDate">Tanggal Lahir <span class="required"></span></label>
+                                <input type="date"
+                                       id="demoDate"
+                                       name="demo_date"
+                                       required
+                                       min="1950-01-01"
+                                       max="2010-12-31">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="demoColor">Warna Favorit</label>
+                                <input type="color"
+                                       id="demoColor"
+                                       name="demo_color"
+                                       value="#2196F3">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="demoRange">Rating (1-10)</label>
+                                <input type="range"
+                                       id="demoRange"
+                                       name="demo_range"
+                                       min="1"
+                                       max="10"
+                                       value="5">
+                                <div style="text-align: center; margin-top: 10px;">
+                                    <span id="rangeValue">5</span>/10
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <input type="checkbox"
+                                   id="demoAgree"
+                                   name="demo_agree"
+                                   required>
+                            <label for="demoAgree" style="margin-bottom: 0;">Saya setuju dengan syarat dan ketentuan <span class="required"></span></label>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button type="submit">🚀 Submit Form Demo</button>
+                    </div>
+                </form>
+
+                <div id="formResult" class="success-box" style="display: none; margin-top: 20px;">
+                    <h3>✅ Form Berhasil Disubmit!</h3>
+                    <pre id="formData" style="background: white; padding: 15px; border-radius: 5px; margin-top: 10px;"></pre>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+            <h2>🎉 Luar Biasa!</h2>
+            <p>Anda telah mempelajari atribut-atribut form HTML yang penting!</p>
+            <p><strong>Selanjutnya:</strong> <a href="../proyek-mini/form-advanced.html" style="color: #fff; text-decoration: underline;">Proyek Form Advanced</a> atau kembali ke <a href="../README.md" style="color: #fff; text-decoration: underline;">Bab 6</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Real-time validation and interaction
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Length counter
+            const lengthField = document.getElementById('lengthField');
+            const lengthCount = document.getElementById('lengthCount');
+
+            if (lengthField && lengthCount) {
+                lengthField.addEventListener('input', function() {
+                    const length = this.value.length;
+                    lengthCount.textContent = `${length}/${this.maxLength} karakter`;
+                    lengthCount.style.color = length > this.maxLength * 0.8 ? '#dc3545' : '#6c757d';
+                });
+            }
+
+            // Range slider
+            const rangeInput = document.getElementById('demoRange');
+            const rangeValue = document.getElementById('rangeValue');
+
+            if (rangeInput && rangeValue) {
+                rangeInput.addEventListener('input', function() {
+                    rangeValue.textContent = this.value;
+                });
+            }
+
+            // Form submission
+            const demoForm = document.getElementById('demoForm');
+            const formResult = document.getElementById('formResult');
+            const formData = document.getElementById('formData');
+
+            if (demoForm) {
+                demoForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Simple validation
+                    const requiredFields = this.querySelectorAll('[required]');
+                    let isValid = true;
+
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.style.borderColor = '#dc3545';
+                        } else {
+                            field.style.borderColor = '#ddd';
+                        }
+                    });
+
+                    if (isValid) {
+                        // Collect form data
+                        const data = new FormData(this);
+                        const jsonData = {};
+
+                        for (let [key, value] of data.entries()) {
+                            jsonData[key] = value;
+                        }
+
+                        formData.textContent = JSON.stringify(jsonData, null, 2);
+                        formResult.style.display = 'block';
+                        formResult.scrollIntoView({ behavior: 'smooth' });
+
+                        // Reset form after 3 seconds
+                        setTimeout(() => {
+                            formResult.style.display = 'none';
+                        }, 3000);
+                    } else {
+                        alert('⚠️ Mohon lengkapi semua field yang wajib diisi!');
+                    }
+                });
+            }
+
+            // Auto-focus first field
+            const firstField = document.querySelector('input[autofocus]');
+            if (firstField) {
+                firstField.focus();
+            }
+
+            // Console messages
+            console.log('🎯 Demo Atribut Form HTML Loaded');
+            console.log('✨ Interactive validation enabled');
+            console.log('📱 Mobile-optimized attributes ready');
+        });
+    </script>
+</body>
+</html>
