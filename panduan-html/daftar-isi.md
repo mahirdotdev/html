@@ -482,72 +482,73 @@
 
 ---
 
-## 📚 BAB 8: SEMANTIC HTML
+## 📚 BAB 8: ELEMENT LANJUTAN DAN PRAKTIK MODERN
 
-### 8.1 Semantik pada HTML
-- Pentingnya semantic HTML
-- SEO benefits
-- Accessibility advantages
-- Code maintainability
+### 8.1 Multimedia Elements — Audio dan Video
+- `<audio>` dan `<video>` dengan `controls`, `autoplay`, `muted`, `loop`, `preload`.
+- Multi-source dan `<track>` (subtitle); poster untuk video.
+- Optimasi ukuran/kompresi dan fallback unduhan.
 
-### 8.2 Struktur Semantik pada HTML
-- `<header>` untuk bagian atas
-- `<nav>` untuk navigasi
-- `<main>` untuk konten utama
-- `<article>` untuk artikel
-- `<section>` untuk bagian
-- `<aside>` untuk sidebar
-- `<footer>` untuk bagian bawah
+### 8.2 Interactive Elements — Form dan Input Types
+- Struktur `<form>`, `label ↔ id`, `name`, dan validasi bawaan.
+- Tipe input umum: `email`, `date`, `number`, `range`, `file`, `search`, `url`, `color`, `datalist`.
+- UX: placeholder, autocomplete, urutan tab, pesan bantuan.
 
-### 8.3 Karakter Spesial HTML
-- HTML entities
-- Special characters
-- Symbol representation
-- Copyright dan trademark
+### 8.3 Semantic HTML5 Elements — Modern Layout Tags
+- `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
+- Landmark, outline heading, dan pedoman satu `<main>` per halaman.
 
-### 8.4 Karakter Khusus di HTML
-- Non-breaking space `&nbsp;`
-- Less than `&lt;`
-- Greater than `&gt;`
-- Ampersand `&amp;`
-- Quote marks
+### 8.4 Advanced Text Formatting — mark, time, small, dll.
+- `<mark>`, `<time datetime>`, `<small>`, `<abbr title>`, `<cite>`, `<kbd>`, `<samp>`, `<var>`.
+- Aturan `datetime` ISO dan penekanan makna `<strong>/<em>`.
 
-### 8.5 Karakter Milik HTML
-- Reserved characters
-- Character escaping
-- HTML syntax conflicts
-- Safe character usage
+### 8.5 Embedded Content — Iframe dan Object
+- `<iframe>`: `title`, `loading="lazy"`, `sandbox`, `allowfullscreen`.
+- `<object>` untuk PDF/dokumen; responsif dengan wrapper.
 
-### 8.6 Karakter Entitas HTML
-- Numeric entities
-- Named entities
-- Unicode entities
-- International characters
+### 8.6 Metadata Elements — Head Section Optimization
+- `<title>`, meta `description`, `charset`, `viewport`, Open Graph, favicon.
+- Praktik penulisan meta yang ringkas, unik, dan valid.
+
+### 8.7 Accessibility Features — ARIA dan Semantic Structure
+- Prinsip: semantic dulu, ARIA seperlunya; fokus terlihat.
+- Atribut umum: `aria-label`, `aria-expanded`, `aria-controls`, `role`.
+
+### 8.8 Responsive Design Elements — Viewport dan Media Queries
+- Meta viewport; gambar responsif `srcset`/`sizes` dan `loading="lazy"`.
+- Tabel dapat digeser; iframe responsif dengan wrapper.
+
+### 8.9 Advanced Linking — Bookmark, Email, Phone
+- `href="#id"` (bookmark), `mailto:`, `tel:` dan keamanan `rel` saat tab baru.
+- CTA dan tautan dengan parameter yang terisi otomatis.
+
+### 8.10 Deprecated vs Modern Elements — Best Practices Update
+- Hindari `center`, `font`, `big`, `strike`; gunakan semantic + CSS.
+- Validasi dengan W3C; rujuk dokumentasi MDN/WHATWG.
 
 ### 🏗️ Proyek Mini Bab 8
-- Membuat website berita dengan struktur semantic lengkap
+- Kampanye acara sekolah: layout semantik, media, form, peta, head teroptimasi, aksesibilitas, dan responsif.
 
 ### 📝 Latihan Bab 8
-- Semantic structure analysis
-- Entity character practice
+- Media dengan fallback; refactor ke semantic + aksesibel; gambar `srcset` + `sizes`.
 
 ---
 
 ## 📚 BAB 9: ATRIBUT HTML (ID DAN CLASS)
 
 ### 9.1 Atribut ID pada HTML
-- Unique identifier
-- CSS targeting
-- JavaScript manipulation
-- Anchor links
-- Best practices naming
+- Penanda unik elemen
+- Targeting dengan CSS
+- Pengaitan spesifik untuk JavaScript
+- Anchor/tautan ke bagian halaman
+- Praktik penamaan yang baik
 
 ### 9.2 Atribut Class pada HTML
-- Multiple elements styling
-- CSS class selectors
-- JavaScript class manipulation
-- Reusable styles
-- Naming conventions
+- Styling banyak elemen sekaligus
+- Selektor class di CSS
+- Manipulasi class via JavaScript
+- Gaya reusable/berulang
+- Konvensi penamaan konsisten
 
 ### 🏗️ Proyek Mini Bab 9
 - Membuat halaman dengan sistem ID dan class yang terorganisir
