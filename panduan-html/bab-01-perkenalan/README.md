@@ -390,10 +390,10 @@ Buat file [`proyek-halo-dunia.html`](panduan-html/bab-01-perkenalan/proyek-mini/
     <p>Saya adalah siswa SMA yang sedang belajar HTML. Saya bersekolah di [Nama Sekolah] dan berada di kelas [Kelas].</p>
 
     <h2>Hobi dan Minat</h2>
-    <p>Hobi saya adalah [sebutkan hobi Anda]. Saya juga tertarik dengan teknologi dan ingin belajar web development.</p>
+    <p>Hobi saya adalah <strong>[sebutkan hobi Anda]. Saya juga tertarik dengan teknologi dan ingin belajar web development.</p>
 
     <h2>Tujuan Belajar HTML</h2>
-    <p>Tujuan saya belajar HTML adalah [tuliskan tujuan Anda]. Saya berharap suatu hari nanti bisa membuat website yang keren!</p>
+    <p>Tujuan saya belajar HTML</strong> adalah </em>[tuliskan tujuan Anda]. Saya berharap suatu hari nanti bisa membuat website yang keren!</p>
 
     <p><strong>Terima kasih telah mengunjungi halaman pertama saya!</strong></p>
 </body>
